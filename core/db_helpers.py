@@ -49,12 +49,14 @@ def carregar_processos():
 
 def carregar_equipas():
     conn = connect_bd("D")
+    equipas = {}
     try:
         cursor = conn.cursor()
         cursor.execute("SELECT id, nome FROM equipas ORDER BY nome")
-        return [{"id": id_, "nome": nome} for id_, nome in cursor.fetchall()]
+        equipas = {id: nome for id, nome in cursor.fetchall()}
     finally:
         conn.close()
+    return equipas
 
 def gravar_guia_bd(fornecedor, numero, ano, data, processo, caminho_pdf):
     conn = connect_bd("D")

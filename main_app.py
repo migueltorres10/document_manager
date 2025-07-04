@@ -3,6 +3,7 @@ import tkinter as tk
 from Faturas.faturas import faturas
 from Guias.guias import guias
 from core.gui_utils import centralizar_janela
+from QR.qr_code import GeradorQRCode
 
 class PainelPrincipal:
     def centralizar_janela(self):
@@ -25,6 +26,9 @@ class PainelPrincipal:
         
         tk.Button(
             self.root, text="📄 Processar e Visualizar Guias", width=35, height=2, command=self.abrir_guias).pack(pady=20)
+        
+        tk.Button(
+            self.root, text="📑 Gerar QRCode para Documentos Internos", width=35, height=2, command=GeradorQRCode).pack(pady=20)
         
         tk.Label(self.root, text="v2.1", font=("Arial", 8), fg="gray").pack(side="bottom", pady=5)
 

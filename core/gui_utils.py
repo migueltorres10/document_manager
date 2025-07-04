@@ -1,6 +1,7 @@
 # core/gui_utils.py
 import tkinter as tk
 from tkinter import messagebox, ttk
+from core.db_helpers import carregar_equipas
 
 def filtrar_combobox_por_texto(combobox, clientes_dict, texto):
     texto = texto.lower()
@@ -42,3 +43,9 @@ def confirmar_eliminacao(nome, acao_callback):
             mostrar_mensagem("info", f"'{nome}' eliminado com sucesso.")
         except Exception as e:
             mostrar_mensagem("erro", f"Erro ao eliminar '{nome}': {e}")
+
+def recarregar_equipas(self):
+    # Recarrega as equipas após fechar a janela de gestão
+    self.equipas = carregar_equipas()
+    valores_equipa = [e["nome"] for e in self.equipas]
+    self.combo_equipa["values"] = valores_equipa   
