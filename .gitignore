@@ -1,0 +1,17 @@
+.env
+_pycache_/
+
+# Ignorar conteúdos de pastas específicas, mas manter .gitkeep
+
+**/entrada/**
+!**/entrada/.gitkeep
+
+**/separados/**
+!**/separados/.gitkeep
+
+**/obsoletos/**
+!**/obsoletos/.gitkeep
+
+**/arquivados/**
+!**/arquivados/.gitkeep
+

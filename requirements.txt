@@ -1,0 +1,9 @@
+python-dotenv
+pyodbc
+pdfplumber
+pdf2image
+pytesseract
+Pillow
+pyzbar
+PyMuPDF
+pytest
