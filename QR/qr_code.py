@@ -151,7 +151,16 @@ class GeradorQRCode:
 
             # Copia template e insere QR
             from core.global_utils import inserir_qr_no_excel
-            inserir_qr_no_excel(template_base, caminho_final, qr_temp_path)
+            inserir_qr_no_excel(
+                template_base,
+                caminho_final,
+                qr_temp_path,
+                dados={
+                    "ano": ano,
+                    "equipa": equipa_nome,
+                    "mes": mes  # pode ser None
+                }
+            )
 
             documentos_gerados.append(caminho_final)
             print(f"[OK] Documento gerado: {caminho_final}")
