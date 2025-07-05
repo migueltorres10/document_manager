@@ -435,3 +435,15 @@ def mover_pdf_assiduidade(caminho_pdf, equipa_id, ano, nome_final, pasta_base):
     shutil.move(caminho_pdf, destino)
     print(f"✅ PDF movido para: {destino}")
     return destino
+
+def obter_mes_selecionado(self):
+    for mes, var in self.meses_var:
+        if var.get():
+            return mes
+    return None
+
+def recarregar_equipas(self):
+    # Recarrega as equipas após fechar a janela de gestão
+    self.equipas = carregar_equipas()
+    valores_equipa = [e["nome"] for e in self.equipas]
+    self.combo_equipa["values"] = valores_equipa   

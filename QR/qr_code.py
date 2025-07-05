@@ -4,8 +4,9 @@ import tkinter as tk
 from tkinter import ttk, messagebox
 import qrcode
 from utils import carregar_equipas
-from core.gui_utils import centralizar_janela, filtrar_combobox_por_texto
+from core.gui_utils import centralizar_janela
 from core.constantes import MESES, MESES_MAP
+from utils import obter_mes_selecionado
 
 class GeradorQRCode:
     def __init__(self):
@@ -17,7 +18,7 @@ class GeradorQRCode:
     def _inicializar_interface(self):
         self.root = tk.Toplevel()
         self.root.title("Gerador de QRCode para Documentos Internos")
-        self.root.geometry("400x300")
+        self.root.geometry("350x400")
         centralizar_janela(self.root)
         self.root.attributes('-topmost', 1)
 
@@ -33,18 +34,12 @@ class GeradorQRCode:
         frame_meses = tk.LabelFrame(self.root, text="Mês de Trabalho")
         frame_meses.pack(pady=10)
 
-        def on_mes_selecionado(mes_index):
-            for i, (_, var) in enumerate(self.meses_var):
-                if i != mes_index:
-                    var.set(False)
-
         for i, mes in enumerate(MESES):
             var = tk.BooleanVar()
             cb = tk.Checkbutton(
                 frame_meses,
                 text=mes,
-                variable=var,
-                command=lambda i=i: on_mes_selecionado(i)
+                variable=var
             )
             cb.grid(row=i // 3, column=i % 3, sticky="w", padx=5, pady=2)
             self.meses_var.append((mes, var))
@@ -72,12 +67,6 @@ class GeradorQRCode:
         filtrados = [f"{e['id']} - {e['nome']}" for e in self.equipas if texto in e["nome"].lower()]
         self.combo_equipa['values'] = filtrados
 
-    def obter_mes_selecionado(self):
-        for mes, var in self.meses_var:
-            if var.get():
-                return mes
-        return None
-
     def gerar_qrcode(self):
         equipa_str = self.equipa_var.get().strip()
         print(f"[DEBUG] equipa_var.get(): '{self.equipa_var.get()}'")
@@ -100,35 +89,47 @@ class GeradorQRCode:
             return
 
         ano = self.ano_var.get().strip()
-        mes = self.obter_mes_selecionado()
-        print(f"[DEBUG] Ano: '{ano}', Mês: '{mes}'")
+        if not ano.isdigit() or len(ano) != 4:
+            messagebox.showwarning("Ano inválido", "Insira um ano válido com 4 dígitos (ex: 2025).")
+            return
+        
+        meses_selecionados = [mes for mes, var in self.meses_var if var.get()]
 
-        conteudo_qr = f"equipa={equipa_id}"
-        if ano:
-            conteudo_qr += f";ano={ano}"
-        if mes:
-            mes_num = MESES_MAP.get(mes)
-            conteudo_qr += f";mes={mes_num:02d}"
+        equipa_nome = next((e['nome'] for e in self.equipas if str(e['id']) == equipa_id), "Desconhecida")
 
-        print(f"[DEBUG] Conteúdo do QR: {conteudo_qr}")
+        if not meses_selecionados:
+            meses_selecionados = [None]
 
-        qr = qrcode.make(conteudo_qr)
+        for mes in meses_selecionados:
+            conteudo_qr = f"equipa={equipa_id}"
+            if ano:
+                conteudo_qr += f";ano={ano}"
+            if mes:
+                mes_num = MESES_MAP.get(mes)
+                conteudo_qr += f";mes={mes_num:02d}"
 
-        partes = [equipa_id]
-        if ano:
-            partes.append(ano)
-        if mes:
-            partes.append(f"{MESES_MAP[mes]:02d}")
-        nome_ficheiro = "_".join(partes) + ".png"
+            qr = qrcode.make(conteudo_qr)
 
-        pasta_qr = os.path.join(os.path.dirname(__file__), "gerados")
-        os.makedirs(pasta_qr, exist_ok=True)
+            partes = [equipa_id]
+            if ano:
+                partes.append(ano)
+            if mes:
+                partes.append(f"{MESES_MAP[mes]:02d}")
+            nome_ficheiro = "_".join(partes) + ".png"
 
-        caminho_completo = os.path.join(pasta_qr, nome_ficheiro)
-        qr.save(caminho_completo)
+            partes_pasta = [os.path.dirname(__file__), "gerados", equipa_nome]
+            if ano:
+                partes_pasta.append(ano)
+            if mes:
+                partes_pasta.append(f"{MESES_MAP[mes]:02d}")
+            pasta_qr = os.path.join(*partes_pasta)
+            os.makedirs(pasta_qr, exist_ok=True)
 
-        print(f"[DEBUG] QR Code guardado em: {caminho_completo}")
-        messagebox.showinfo("Sucesso", f"QR Code guardado como:\n{nome_ficheiro}")
+            caminho_completo = os.path.join(pasta_qr, nome_ficheiro)
+            qr.save(caminho_completo)
+            print(f"[DEBUG] QR Code guardado em: {caminho_completo}")
+
+        messagebox.showinfo("Sucesso", f"{len(meses_selecionados)} QR Code(s) gerado(s) com sucesso!")
 
 if __name__ == "__main__":
     GeradorQRCode()

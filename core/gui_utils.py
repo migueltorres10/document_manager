@@ -43,9 +43,3 @@ def confirmar_eliminacao(nome, acao_callback):
             mostrar_mensagem("info", f"'{nome}' eliminado com sucesso.")
         except Exception as e:
             mostrar_mensagem("erro", f"Erro ao eliminar '{nome}': {e}")
-
-def recarregar_equipas(self):
-    # Recarrega as equipas após fechar a janela de gestão
-    self.equipas = carregar_equipas()
-    valores_equipa = [e["nome"] for e in self.equipas]
-    self.combo_equipa["values"] = valores_equipa   

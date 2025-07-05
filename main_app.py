@@ -19,6 +19,7 @@ class PainelPrincipal:
         self.root.mainloop()
 
     def _criar_widgets(self):
+        
         tk.Label(self.root, text="📋 Selecione uma opção", font=("Helvetica", 16)).pack(pady=20)
 
         tk.Button(
@@ -27,8 +28,19 @@ class PainelPrincipal:
         tk.Button(
             self.root, text="📄 Processar e Visualizar Guias", width=35, height=2, command=self.abrir_guias).pack(pady=20)
         
+            # Frame para agrupar os dois botões lado a lado
+        frame_qr_digital = tk.Frame(self.root, bg="#f0f0f0")  # Fundo do container dos botões
+        frame_qr_digital.pack(pady=20)
+        
+        # Botão Gerar QR Code
         tk.Button(
-            self.root, text="📑 Gerar QRCode para Documentos Internos", width=35, height=2, command=GeradorQRCode).pack(pady=20)
+            frame_qr_digital, text="📑 QRCode\nDocumentos", width=17, height=4, command=GeradorQRCode
+        ).pack(side="left", padx=5)
+
+        # Botão Digitalizar Documento
+        tk.Button(
+            frame_qr_digital, text="📠 Digitalizar\nDocumento", width=17, height=4, command=lambda: digitalizar()
+        ).pack(side="left", padx=5)
         
         tk.Label(self.root, text="v2.1", font=("Arial", 8), fg="gray").pack(side="bottom", pady=5)
 
