@@ -22,3 +22,27 @@ MESES = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
 MESES_MAP = {
     nome: idx + 1 for idx, nome in enumerate(MESES)
 }
+
+TIPOS_DOCUMENTOS = {
+    "Guias":"GR",
+    "Faturas" : "F",
+    "Recibos": "R",
+    "Folhas de Obra": "FO",
+    "Folhas Faltas": "FF",
+    "Folhas Assiduidade": "FA",
+    "Faturas Emitidas": "F-E",
+    "Recibos Emitidos": "R-E",
+    "Guias Emitidas": "GR-E"
+}
+
+PASTAS = ["Guias/entrada", 
+          "Faturas/entrada", 
+          "Folhas de Obra/entrada",
+          "Folhas de Obra/minutas", 
+          "Folhas Assiduidade/entrada",
+          "Folhas Assiduidade/minutas",
+          "Folhas Faltas/entrada", 
+          "Folhas Faltas/minutas",
+          "Faturas Emitidas/entrda", 
+          "Recibos Emitidos/entrada", 
+          "Guias Emitidas/entrada"]

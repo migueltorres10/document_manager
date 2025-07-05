@@ -3,7 +3,9 @@ pyodbc
 pdfplumber
 pdf2image
 pytesseract
+SumatraPDF
+poppler
+naps2
 Pillow
 pyzbar
 PyMuPDF
-pytest

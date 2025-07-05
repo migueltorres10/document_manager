@@ -4,6 +4,14 @@ from Faturas.faturas import faturas
 from Guias.guias import guias
 from core.gui_utils import centralizar_janela
 from QR.qr_code import GeradorQRCode
+from Digitalizar.digitalizar import digitalizar
+from core.constantes import PASTAS
+
+
+def criar_pastas():
+    for pasta in PASTAS:
+        if not os.path.exists(pasta):
+            os.makedirs(pasta)
 
 class PainelPrincipal:
     def centralizar_janela(self):
@@ -39,7 +47,7 @@ class PainelPrincipal:
 
         # Botão Digitalizar Documento
         tk.Button(
-            frame_qr_digital, text="📠 Digitalizar\nDocumento", width=17, height=4, command=lambda: digitalizar()
+            frame_qr_digital, text="📠 Digitalizar\nDocumento", width=17, height=4, command=self.digitalizar
         ).pack(side="left", padx=5)
         
         tk.Label(self.root, text="v2.1", font=("Arial", 8), fg="gray").pack(side="bottom", pady=5)
@@ -51,5 +59,9 @@ class PainelPrincipal:
     def abrir_guias(self):
         guias()
 
+    def digitalizar(self):
+        digitalizar()
+
 if __name__ == "__main__":
+    criar_pastas()
     PainelPrincipal()

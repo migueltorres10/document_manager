@@ -13,14 +13,21 @@ from core.pdf_utils import (
     abrir_pdf_externo,
     fechar_sumatra
 )
-from utils import (
+from core.db_helpers import (
     obter_fornecedores,
-    extrair_dados_qrcode_de_pdf,
     gravar_fatura_bd,
-    mover_pdf_para_pasta_destino,
-    renomear_pdf,
     carregar_processos
 )
+
+from core.ocr_utils import (
+    extrair_dados_qrcode_de_pdf
+)
+
+from core.file_utils import (
+    mover_pdf_para_pasta_destino,
+    renomear_pdf
+)
+
 from processos import GestorProcessos
 
 

@@ -1,7 +1,7 @@
 # core/pdf_utils.py
 import os
 import subprocess
-from utils import SUMATRA_PATH
+from config import SUMATRA_PATH
 
 
 def listar_pdfs(pasta):

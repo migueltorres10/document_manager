@@ -3,15 +3,15 @@ import os
 import tkinter as tk
 from tkinter import ttk, messagebox
 import qrcode
-from utils import carregar_equipas
+from core.db_helpers import carregar_equipas
 from core.gui_utils import centralizar_janela
-from core.constantes import MESES, MESES_MAP
-from utils import obter_mes_selecionado
+from core.constantes import MESES, MESES_MAP, TIPOS_DOCUMENTOS
 
 class GeradorQRCode:
     def __init__(self):
         self.equipas = carregar_equipas()
         self.meses_var = []
+        self.tipo_documento = None
 
         self._inicializar_interface()
 
@@ -24,12 +24,15 @@ class GeradorQRCode:
 
         self.equipa_var = tk.StringVar()
         self.ano_var = tk.StringVar()
+        self.tipo_var = tk.StringVar()  # Definindo o tipo padrão
 
         self._criar_widgets()
 
     def _criar_widgets(self):
         self._adicionar_label_entry("Equipa:", self.equipa_var, is_combobox="equipa")
         self._adicionar_label_entry("Ano:", self.ano_var)
+        self._adicionar_label_entry("Tipo de Documento:", self.tipo_var, is_combobox=True)
+
 
         frame_meses = tk.LabelFrame(self.root, text="Mês de Trabalho")
         frame_meses.pack(pady=10)
@@ -55,6 +58,8 @@ class GeradorQRCode:
                 combo["values"] = valores
                 combo.bind("<KeyRelease>", self.filtrar_equipas)
                 self.combo_equipa = combo
+            elif texto.lower().startswith("tipo"):
+                combo["values"] = list(TIPOS_DOCUMENTOS.keys())
             combo.pack(pady=5)
         else:
             entry = tk.Entry(self.root, textvariable=var, width=40)
@@ -93,7 +98,13 @@ class GeradorQRCode:
             messagebox.showwarning("Ano inválido", "Insira um ano válido com 4 dígitos (ex: 2025).")
             return
         
+        tipo_documento = self.tipo_var.get().strip()
+        if tipo_documento not in TIPOS_DOCUMENTOS:
+            messagebox.showwarning("Tipo inválido", "Selecione um tipo de documento válido.")
+            return
+        
         meses_selecionados = [mes for mes, var in self.meses_var if var.get()]
+
 
         equipa_nome = next((e['nome'] for e in self.equipas if str(e['id']) == equipa_id), "Desconhecida")
 
