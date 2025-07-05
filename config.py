@@ -29,6 +29,7 @@ POPPLER_PATH = os.getenv("POPPLER_PATH")
 TESSERACT_CMD = os.getenv("TESSERACT_CMD")
 SUMATRA_PATH = os.getenv("SUMATRA_PATH")
 NAPS2_PATH = os.getenv("NAPS2_PATH")
+LIBREOFFICE_PATH = os.getenv("LIBREOFFICE_PATH")
 
 try:
     conn_forn = connect_bd("S")

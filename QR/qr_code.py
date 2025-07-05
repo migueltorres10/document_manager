@@ -7,6 +7,9 @@ from core.gui_utils import centralizar_janela
 from core.constantes import MESES, MESES_MAP, TIPOS_DOCUMENTOS
 from core.global_utils import inserir_qr_no_excel
 import qrcode
+from core.print_utils import converter_para_pdf, imprimir_pdf_no_windows
+from tkinter import simpledialog
+
 
 
 class GeradorQRCode:
@@ -162,6 +165,26 @@ class GeradorQRCode:
                 }
             )
 
+            if tipo_documento == "Folhas de Obra":
+                # Perguntar número de cópias
+                copias = simpledialog.askinteger(
+                    "Número de Cópias",
+                    f"Quantas cópias imprimir para {equipa_nome} ({ano})?",
+                    minvalue=1,
+                    initialvalue=1,
+                    parent=self.root
+                )
+
+                if copias:
+                    pdf_path = converter_para_pdf(caminho_final)
+                    if pdf_path:
+                        imprimir_pdf_no_windows(pdf_path, copias)
+            else:
+                # Imprime diretamente se for folha de obra
+                pdf_path = converter_para_pdf(caminho_final)
+                if pdf_path:
+                    imprimir_pdf_no_windows(pdf_path)
+
             documentos_gerados.append(caminho_final)
             print(f"[OK] Documento gerado: {caminho_final}")
 
@@ -169,6 +192,6 @@ class GeradorQRCode:
             messagebox.showinfo("Sucesso", f"{len(documentos_gerados)} documento(s) gerado(s) com sucesso!")
         else:
             messagebox.showinfo("Nada feito", "Nenhum documento foi gerado (possivelmente já existiam")
-
+            
 if __name__ == "__main__":
     GeradorQRCode()
