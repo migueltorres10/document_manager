@@ -12,6 +12,7 @@ class GeradorQRCode:
         self.equipas = carregar_equipas()
         print(f"[DEBUG] Equipas carregadas: {self.equipas}")
         self.meses_var = []
+        self.meses_checkbuttons = []
         self.tipo_documento = None
 
         self._inicializar_interface()
@@ -47,8 +48,19 @@ class GeradorQRCode:
             )
             cb.grid(row=i // 3, column=i % 3, sticky="w", padx=5, pady=2)
             self.meses_var.append((mes, var))
+            self.meses_checkbuttons.append(cb)
 
         tk.Button(self.root, text="Gerar QRCode", command=self.gerar_qrcode).pack(pady=15)
+
+    def _tipo_selecionado(self, tipo):
+        self.tipo_var.set(tipo)
+        if tipo == "Folhas de Obra":
+            for cb, (_, var) in zip(self.meses_checkbuttons, self.meses_var):
+                cb.config(state="disabled")
+                var.set(False)
+        else:
+            for cb in self.meses_checkbuttons:
+                cb.config(state="normal")
 
     def _adicionar_label_entry(self, texto, var, is_combobox=False):
         tk.Label(self.root, text=texto).pack(pady=5)
@@ -62,7 +74,7 @@ class GeradorQRCode:
             elif texto.lower().startswith("tipo"):
                 tipos_validos = ["Folhas de Obra", "Folhas Faltas", "Folhas Assiduidade"]
                 combo["values"] = tipos_validos
-                combo.bind("<<ComboboxSelected>>", lambda e: self.tipo_var.set(combo.get()))
+                combo.bind("<<ComboboxSelected>>", lambda e: self._tipo_selecionado(combo.get()))
             combo.pack(pady=5)
         else:
             entry = tk.Entry(self.root, textvariable=var, width=40)
@@ -110,6 +122,16 @@ class GeradorQRCode:
         
         meses_selecionados = [mes for mes, var in self.meses_var if var.get()]
 
+        if tipo_documento == "Folhas de Obra":
+            meses_selecionados = [None]
+
+        if not meses_selecionados:
+            messagebox.showwarning("Mês obrigatório", "Selecione pelo menos um mês.")
+            return
+        # Caso especial para Folhas de Obra — forçar None
+        if tipo_documento == "Folhas de Obra":
+            meses_selecionados = [None]
+
         if not meses_selecionados:
             meses_selecionados = [None]
 
@@ -123,7 +145,7 @@ class GeradorQRCode:
 
             qr = qrcode.make(conteudo_qr)
 
-            partes = [equipa_id]
+            partes = []
             if ano:
                 partes.append(ano)
             if mes:
@@ -138,8 +160,6 @@ class GeradorQRCode:
                 self.equipas[int(equipa_id)]  # Nome da equipa
             ]
 
-            if mes:
-                partes_pasta.append(f"{MESES_MAP[mes]:02d}")
             pasta_qr = os.path.join(*partes_pasta)
             os.makedirs(pasta_qr, exist_ok=True)
 
