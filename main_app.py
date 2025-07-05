@@ -37,20 +37,22 @@ class PainelPrincipal:
             self.root, text="📄 Processar e Visualizar Guias", width=35, height=2, command=self.abrir_guias).pack(pady=20)
         
             # Frame para agrupar os dois botões lado a lado
-        frame_qr_digital = tk.Frame(self.root, bg="#f0f0f0")  # Fundo do container dos botões
-        frame_qr_digital.pack(pady=20)
-        
-        # Botão Gerar QR Code
-        tk.Button(
-            frame_qr_digital, text="📑 QRCode\nDocumentos", width=17, height=4, command=GeradorQRCode
-        ).pack(side="left", padx=5)
+        frame_qr_digital = tk.Frame(self.root, bg="#f0f0f0")
+        frame_qr_digital.pack(pady=20, fill="x", expand=True)
 
-        # Botão Digitalizar Documento
+        # Distribui igualmente as colunas
+        for col in range(2):
+            frame_qr_digital.columnconfigure(col, weight=1)
+
+        # QRCode
         tk.Button(
-            frame_qr_digital, text="📠 Digitalizar\nDocumento", width=17, height=4, command=self.digitalizar
-        ).pack(side="left", padx=5)
-        
-        tk.Label(self.root, text="v2.1", font=("Arial", 8), fg="gray").pack(side="bottom", pady=5)
+            frame_qr_digital, text="📑 QRCode\nDocumentos", height=4, command=GeradorQRCode
+        ).grid(row=0, column=0, padx=5, pady=5, sticky="nsew")
+
+        # Digitalizar
+        tk.Button(
+            frame_qr_digital, text="📠 Digitalizar\nDocumento", height=4, command=self.digitalizar
+        ).grid(row=0, column=1, padx=5, pady=5, sticky="nsew")
 
 
     def abrir_faturas(self):
@@ -61,6 +63,7 @@ class PainelPrincipal:
 
     def digitalizar(self):
         digitalizar()
+
 
 if __name__ == "__main__":
     criar_pastas()
