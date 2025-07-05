@@ -1,11 +1,14 @@
 import os
 import tkinter as tk
+from turtle import right
 from Faturas.faturas import faturas
 from Guias.guias import guias
 from core.gui_utils import centralizar_janela
 from QR.qr_code import GeradorQRCode
 from Digitalizar.digitalizar import digitalizar
 from core.constantes import PASTAS
+from processos import GestorProcessos
+from equipas import GestorEquipas
 
 
 def criar_pastas():
@@ -36,6 +39,14 @@ class PainelPrincipal:
         tk.Button(
             self.root, text="📄 Processar e Visualizar Guias", width=35, height=2, command=self.abrir_guias).pack(pady=20)
         
+        tk.Button(
+            self.root, text="📂 Gestor de Processos", width=35, height=2, command=self.abrir_gestor_processos
+        ).pack(pady=20)
+
+        tk.Button(
+            self.root, text="👥 Gestor de Equipas", width=35, height=2, command=self.abrir_gestor_equipas
+        ).pack(pady=20)
+        
             # Frame para agrupar os dois botões lado a lado
         frame_qr_digital = tk.Frame(self.root, bg="#f0f0f0")
         frame_qr_digital.pack(pady=20, fill="x", expand=True)
@@ -46,7 +57,7 @@ class PainelPrincipal:
 
         # QRCode
         tk.Button(
-            frame_qr_digital, text="📑 QRCode\nDocumentos", height=4, command=GeradorQRCode
+            frame_qr_digital, text="📑 Imprir\nDocumentos", height=4, command=GeradorQRCode
         ).grid(row=0, column=0, padx=5, pady=5, sticky="nsew")
 
         # Digitalizar
@@ -63,6 +74,16 @@ class PainelPrincipal:
 
     def digitalizar(self):
         digitalizar()
+
+    def abrir_gestor_processos(self):
+        gestor = GestorProcessos(on_close=self.centralizar_janela)
+        gestor.root.protocol("WM_DELETE_WINDOW", gestor.fechar_janela)
+        gestor.root.mainloop()
+
+    def abrir_gestor_equipas(self):
+        gestor = GestorEquipas(on_close=self.centralizar_janela)
+        gestor.root.protocol("WM_DELETE_WINDOW", gestor.fechar_janela)
+        gestor.root.mainloop()
 
 
 if __name__ == "__main__":

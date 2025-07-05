@@ -47,16 +47,19 @@ def carregar_processos():
         "descricao": desc
     } for ref, nif, desc in dados]
 
-def carregar_equipas():
+def carregar_equipas(as_dict=True):
+    from config import connect_bd
     conn = connect_bd("D")
-    equipas = {}
-    try:
-        cursor = conn.cursor()
-        cursor.execute("SELECT id, nome FROM equipas ORDER BY nome")
-        equipas = {id: nome for id, nome in cursor.fetchall()}
-    finally:
-        conn.close()
-    return equipas
+    cursor = conn.cursor()
+    cursor.execute("SELECT id, nome FROM equipas ORDER BY nome")
+    resultados = cursor.fetchall()
+    conn.close()
+
+    if as_dict:
+        return {id_: nome for id_, nome in resultados}
+    else:
+        return [{"id": id_, "nome": nome} for id_, nome in resultados]
+
 
 def gravar_guia_bd(fornecedor, numero, ano, data, processo, caminho_pdf):
     conn = connect_bd("D")
