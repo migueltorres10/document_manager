@@ -10,6 +10,7 @@ from core.constantes import MESES, MESES_MAP, TIPOS_DOCUMENTOS
 class GeradorQRCode:
     def __init__(self):
         self.equipas = carregar_equipas()
+        print(f"[DEBUG] Equipas carregadas: {self.equipas}")
         self.meses_var = []
         self.tipo_documento = None
 
@@ -54,12 +55,14 @@ class GeradorQRCode:
         if is_combobox:
             combo = ttk.Combobox(self.root, textvariable=var, state="normal", width=40)
             if texto.lower().startswith("equipa"):
-                valores = [f"{p['id']} - {p['nome']}" for p in self.equipas]
+                valores = [f"{id} - {nome}" for id, nome in self.equipas.items()]
                 combo["values"] = valores
                 combo.bind("<KeyRelease>", self.filtrar_equipas)
                 self.combo_equipa = combo
             elif texto.lower().startswith("tipo"):
-                combo["values"] = list(TIPOS_DOCUMENTOS.keys())
+                tipos_validos = ["Folhas de Obra", "Folhas Faltas", "Folhas Assiduidade"]
+                combo["values"] = tipos_validos
+                combo.bind("<<ComboboxSelected>>", lambda e: self.tipo_var.set(combo.get()))
             combo.pack(pady=5)
         else:
             entry = tk.Entry(self.root, textvariable=var, width=40)
@@ -69,10 +72,12 @@ class GeradorQRCode:
 
     def filtrar_equipas(self, event):
         texto = self.equipa_var.get().lower()
-        filtrados = [f"{e['id']} - {e['nome']}" for e in self.equipas if texto in e["nome"].lower()]
+        filtrados = [f"{id} - {nome}" for id, nome in self.equipas.items() if texto in nome.lower()]
         self.combo_equipa['values'] = filtrados
 
     def gerar_qrcode(self):
+        tipo_documento = self.tipo_var.get().strip()
+       
         equipa_str = self.equipa_var.get().strip()
         print(f"[DEBUG] equipa_var.get(): '{self.equipa_var.get()}'")
         print(f"[DEBUG] equipa_str (após strip): '{equipa_str}'")
@@ -85,7 +90,7 @@ class GeradorQRCode:
         equipa_id = equipa_str.split(" - ")[0].strip()
         print(f"[DEBUG] equipa_id extraído: '{equipa_id}'")
 
-        ids_validos = [str(e["id"]) for e in self.equipas]
+        ids_validos = [str(eid) for eid in self.equipas.keys()]
         print(f"[DEBUG] Lista de IDs válidos: {ids_validos}")
 
         if equipa_id not in ids_validos:
@@ -98,15 +103,12 @@ class GeradorQRCode:
             messagebox.showwarning("Ano inválido", "Insira um ano válido com 4 dígitos (ex: 2025).")
             return
         
-        tipo_documento = self.tipo_var.get().strip()
+        
         if tipo_documento not in TIPOS_DOCUMENTOS:
             messagebox.showwarning("Tipo inválido", "Selecione um tipo de documento válido.")
             return
         
         meses_selecionados = [mes for mes, var in self.meses_var if var.get()]
-
-
-        equipa_nome = next((e['nome'] for e in self.equipas if str(e['id']) == equipa_id), "Desconhecida")
 
         if not meses_selecionados:
             meses_selecionados = [None]
@@ -128,9 +130,14 @@ class GeradorQRCode:
                 partes.append(f"{MESES_MAP[mes]:02d}")
             nome_ficheiro = "_".join(partes) + ".png"
 
-            partes_pasta = [os.path.dirname(__file__), "gerados", equipa_nome]
-            if ano:
-                partes_pasta.append(ano)
+            partes_pasta = [
+                os.path.join(os.path.dirname(__file__), ".."),
+                tipo_documento,
+                "minutas",
+                ano,
+                self.equipas[int(equipa_id)]  # Nome da equipa
+            ]
+
             if mes:
                 partes_pasta.append(f"{MESES_MAP[mes]:02d}")
             pasta_qr = os.path.join(*partes_pasta)
