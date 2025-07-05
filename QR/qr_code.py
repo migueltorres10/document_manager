@@ -78,7 +78,7 @@ class GeradorQRCode:
                 combo.bind("<KeyRelease>", self.filtrar_equipas)
                 self.combo_equipa = combo
             elif texto.lower().startswith("tipo"):
-                tipos_validos = ["Folhas de Obra", "Folhas Faltas", "Folhas Assiduidade"]
+                tipos_validos = ["Folhas_Obra", "Folhas_Faltas", "Folhas_Assiduidade"]
                 combo["values"] = tipos_validos
                 combo.bind("<<ComboboxSelected>>", lambda e: self._tipo_selecionado(combo.get()))
             combo.pack(pady=5)

@@ -5,6 +5,7 @@ from pyzbar.pyzbar import decode
 from datetime import datetime
 from core.constantes import QR_FIELD_MAP
 from config import POPPLER_PATH, TESSERACT_CMD
+import os
 
 pytesseract.pytesseract.tesseract_cmd = TESSERACT_CMD
 
@@ -36,6 +37,7 @@ def pdf_para_texto(pdf_path):
 
 def extrair_dados_qrcode_de_pdf(pdf_path):
     try:
+        print(os.getenv("POPPLER_PATH"))
         imagens = convert_from_path(pdf_path, dpi=300, poppler_path=POPPLER_PATH)
         for img in imagens:
             resultado_qr = decode(img)
@@ -59,3 +61,29 @@ def extrair_ano(data_doc=None):
     if data_doc and len(data_doc) >= 4:
         return data_doc[:4]
     return str(datetime.now().year)
+
+def ler_dados_qr(pdf_path):
+    try:
+        # Converte o PDF em imagens (1 por página)
+        imagens = convert_from_path(pdf_path, dpi=300, poppler_path=POPPLER_PATH)
+
+        for img in imagens:
+            resultado_qr = decode(img)
+            if resultado_qr:
+                texto = resultado_qr[0].data.decode("utf-8")
+
+                # Transforma o texto em dicionário se estiver no formato esperado
+                dados = {}
+                for par in texto.split(";"):
+                    if "=" in par:
+                        chave, valor = par.split("=", 1)
+                        dados[chave.strip()] = valor.strip()
+                print(f"[DEBUG] QR extraído: {dados}")
+                return dados
+
+        print("[INFO] Nenhum QR encontrado.")
+        return None
+
+    except Exception as e:
+        print(f"[ERRO] Falha ao ler QR do PDF: {e}")
+        return None

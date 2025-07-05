@@ -120,21 +120,21 @@ def inserir_meses_folha_obra(folha_id, lista_meses):
     conn = connect_bd("D")
     try:
         cursor = conn.cursor()
-        for mes_nome in lista_meses:
-            numero_mes = MESES_MAP.get(mes_nome)
-            if numero_mes:
+        for numero_mes in lista_meses:
+            if isinstance(numero_mes, int) and 1 <= numero_mes <= 12:
                 cursor.execute("""
                     INSERT INTO folhas_obra_meses (folha_id, mes)
                     VALUES (?, ?)
                 """, (folha_id, numero_mes))
             else:
-                print(f"⚠️ Mês inválido: {mes_nome}")
+                print(f"⚠️ Mês inválido: {numero_mes}")
         conn.commit()
         print("✅ Meses associados à folha de obra.")
     except Exception as e:
         print(f"❌ Erro ao inserir meses: {e}")
     finally:
         conn.close()
+
 
 def folha_assiduidade_bd(equipa_id, mes, ano, caminho_pdf):
     conn = connect_bd("D")
@@ -175,3 +175,35 @@ def folha_faltas_bd(equipa_id, mes, ano, caminho_pdf):
         return None
     finally:
         conn.close()
+
+def recarregar_equipas(as_dict=True):
+    conn = connect_bd("D")
+    try:
+        cursor = conn.cursor()
+        cursor.execute("SELECT id, nome FROM equipas ORDER BY nome")
+        resultados = cursor.fetchall()
+        conn.close()
+
+        if as_dict:
+            return {id_: nome for id_, nome in resultados}
+        else:
+            return [{"id": id_, "nome": nome} for id_, nome in resultados]
+    except Exception as e:
+        print(f"❌ Erro ao recarregar equipas: {e}")
+        return {} if as_dict else []
+        
+
+def recarregar_processos():
+    conn = connect_bd("D")
+    try:
+        cursor = conn.cursor()
+        cursor.execute("SELECT referencia, nif_cliente, descricao FROM processos")
+        resultados = cursor.fetchall()
+        conn.close()
+
+        return [{"referencia": ref, "nome_cliente": nome} for ref, nome in resultados]
+    except Exception as e:
+        print(f"❌ Erro ao recarregar processos: {e}")
+        return []
+
+

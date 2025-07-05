@@ -9,6 +9,7 @@ from Digitalizar.digitalizar import digitalizar
 from core.constantes import PASTAS
 from processos import GestorProcessos
 from equipas import GestorEquipas
+from Folhas_Obra.folhasobra import folhasobra
 
 
 def criar_pastas():
@@ -38,6 +39,9 @@ class PainelPrincipal:
         
         tk.Button(
             self.root, text="📄 Processar e Visualizar Guias", width=35, height=2, command=self.abrir_guias).pack(pady=20)
+        tk.Button(
+            self.root, text="📑 Processar e Visualizar Folhas de Obra", width=35, height=2, command=self.abrir_folhas_obra
+        ).pack(pady=20)
         
         tk.Button(
             self.root, text="📂 Gestor de Processos", width=35, height=2, command=self.abrir_gestor_processos
@@ -62,7 +66,7 @@ class PainelPrincipal:
 
         # Digitalizar
         tk.Button(
-            frame_qr_digital, text="📠 Digitalizar\nDocumento", height=4, command=self.digitalizar
+            frame_qr_digital, text="📠 Digitalizar\nDocumentos", height=4, command=self.digitalizar
         ).grid(row=0, column=1, padx=5, pady=5, sticky="nsew")
 
 
@@ -71,6 +75,9 @@ class PainelPrincipal:
     
     def abrir_guias(self):
         guias()
+
+    def abrir_folhas_obra(self):
+        folhasobra()
 
     def digitalizar(self):
         digitalizar()

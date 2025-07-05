@@ -63,3 +63,5 @@ def inserir_qr_no_excel(template_path, destino_path, imagem_qr_path, dados={}):
 
     except Exception as e:
         print(f"[ERRO] Falha ao inserir QR e preencher dados: {e}")
+
+

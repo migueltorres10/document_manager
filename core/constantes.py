@@ -27,22 +27,22 @@ TIPOS_DOCUMENTOS = {
     "Guias":"GR",
     "Faturas" : "F",
     "Recibos": "R",
-    "Folhas de Obra": "FO",
-    "Folhas Faltas": "FF",
-    "Folhas Assiduidade": "FA",
-    "Faturas Emitidas": "F-E",
-    "Recibos Emitidos": "R-E",
-    "Guias Emitidas": "GR-E"
+    "Folhas_Obra": "FO",
+    "Folhas_Faltas": "FF",
+    "Folhas_Assiduidade": "FA",
+    "Faturas_Emitidas": "F-E",
+    "Recibos_Emitidos": "R-E",
+    "Guias_Emitidas": "GR-E"
 }
 
 PASTAS = ["Guias/entrada", 
           "Faturas/entrada", 
-          "Folhas de Obra/entrada",
-          "Folhas de Obra/geradas", 
-          "Folhas Assiduidade/entrada",
-          "Folhas Assiduidade/geradas",
-          "Folhas Faltas/entrada", 
-          "Folhas Faltas/geradas",
-          "Faturas Emitidas/entrda", 
-          "Recibos Emitidos/entrada", 
-          "Guias Emitidas/entrada"]
+          "Folhas_Obra/entrada",
+          "Folhas_Obra/geradas", 
+          "Folhas_Assiduidade/entrada",
+          "Folhas_Assiduidade/geradas",
+          "Folhas_Faltas/entrada", 
+          "Folhas_Faltas/geradas",
+          "Faturas_Emitidas/entrda", 
+          "Recibos_Emitidos/entrada", 
+          "Guias_Emitidas/entrada"]
