@@ -60,17 +60,26 @@ def mover_pdf_para_pasta_destino(caminho_pdf, fornecedor, ano, pasta_base):
     shutil.move(caminho_pdf, novo_caminho)
     return novo_caminho
 
-def mover_pdf_folha_obra(caminho_pdf, processo, cliente, pasta_base, nome_final=None):
-    if not all([processo, cliente]):
-        raise ValueError("Processo e cliente são obrigatórios.")
-    pasta_destino = os.path.join(pasta_base, processo, cliente)
+def mover_pdf_folha_obra(caminho_pdf, subpasta, pasta_base, nome_final=None):
+    import shutil
+    from core.file_utils import limpar_nome_ficheiro
+
+    if not subpasta:
+        raise ValueError("Nome da subpasta é obrigatório.")
+
+    subpasta = limpar_nome_ficheiro(subpasta)
+    pasta_destino = os.path.join(pasta_base, subpasta)
     os.makedirs(pasta_destino, exist_ok=True)
+
     nome_pdf = nome_final if nome_final else os.path.basename(caminho_pdf)
     destino = os.path.join(pasta_destino, nome_pdf)
+
     if os.path.exists(destino):
         raise FileExistsError(f"Já existe: {destino}")
+
     shutil.move(caminho_pdf, destino)
     return destino
+
 
 def mover_pdf_equipa(caminho_pdf, equipa_id, ano, nome_final, pasta_base):
     pasta_destino = os.path.join(pasta_base, ano, f"Equipa_{equipa_id}")

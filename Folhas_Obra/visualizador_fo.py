@@ -219,8 +219,10 @@ class VisualizadorFolhasObra:
             return
         meses_str = ''.join(f"{m:02d}" for m in meses_selecionados)
 
-        nome_pdf = self.pdfs[self.index_atual]
-        caminho_pdf = os.path.join(self.pasta_pdf, nome_pdf)
+        nome_pdf_original = self.pdfs[self.index_atual]
+        caminho_pdf = os.path.join(self.pasta_pdf, nome_pdf_original)
+        nome_pdf_final = f"{ano}{meses_str}_{limpar_nome_ficheiro(nome_ficheiro)}.pdf"
+        subpasta = f"{processo_ref}-{cliente_nome}"
                 # Procurar NIF do cliente a partir do nome
         cliente_nif = None
         for nif, nome in self.clientes.items():  # self.clientes deve vir de carregar_clientes()
@@ -239,8 +241,7 @@ class VisualizadorFolhasObra:
 
             destino = mover_pdf_folha_obra(
                 caminho_pdf,
-                processo_ref,
-                cliente_nif,
+                subpasta,
                 os.path.join(self.base_dir, "arquivados"),
                 nome_final=nome_pdf_final
             )
