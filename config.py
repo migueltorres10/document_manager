@@ -30,6 +30,7 @@ TESSERACT_CMD = os.getenv("TESSERACT_CMD")
 SUMATRA_PATH = os.getenv("SUMATRA_PATH")
 NAPS2_PATH = os.getenv("NAPS2_PATH")
 LIBREOFFICE_PATH = os.getenv("LIBREOFFICE_PATH")
+HP_SCAN_EXECUTABLE = os.getenv("HPSCANNER_PATH")
 
 try:
     conn_forn = connect_bd("S")
