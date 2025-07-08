@@ -10,6 +10,7 @@ from core.constantes import PASTAS
 from processos import GestorProcessos
 from equipas import GestorEquipas
 from Folhas_Obra.folhasobra import folhasobra
+from Folhas_Assiduidade.folhasassiduidade import folhasassiduidade 
 
 
 def criar_pastas():
@@ -24,7 +25,7 @@ class PainelPrincipal:
         self.base_dir = os.path.dirname(os.path.abspath(__file__))
         self.root = tk.Tk()
         self.root.title("📂 Arquivador de Documentos")
-        self.root.geometry("350x600")
+        self.root.geometry("350x800")
         self.root.resizable(False, False)
         self.centralizar_janela()
         self._criar_widgets()
@@ -42,6 +43,9 @@ class PainelPrincipal:
         tk.Button(
             self.root, text="📑 Processar e Visualizar Folhas de Obra", width=35, height=2, command=self.abrir_folhas_obra
         ).pack(pady=20)
+
+        tk.Button(
+            self.root, text="📅 Processar e Visualizar Folhas de Assiduidade", width=35, height=2, command=self.abrir_folhas_assiduidade).pack(pady=20)
         
         tk.Button(
             self.root, text="📂 Gestor de Processos", width=35, height=2, command=self.abrir_gestor_processos
@@ -78,6 +82,9 @@ class PainelPrincipal:
 
     def abrir_folhas_obra(self):
         folhasobra()
+
+    def abrir_folhas_assiduidade(self):
+        folhasassiduidade()
 
     def digitalizar(self):
         digitalizar()

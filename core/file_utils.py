@@ -81,11 +81,13 @@ def mover_pdf_folha_obra(caminho_pdf, subpasta, pasta_base, nome_final=None):
     return destino
 
 
-def mover_pdf_equipa(caminho_pdf, equipa_id, ano, nome_final, pasta_base):
-    pasta_destino = os.path.join(pasta_base, ano, f"Equipa_{equipa_id}")
+def mover_pdf_equipa(caminho_pdf, nome_equipa, ano, nome_final, pasta_base):
+    nome_equipa = nome_equipa.replace(" ", "_")  # opcional: evitar espaços
+    pasta_destino = os.path.join(pasta_base, ano, nome_equipa)
     os.makedirs(pasta_destino, exist_ok=True)
     destino = os.path.join(pasta_destino, nome_final)
     if os.path.exists(destino):
         raise FileExistsError(f"Já existe: {destino}")
     shutil.move(caminho_pdf, destino)
     return destino
+
