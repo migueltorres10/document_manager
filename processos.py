@@ -1,15 +1,28 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 
-from core.db_helpers import obter_clientes, carregar_processos
-from core.gui_utils import filtrar_combobox_por_texto, atualizar_listbox_por_filtro
+from core.db_helpers import (
+    obter_clientes, 
+    carregar_recarregar_processos
+)
+from core.gui_utils import (
+    filtrar_combobox_por_texto, 
+    atualizar_listbox_por_filtro
+)
+
 from config import connect_bd
 
+from core.logger import configurar_logger
+logger = configurar_logger(__name__)
 
 class GestorProcessos:
+    """
+    Classe para gerenciar processos, permitindo criar, editar, eliminar e visualizar processos.
+    A interface permite pesquisar, selecionar e editar detalhes dos processos.
+    """
     def __init__(self, on_close=None):
         self.clientes = obter_clientes()
-        self.processos = carregar_processos()
+        self.processos = carregar_recarregar_processos()
         self.referencia_selecionada = None
         self.on_close = on_close
         self.inicializar_interface()
@@ -81,6 +94,7 @@ class GestorProcessos:
     def carregar_detalhes(self, event):
         selecionado = self.listbox.curselection()
         if not selecionado:
+            logger.info("Nenhum processo selecionado.")
             return
 
         texto = self.listbox.get(selecionado[0])
@@ -107,6 +121,7 @@ class GestorProcessos:
 
         if not all([referencia, cliente_str]):
             messagebox.showwarning("Campos obrigatórios", "Preencha a referência e selecione o cliente.")
+            logger.warning("Campos obrigatórios não preenchidos.")
             return
 
         nif_cliente = cliente_str.split(" - ")[0]
@@ -125,21 +140,25 @@ class GestorProcessos:
                 """, (referencia, nif_cliente, descricao))
 
             conn.commit()
-            self.processos = carregar_processos()
+            self.processos = carregar_recarregar_processos()
             self.atualizar_lista_evento()
             messagebox.showinfo("Sucesso", "Processo salvo com sucesso.")
+            logger.info(f"Processo '{referencia}' salvo com sucesso.")
         except Exception as e:
             messagebox.showerror("Erro", f"Erro ao salvar: {e}")
+            logger.error(f"Erro ao salvar processo: {e}")
         finally:
             conn.close()
 
     def eliminar_processo(self):
         if not self.referencia_selecionada:
             messagebox.showwarning("Selecionar", "Selecione um processo primeiro.")
+            logger.warning("Nenhum processo selecionado para eliminar.")
             return
 
         confirm = messagebox.askyesno("Confirmar", f"Deseja eliminar o processo '{self.referencia_selecionada}'?")
         if not confirm:
+            logger.info("Eliminação de processo cancelada.")
             return
 
         conn = connect_bd("D")
@@ -147,12 +166,14 @@ class GestorProcessos:
         try:
             cursor.execute("DELETE FROM processos WHERE referencia = ?", (self.referencia_selecionada,))
             conn.commit()
-            self.processos = carregar_processos()
+            self.processos = carregar_recarregar_processos()
             self.novo_processo()
             self.atualizar_lista_evento()
             messagebox.showinfo("Removido", "Processo eliminado com sucesso.")
+            logger.info(f"Processo '{self.referencia_selecionada}' eliminado com sucesso.")
         except Exception as e:
             messagebox.showerror("Erro", f"Erro ao eliminar: {e}")
+            logger.error(f"Erro ao eliminar processo: {e}")
         finally:
             conn.close()
 
@@ -161,7 +182,6 @@ def main():
     root = tk.Tk()
     root.withdraw()
     GestorProcessos(on_close=root.destroy)
-    root.mainloop()
 
 
 if __name__ == "__main__":

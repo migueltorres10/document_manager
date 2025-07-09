@@ -2,6 +2,8 @@ import os
 import tkinter as tk
 from tkinter import ttk
 import datetime
+from core.logger import configurar_logger
+logger = configurar_logger(__name__)
 
 from core.gui_utils import (
     filtrar_combobox_por_texto,
@@ -10,14 +12,12 @@ from core.gui_utils import (
     mostrar_mensagem
 )
 from core.pdf_utils import (
-    listar_pdfs,
-    abrir_pdf_externo,
-    fechar_sumatra
+    listar_pdfs
 )
 from core.db_helpers import (
     obter_fornecedores,
     gravar_guia_bd,
-    carregar_processos
+    carregar_recarregar_processos
 )
 
 from core.ocr_utils import (
@@ -28,22 +28,37 @@ from core.file_utils import (
     mover_pdf_para_pasta_destino,
     renomear_pdf
 )
+
+from core.visualizador_utils import (
+    abrir_pdf_atual,
+    mostrar_anterior,
+    mostrar_proximo,
+    terminar
+)
+
 from processos import GestorProcessos
 
 
 class VisualizadorGuias:
+    """
+    Classe para visualizar e gerenciar guias PDF.
+    Permite navegar entre guias, preencher dados, salvar e eliminar guias.
+    """
     def __init__(self, pasta_pdf, base_dir):
         self.pasta_pdf = pasta_pdf
         self.base_dir = base_dir
         self.pdfs = listar_pdfs(pasta_pdf)
+        # Inicializa o índice atual para o primeiro PDF
         self.index_atual = 0
         self.fornecedores = obter_fornecedores()
-        self.processos = carregar_processos()
+        self.processos = carregar_recarregar_processos()
 
         if not self.pdfs:
+            logger.warning("Nenhuma Guia encontrada na pasta 'separados'.")
             mostrar_mensagem("erro", "Nenhuma Guia encontrada na pasta 'separados'.")
             return
-
+        
+        logger.info("Iniciando visualizador de guias com arquivos: %s", self.pdfs)
         self._inicializar_interface()
         self.abrir_pdf_atual()
 
@@ -54,6 +69,7 @@ class VisualizadorGuias:
         centralizar_janela(self.root)
         self.root.attributes('-topmost', 1)
 
+        # Variáveis para os campos do formulário
         self.fornecedor_var = tk.StringVar()
         self.processo_var = tk.StringVar()
         self.entry_ano = tk.Entry(self.root)
@@ -105,32 +121,22 @@ class VisualizadorGuias:
             var.pack()
 
     def abrir_pdf_atual(self):
-        if not self.pdfs:
-            return
-        fechar_sumatra()
-        caminho_pdf = os.path.join(self.pasta_pdf, self.pdfs[self.index_atual])
-        abrir_pdf_externo(caminho_pdf)
-        self.preencher_dados_qr(caminho_pdf)
+        abrir_pdf_atual(self.pdfs, self.index_atual, self.pasta_pdf, self.preencher_dados_qr)
 
     def mostrar_anterior(self):
-        if self.index_atual > 0:
-            self.index_atual -= 1
-            self.abrir_pdf_atual()
+        self.index_atual = mostrar_anterior(self.pdfs, self.index_atual, self.abrir_pdf_atual, doc_nome="guia")
 
     def mostrar_proximo(self):
-        if self.index_atual < len(self.pdfs) - 1:
-            self.index_atual += 1
-            self.abrir_pdf_atual()
+        self.index_atual = mostrar_proximo(self.pdfs, self.index_atual, self.abrir_pdf_atual, doc_nome="guia")
 
     def terminar(self):
-        fechar_sumatra()
-        self.root.destroy()
+        terminar(self.root)
 
     def abrir_gestor_processos(self):
         self.root.after(100, lambda: GestorProcessos(on_close=self.recarregar_processos))
 
     def recarregar_processos(self):
-        self.processos = carregar_processos()
+        self.processos = carregar_recarregar_processos()
         self.combo_processo["values"] = [f"{p['referencia']} - {p['nome_cliente']}" for p in self.processos]
 
     def salvar_dados(self):
@@ -142,17 +148,20 @@ class VisualizadorGuias:
         processo = processo_str.split(" - ")[0] if processo_str else ""
 
         if not all([fornecedor_nome, ano, numero, data]):
+            logger.warning("Campos obrigatórios não preenchidos.")
             mostrar_mensagem("aviso", "Preencha todos os campos obrigatórios.")
             return
 
         fornecedor_nif = next((nif for nif, nome in self.fornecedores.items() if nome == fornecedor_nome), None)
         if not fornecedor_nif:
+            logger.error("Fornecedor não encontrado na base de dados.")
             mostrar_mensagem("erro", "Fornecedor não encontrado na base de dados.")
             return
 
         try:
             data_formatada = datetime.datetime.strptime(data, "%Y-%m-%d").date()
         except ValueError:
+            logger.error("Formato de data inválido.")
             mostrar_mensagem("erro", "Formato de data inválido. Use YYYY-MM-DD.")
             return
 
@@ -166,6 +175,7 @@ class VisualizadorGuias:
             gravar_guia_bd(fornecedor_nif, numero, ano, data_formatada, processo, final)
 
             mostrar_mensagem("info", "Guia gravada e movida com sucesso.")
+            logger.info(f"Guia '{nome_pdf}' gravada e movida para '{final}'.")
             del self.pdfs[self.index_atual]
 
             if self.pdfs:
@@ -174,6 +184,7 @@ class VisualizadorGuias:
                 self.abrir_pdf_atual()
             else:
                 mostrar_mensagem("info", "Nenhum PDF restante.")
+                logger.info("Nenhum PDF restante. Fechando visualizador.")
                 self.root.destroy()
 
         except FileExistsError as fe:
@@ -192,6 +203,7 @@ class VisualizadorGuias:
             if os.path.exists(caminho_pdf):
                 os.remove(caminho_pdf)
             del self.pdfs[self.index_atual]
+            logger.info(f"Guia '{nome_pdf}' eliminada com sucesso.")
             if self.pdfs:
                 if self.index_atual >= len(self.pdfs):
                     self.index_atual = len(self.pdfs) - 1
@@ -203,6 +215,7 @@ class VisualizadorGuias:
         confirmar_eliminacao(nome_pdf, acao)
 
     def preencher_dados_qr(self, caminho_pdf):
+        logger.info(f"Preenchendo dados do QR Code para o PDF: {caminho_pdf}")
         self.entry_ano.delete(0, tk.END)
         self.entry_data.delete(0, tk.END)
         self.entry_numero.delete(0, tk.END)
@@ -211,6 +224,7 @@ class VisualizadorGuias:
 
         dados_qr = extrair_dados_qrcode_de_pdf(caminho_pdf)
         if not dados_qr:
+            logger.warning("Nenhum dado QR Code encontrado no PDF.")
             return
 
         fornecedor_nome = self.fornecedores.get(dados_qr.get("nif_emitente"))

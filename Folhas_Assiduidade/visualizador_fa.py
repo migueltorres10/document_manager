@@ -1,7 +1,8 @@
 import os
 import tkinter as tk
 from tkinter import ttk
-import datetime
+from core.logger import configurar_logger
+logger = configurar_logger(__name__)
 
 
 from core.gui_utils import (
@@ -11,19 +12,23 @@ from core.gui_utils import (
     mostrar_mensagem
 )
 from core.pdf_utils import (
-    listar_pdfs,
-    abrir_pdf_externo,
-    fechar_sumatra
+    listar_pdfs
 )
 from core.db_helpers import (
-    carregar_equipas, 
-    recarregar_equipas,
+    carregar_recarregar_equipas,
     folha_assiduidade_bd
 )
 from core.ocr_utils import ler_dados_qr
 
 from core.file_utils import (
     mover_pdf_equipa
+)
+
+from core.visualizador_utils import (
+    abrir_pdf_atual,
+    mostrar_anterior,
+    mostrar_proximo,
+    terminar
 )
 
 from core.constantes import (
@@ -35,20 +40,21 @@ from equipas import GestorEquipas
 
 
 class VisualizadorFolhasAssiduidade:
-
-    def abrir_gestor_equipas(self):
-        self.root.after(100, lambda: GestorEquipas(on_close=self.recarregar_equipas))
-
+    """
+    Classe para visualizar e gerenciar folhas de assiduidade PDF.
+    Permite navegar entre folhas, preencher dados, salvar e eliminar folhas.
+    """
     def __init__(self, pasta_pdf, base_dir):
         self.pasta_pdf = pasta_pdf
         self.base_dir = base_dir
         self.pdfs = listar_pdfs(pasta_pdf)
         self.index_atual = 0
-        self.equipas = carregar_equipas(as_dict=True)
+        self.equipas = carregar_recarregar_equipas(as_dict=True)
         self.meses_var = []
 
         if not self.pdfs:
             mostrar_mensagem("erro", "Nenhuma folha de assiduídade encontrada.")
+            logger.warning("Nenhuma folha de assiduidade encontrada na pasta 'separados'.")
             return
 
         self._inicializar_interface()
@@ -116,26 +122,16 @@ class VisualizadorFolhasAssiduidade:
             entry.pack(pady=5)
 
     def abrir_pdf_atual(self):
-        if not self.pdfs:
-            return
-        fechar_sumatra()
-        caminho_pdf = os.path.join(self.pasta_pdf, self.pdfs[self.index_atual])
-        abrir_pdf_externo(caminho_pdf)
-        self.preencher_dados_qr(caminho_pdf)
+        abrir_pdf_atual(self.pdfs, self.index_atual, self.pasta_pdf, self.preencher_dados_qr)
 
     def mostrar_anterior(self):
-        if self.index_atual > 0:
-            self.index_atual -= 1
-            self.abrir_pdf_atual()
+        self.index_atual = mostrar_anterior(self.pdfs, self.index_atual, self.abrir_pdf_atual, doc_nome="folha")
 
     def mostrar_proximo(self):
-        if self.index_atual < len(self.pdfs) - 1:
-            self.index_atual += 1
-            self.abrir_pdf_atual()
+        self.index_atual = mostrar_proximo(self.pdfs, self.index_atual, self.abrir_pdf_atual, doc_nome="folha")
 
     def terminar(self):
-        fechar_sumatra()
-        self.root.destroy()
+        terminar(self.root)
 
     def atualizar_lista_pdfs(self):
         self.pdfs = listar_pdfs(self.pasta_pdf)
@@ -144,52 +140,53 @@ class VisualizadorFolhasAssiduidade:
         filtrar_combobox_por_texto(self.combo_equipa, self.equipas, self.equipa_var.get())
 
     def recarregar_equipas(self):
-        self.equipas = recarregar_equipas(as_dict=True)
+        self.equipas = carregar_recarregar_equipas(as_dict=True)
         valores = [f"{p['id']} - {p['nome']}" for p in self.equipas]
         self.combo_equipa["values"] = valores
+
+    def abrir_gestor_equipas(self):
+        self.root.after(100, lambda: GestorEquipas(on_close=self.recarregar_equipas))
 
     def salvar_dados(self):
         equipa_str = self.equipa_var.get().strip()
         ano = self.ano_var.get().strip()
+        mes_nome = self.mes_var.get().strip()
 
-
-        if not all([equipa_str, ano]):
+        if not all([equipa_str, ano, mes_nome]):
             mostrar_mensagem("aviso", "Todos os campos obrigatórios devem ser preenchidos.")
+            logger.warning("Campos obrigatórios não preenchidos.")
             return
-
-        equipa_id = equipa_str.split(" - ")[0]
-        nome_equipa = equipa_str.split(" - ")[1]
-
-        mes_selecionado = self.mes_var.get().strip()
-        mes_num = MESES_MAP.get(mes_selecionado)
-        if mes_num is None:
-            mostrar_mensagem("erro", f"Mês inválido: '{mes_selecionado}'")
-            return
-    
-        mes_str = f"{mes_num:02d}"
-        nome_pdf_original = self.pdfs[self.index_atual]
-        caminho_pdf = os.path.join(self.pasta_pdf, nome_pdf_original)
-        nome_pdf_final = f"{mes_selecionado.lower()}.pdf" #Deve ser o nome do mês selecionado por extenso
 
         try:
-            nome_pdf_final = f"{mes_selecionado.lower()}.pdf"
+            equipa_id, nome_equipa = equipa_str.split(" - ", 1)
+        except ValueError:
+            mostrar_mensagem("erro", "Formato inválido para equipa.")
+            logger.error(f"Formato inválido para equipa: {equipa_str}")
+            return
 
+        mes_num = MESES_MAP.get(mes_nome)
+        if mes_num is None:
+            mostrar_mensagem("erro", f"Mês inválido: '{mes_nome}'")
+            return
 
+        nome_pdf_original = self.pdfs[self.index_atual]
+        caminho_pdf = os.path.join(self.pasta_pdf, nome_pdf_original)
+        nome_pdf_final = f"{mes_nome.lower()}.pdf"
+
+        try:
             destino = mover_pdf_equipa(
-                caminho_pdf,
-                nome_equipa,
-                ano,
-                nome_pdf_final,
-                os.path.join(self.base_dir, "arquivados")
+                caminho_pdf, nome_equipa, ano, nome_pdf_final, os.path.join(self.base_dir, "arquivados")
             )
 
             folha_assiduidade_bd(
-                equipa_id,
-                mes_str,
-                int(ano),
-                destino
+                equipa_id=int(equipa_id),
+                mes=f"{mes_num:02d}",
+                ano=int(ano),
+                caminho_pdf=destino
             )
 
+            mostrar_mensagem("info", "Folha de assiduidade gravada com sucesso.")
+            logger.info(f"Folha gravada com sucesso: {destino}")
             del self.pdfs[self.index_atual]
 
             if self.pdfs:
@@ -197,12 +194,16 @@ class VisualizadorFolhasAssiduidade:
                     self.index_atual = len(self.pdfs) - 1
                 self.abrir_pdf_atual()
             else:
+                mostrar_mensagem("info", "Nenhum PDF restante.")
+                logger.info("Nenhum PDF restante. Fechando visualizador.")
                 self.root.destroy()
 
         except FileExistsError as fe:
+            logger.warning(f"Ficheiro duplicado: {fe}")
             mostrar_mensagem("erro", f"Ficheiro duplicado: {fe}")
         except Exception as e:
-            mostrar_mensagem("erro", f"Erro ao gravar folha de obra: {e}")
+            logger.exception("Erro ao gravar folha de assiduidade:")
+            mostrar_mensagem("erro", f"Erro ao gravar folha de assiduidade: {e}")
 
         self.atualizar_lista_pdfs()
 
@@ -213,6 +214,7 @@ class VisualizadorFolhasAssiduidade:
 
 
     def eliminar_pdf(self):
+        logger.info("Tentando eliminar PDF atual.")
         if not self.pdfs:
             return
 
@@ -223,6 +225,8 @@ class VisualizadorFolhasAssiduidade:
             if os.path.exists(caminho_pdf):
                 os.remove(caminho_pdf)
             del self.pdfs[self.index_atual]
+            mostrar_mensagem("info", f"Folha '{nome_pdf}' eliminada com sucesso.")
+            logger.info(f"Folha '{nome_pdf}' eliminada com sucesso.")
             if self.pdfs:
                 if self.index_atual >= len(self.pdfs):
                     self.index_atual = len(self.pdfs) - 1
@@ -238,6 +242,7 @@ class VisualizadorFolhasAssiduidade:
 
         dados_qr = ler_dados_qr(caminho_pdf)
         if not dados_qr:
+            logger.warning("Nenhum dado QR Code encontrado no PDF.")
             return
 
         ano = dados_qr.get("ano")

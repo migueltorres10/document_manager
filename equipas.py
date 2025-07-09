@@ -1,13 +1,17 @@
 import tkinter as tk
-from tkinter import ttk, messagebox
-from core.db_helpers import carregar_equipas
+from tkinter import messagebox
+from core.db_helpers import carregar_recarregar_equipas
 from core.gui_utils import filtrar_combobox_por_texto, atualizar_listbox_por_filtro
 from config import connect_bd
-
-
+from core.logger import configurar_logger
+logger = configurar_logger(__name__)
 class GestorEquipas:
+    """
+    Classe para gerenciar equipas, permitindo criar, editar, eliminar e visualizar equipas.
+    A interface permite pesquisar, selecionar e editar detalhes das equipas.
+    """
     def __init__(self, on_close=None):
-        self.equipas = carregar_equipas(as_dict=False)
+        self.equipas = carregar_recarregar_equipas(as_dict=False)
         self.id_selecionado = None
         self.on_close = on_close
         self.inicializar_interface()
@@ -92,6 +96,7 @@ class GestorEquipas:
 
         if not nome:
             messagebox.showwarning("Dados inválidos", "O nome não pode estar vazio.")
+            logger.warning("Tentativa de salvar equipa com nome vazio.")
             return
 
 
@@ -104,20 +109,24 @@ class GestorEquipas:
                 cursor.execute("INSERT INTO equipas (nome) VALUES (?)", (nome,))
             conn.commit()
             messagebox.showinfo("Sucesso", "Equipa salva com sucesso.")
-            self.equipas = carregar_equipas(as_dict=False)
+            self.equipas = carregar_recarregar_equipas(as_dict=False)
             self.atualizar_lista_evento()
+            logger.info(f"Equipa '{nome}' salva com sucesso.")
         except Exception as e:
             messagebox.showerror("Erro", f"Erro ao salvar: {e}")
+            logger.error(f"Erro ao salvar equipa: {e}")
         finally:
             conn.close()
 
     def eliminar_equipa(self):
         if not self.id_selecionado:
             messagebox.showwarning("Selecionar", "Selecione uma equipa.")
+            logger.warning("Nenhuma equipa selecionada para eliminar.")
             return
 
         confirm = messagebox.askyesno("Confirmação", f"Eliminar equipa {self.id_selecionado}?")
         if not confirm:
+            logger.info("Eliminação de equipa cancelada.")
             return
 
         conn = connect_bd("D")
@@ -126,11 +135,13 @@ class GestorEquipas:
             cursor.execute("DELETE FROM equipas WHERE id = ?", (self.id_selecionado,))
             conn.commit()
             messagebox.showinfo("Removido", "Equipa eliminada com sucesso.")
+            logger.info(f"Equipa {self.id_selecionado} eliminada com sucesso.")
             self.nova_equipa()
-            self.equipas = carregar_equipas(as_dict=False)
+            self.equipas = carregar_recarregar_equipas(as_dict=False)
             self.atualizar_lista_evento()
         except Exception as e:
             messagebox.showerror("Erro", f"Erro ao eliminar: {e}")
+            logger.error(f"Erro ao eliminar equipa: {e}")
         finally:
             conn.close()
 
@@ -139,8 +150,6 @@ def main():
     root = tk.Tk()
     root.withdraw()
     GestorEquipas(on_close=root.destroy)
-    root.mainloop()
-
 
 if __name__ == "__main__":
     main()

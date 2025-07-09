@@ -1,10 +1,13 @@
 # main_app.py
 import tkinter as tk
+from core.logger import configurar_logger
 from app_gui.fornecedores import abrir_janela_fornecedores
 from app_gui.internos import abrir_janela_internos
 from app_gui.fgs import abrir_janela_fgs
 from QR.qr_code import GeradorQRCode
 from Digitalizar.digitalizar import digitalizar
+
+logger = configurar_logger(__name__)
 
 class PainelPrincipal:
     def __init__(self):
