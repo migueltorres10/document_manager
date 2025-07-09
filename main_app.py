@@ -11,6 +11,7 @@ from processos import GestorProcessos
 from equipas import GestorEquipas
 from Folhas_Obra.folhasobra import folhasobra
 from Folhas_Assiduidade.folhasassiduidade import folhasassiduidade 
+from Folhas_Faltas.folhasasfaltas import folhasfaltas
 
 
 def criar_pastas():
@@ -48,12 +49,17 @@ class PainelPrincipal:
             self.root, text="📅 Processar e Visualizar Folhas de Assiduidade", width=35, height=2, command=self.abrir_folhas_assiduidade).pack(pady=20)
         
         tk.Button(
+            self.root, text="❗ Processar e Visualizar Folhas de Faltas", width=35, height=2, command=self.abrir_folhas_faltas
+        ).pack(pady=20)
+        
+        tk.Button(
             self.root, text="📂 Gestor de Processos", width=35, height=2, command=self.abrir_gestor_processos
         ).pack(pady=20)
 
         tk.Button(
             self.root, text="👥 Gestor de Equipas", width=35, height=2, command=self.abrir_gestor_equipas
         ).pack(pady=20)
+        
         
             # Frame para agrupar os dois botões lado a lado
         frame_qr_digital = tk.Frame(self.root, bg="#f0f0f0")
@@ -85,6 +91,9 @@ class PainelPrincipal:
 
     def abrir_folhas_assiduidade(self):
         folhasassiduidade()
+
+    def abrir_folhas_faltas(self):
+        folhasfaltas()
 
     def digitalizar(self):
         digitalizar()

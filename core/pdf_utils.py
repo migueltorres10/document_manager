@@ -2,6 +2,9 @@
 import os
 import subprocess
 from config import SUMATRA_PATH
+import fitz
+import tempfile
+import shutil
 
 
 def listar_pdfs(pasta):
@@ -27,3 +30,19 @@ def fechar_sumatra():
                        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     except Exception as e:
         print(f"Erro ao fechar SumatraPDF: {e}")
+
+def rodar_pdf_90graus(input_path):
+    doc = fitz.open(input_path)
+
+    for page in doc:
+        page.set_rotation((page.rotation + 90) % 360)
+
+    # Criar ficheiro temporário
+    fd, temp_path = tempfile.mkstemp(suffix=".pdf")
+    os.close(fd)  # Fecha o descriptor
+
+    doc.save(temp_path)
+    doc.close()
+
+    # Substituir o original
+    shutil.move(temp_path, input_path)

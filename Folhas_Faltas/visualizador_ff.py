@@ -2,6 +2,7 @@ import os
 import tkinter as tk
 from tkinter import ttk
 import datetime
+from core.pdf_utils import rodar_pdf_90graus
 
 
 from core.gui_utils import (
@@ -18,7 +19,7 @@ from core.pdf_utils import (
 from core.db_helpers import (
     carregar_equipas, 
     recarregar_equipas,
-    folha_assiduidade_bd
+    folha_faltas_bd
 )
 from core.ocr_utils import ler_dados_qr
 
@@ -34,7 +35,7 @@ from core.constantes import (
 from equipas import GestorEquipas
 
 
-class VisualizadorFolhasAssiduidade:
+class VisualizadorFolhasFaltas:
 
     def abrir_gestor_equipas(self):
         self.root.after(100, lambda: GestorEquipas(on_close=self.recarregar_equipas))
@@ -120,6 +121,11 @@ class VisualizadorFolhasAssiduidade:
             return
         fechar_sumatra()
         caminho_pdf = os.path.join(self.pasta_pdf, self.pdfs[self.index_atual])
+        try:
+            rodar_pdf_90graus(caminho_pdf)  # roda o PDF antes de abrir
+        except Exception as e:
+            mostrar_mensagem("erro", f"Erro ao rodar PDF: {e}")
+            return
         abrir_pdf_externo(caminho_pdf)
         self.preencher_dados_qr(caminho_pdf)
 
@@ -183,7 +189,7 @@ class VisualizadorFolhasAssiduidade:
                 os.path.join(self.base_dir, "arquivados")
             )
 
-            folha_assiduidade_bd(
+            folha_faltas_bd(
                 equipa_id,
                 mes_str,
                 int(ano),
