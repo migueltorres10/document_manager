@@ -1,65 +1,46 @@
+#main.py
 import os
 import tkinter as tk
-from turtle import right
 from Faturas.faturas import faturas
 from Guias.guias import guias
 from core.gui_utils import centralizar_janela
 from QR.qr_code import GeradorQRCode
 from Digitalizar.digitalizar import digitalizar
-from core.constantes import PASTAS
 from processos import GestorProcessos
 from equipas import GestorEquipas
 from Folhas_Obra.folhasobra import folhasobra
 from Folhas_Assiduidade.folhasassiduidade import folhasassiduidade 
 from Folhas_Faltas.folhasasfaltas import folhasfaltas
-
-
-def criar_pastas():
-    for pasta in PASTAS:
-        if not os.path.exists(pasta):
-            os.makedirs(pasta)
+from core.file_utils import criar_pastas
 
 class PainelPrincipal:
+    """Classe responsável por exibir a interface principal do Gestor de Documentos."""
     def centralizar_janela(self):
         centralizar_janela(self.root)
     def __init__(self):
         self.base_dir = os.path.dirname(os.path.abspath(__file__))
         self.root = tk.Tk()
-        self.root.title("📂 Arquivador de Documentos")
+        self.root.title("📂 Gestor de Documentos")
         self.root.geometry("350x800")
         self.root.resizable(False, False)
         self.centralizar_janela()
         self._criar_widgets()
         self.root.mainloop()
 
+    def _adicionar_botao(self, texto, comando):
+        tk.Button(self.root, text=texto, width=35, height=2, command=comando).pack(pady=20)
+    
     def _criar_widgets(self):
-        
-        tk.Label(self.root, text="📋 Selecione uma opção", font=("Helvetica", 16)).pack(pady=20)
+            
+        tk.Label(self.root, text="📋 Selecione uma opção", font=("Helvetica", 16, "bold")).pack(pady=20)
 
-        tk.Button(
-            self.root, text="🧾 Processar e Visualizar Faturas", width=35, height=2, command=self.abrir_faturas).pack(pady=20)
-        
-        tk.Button(
-            self.root, text="📄 Processar e Visualizar Guias", width=35, height=2, command=self.abrir_guias).pack(pady=20)
-        tk.Button(
-            self.root, text="📑 Processar e Visualizar Folhas de Obra", width=35, height=2, command=self.abrir_folhas_obra
-        ).pack(pady=20)
-
-        tk.Button(
-            self.root, text="📅 Processar e Visualizar Folhas de Assiduidade", width=35, height=2, command=self.abrir_folhas_assiduidade).pack(pady=20)
-        
-        tk.Button(
-            self.root, text="❗ Processar e Visualizar Folhas de Faltas", width=35, height=2, command=self.abrir_folhas_faltas
-        ).pack(pady=20)
-        
-        tk.Button(
-            self.root, text="📂 Gestor de Processos", width=35, height=2, command=self.abrir_gestor_processos
-        ).pack(pady=20)
-
-        tk.Button(
-            self.root, text="👥 Gestor de Equipas", width=35, height=2, command=self.abrir_gestor_equipas
-        ).pack(pady=20)
-        
+        self._adicionar_botao("🧾 Processar e Visualizar Faturas", self.abrir_faturas)
+        self._adicionar_botao("📄 Processar e Visualizar Guias", self.abrir_guias)
+        self._adicionar_botao("📑 Processar e Visualizar Folhas de Obra", self.abrir_folhas_obra)
+        self._adicionar_botao("📋 Processar e Visualizar Folhas de Assiduidade", self.abrir_folhas_assiduidade)
+        self._adicionar_botao("❌ Processar e Visualizar Folhas de Faltas", self.abrir_folhas_faltas)
+        self._adicionar_botao("📂 Gerir Processos", self.abrir_gestor_processos)
+        self._adicionar_botao("👥 Gerir Equipas", self.abrir_gestor_equipas)
         
             # Frame para agrupar os dois botões lado a lado
         frame_qr_digital = tk.Frame(self.root, bg="#f0f0f0")
@@ -71,7 +52,7 @@ class PainelPrincipal:
 
         # QRCode
         tk.Button(
-            frame_qr_digital, text="📑 Imprir\nDocumentos", height=4, command=GeradorQRCode
+            frame_qr_digital, text="📑 Imprimir\nDocumentos", height=4, command=GeradorQRCode
         ).grid(row=0, column=0, padx=5, pady=5, sticky="nsew")
 
         # Digitalizar
@@ -101,14 +82,18 @@ class PainelPrincipal:
     def abrir_gestor_processos(self):
         gestor = GestorProcessos(on_close=self.centralizar_janela)
         gestor.root.protocol("WM_DELETE_WINDOW", gestor.fechar_janela)
-        gestor.root.mainloop()
+        self.root.wait_window(gestor.root)
 
     def abrir_gestor_equipas(self):
         gestor = GestorEquipas(on_close=self.centralizar_janela)
         gestor.root.protocol("WM_DELETE_WINDOW", gestor.fechar_janela)
-        gestor.root.mainloop()
+        self.root.wait_window(gestor.root)
 
+
+def iniciar_app():
+    criar_pastas()
+    app = PainelPrincipal()
+    app.root.mainloop()
 
 if __name__ == "__main__":
-    criar_pastas()
-    PainelPrincipal()
+    iniciar_app()

@@ -3,6 +3,7 @@ import shutil
 import re
 from pathlib import Path
 import fitz  # PyMuPDF
+from core.constantes import PASTAS
 
 def dividir_e_mover_pdf(pasta_origem, pasta_obsoletos, pasta_separados):
     Path(pasta_obsoletos).mkdir(parents=True, exist_ok=True)
@@ -90,4 +91,9 @@ def mover_pdf_equipa(caminho_pdf, nome_equipa, ano, nome_final, pasta_base):
         raise FileExistsError(f"Já existe: {destino}")
     shutil.move(caminho_pdf, destino)
     return destino
+
+def criar_pastas():
+    for pasta in PASTAS:
+        if not os.path.exists(pasta):
+            os.makedirs(pasta)
 

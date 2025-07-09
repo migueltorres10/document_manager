@@ -43,6 +43,6 @@ PASTAS = ["Guias/entrada",
           "Folhas_Assiduidade/geradas",
           "Folhas_Faltas/entrada", 
           "Folhas_Faltas/geradas",
-          "Faturas_Emitidas/entrda", 
+          "Faturas_Emitidas/entrada", 
           "Recibos_Emitidos/entrada", 
           "Guias_Emitidas/entrada"]
