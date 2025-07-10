@@ -1,0 +1,881 @@
+[2025-07-10 11:14:53,432] [INFO] Faturas.faturas: Iniciando processamento de faturas em: d:\document_manager\Faturas
+[2025-07-10 11:14:53,433] [INFO] core.processador_base: 🔄 Iniciando processamento de PDFs da pasta de entrada...
+[2025-07-10 11:14:53,434] [WARNING] core.processador_base: ⚠️ Nenhum PDF foi processado na pasta de entrada.
+[2025-07-10 11:14:53,434] [INFO] core.db_helpers: Carregando fornecedores da base de dados...
+[2025-07-10 11:14:53,488] [INFO] core.db_helpers: 236 fornecedores carregados da base de dados.
+[2025-07-10 11:14:53,508] [INFO] core.db_helpers: 7 processos carregados da base de dados.
+[2025-07-10 11:14:53,509] [INFO] core.db_helpers: Carregando clientes da base de dados...
+[2025-07-10 11:14:53,520] [INFO] core.db_helpers: 242 clientes carregados da base de dados.
+[2025-07-10 11:14:53,521] [INFO] Faturas.visualizador_faturas: Iniciando visualizador de faturas com PDFs encontrados: ['F.G.SANTOS F 108 (1)_p1.pdf', 'F.G.SANTOS F 108 (1)_p2.pdf', 'FAC_2025_10-64578 (1)_p1.pdf', 'FAC_2025_10-64806 (1)_p1.pdf', 'FAC_2025_10-64925 (1)_p1.pdf', 'FAC_2025_10-64991 (1)_p1.pdf', 'FAC_2025_10-65098 (1)_p1.pdf', 'FAC_2025_10-65459_p1.pdf', 'FAC_2025_10-65646_p1.pdf', 'FAC_2025_10-65805_p1.pdf', 'FATURA Nº1802_p1.pdf', 'FATURA Nº1862_p1.pdf', 'FATURA Nº1875_p1.pdf', 'FAT_2025_6235 (1)_p1.pdf', 'FAT_2025_6297_p1.pdf', 'FAT_2025_6335_p1.pdf', 'F_2025-07-10_10-55-55_p1.pdf', 'F_2025-07-10_10-55-55_p2.pdf', 'F_2025-07-10_10-55-55_p3.pdf', 'F_2025-07-10_10-55-55_p4.pdf', 'F_2025-07-10_10-55-55_p5.pdf', 'F_2025-07-10_10-55-55_p6.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf', 'NCC_2025_10-6886 (1)_p1.pdf', 'NC_2025_598_p1.pdf']
+[2025-07-10 11:14:53,534] [DEBUG] core.gui_utils: Janela centralizada com sucesso.
+[2025-07-10 11:14:53,714] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 11:14:53,715] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\F.G.SANTOS F 108 (1)_p1.pdf
+[2025-07-10 11:14:53,718] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\F.G.SANTOS F 108 (1)_p1.pdf
+[2025-07-10 11:14:53,719] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\F.G.SANTOS F 108 (1)_p1.pdf
+[2025-07-10 11:14:53,720] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\F.G.SANTOS F 108 (1)_p1.pdf
+[2025-07-10 11:14:55,189] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 11:14:55,194] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 11:14:55,194] [INFO] core.processador_base: 🟢 Visualizador iniciado com sucesso.
+[2025-07-10 11:15:00,899] [DEBUG] core.gui_utils: Combobox atualizado com 13 valores para filtro: 'jo'
+[2025-07-10 11:15:00,939] [DEBUG] core.gui_utils: Combobox atualizado com 9 valores para filtro: 'jos'
+[2025-07-10 11:15:00,979] [DEBUG] core.gui_utils: Combobox atualizado com 9 valores para filtro: 'jos'
+[2025-07-10 11:15:01,179] [DEBUG] core.gui_utils: Combobox atualizado com 5 valores para filtro: 'jose'
+[2025-07-10 11:15:01,319] [DEBUG] core.gui_utils: Combobox atualizado com 5 valores para filtro: 'jose '
+[2025-07-10 11:15:01,499] [DEBUG] core.gui_utils: Combobox atualizado com 1 valores para filtro: 'jose da'
+[2025-07-10 11:15:01,569] [DEBUG] core.gui_utils: Combobox atualizado com 1 valores para filtro: 'jose da '
+[2025-07-10 11:15:01,619] [DEBUG] core.gui_utils: Combobox atualizado com 1 valores para filtro: 'jose da '
+[2025-07-10 11:15:03,369] [DEBUG] core.gui_utils: Combobox atualizado com 7 valores para filtro: ''
+[2025-07-10 11:15:04,979] [DEBUG] core.gui_utils: Combobox atualizado com 6 valores para filtro: '1'
+[2025-07-10 11:15:05,289] [DEBUG] core.gui_utils: Combobox atualizado com 6 valores para filtro: '1.'
+[2025-07-10 11:15:05,479] [DEBUG] core.gui_utils: Combobox atualizado com 6 valores para filtro: '1.2'
+[2025-07-10 11:15:06,589] [DEBUG] core.gui_utils: Combobox atualizado com 6 valores para filtro: '1.2.'
+[2025-07-10 11:15:07,299] [DEBUG] core.gui_utils: Combobox atualizado com 2 valores para filtro: '1.2.3'
+[2025-07-10 11:15:32,159] [DEBUG] core.gui_utils: Combobox atualizado com 0 valores para filtro: '505507188 - jose da rocha & filhos lda'
+[2025-07-10 11:15:32,819] [DEBUG] core.gui_utils: Combobox atualizado com 0 valores para filtro: '1.2.3.176.1.2 - donzília da conceição sousa da silva'
+[2025-07-10 11:15:35,159] [DEBUG] Faturas.visualizador_faturas: Valores convertidos: Base=1473.0, IVA=0.0, Total=1473.0
+[2025-07-10 11:15:35,159] [ERROR] Faturas.visualizador_faturas: Fornecedor '505507188 - JOSE DA ROCHA & FILHOS LDA' não encontrado na base de dados.
+[2025-07-10 11:15:35,269] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'erro': Fornecedor não encontrado na base de dados.
+[2025-07-10 11:17:31,599] [INFO] Faturas.faturas: Iniciando processamento de faturas em: d:\document_manager\Faturas
+[2025-07-10 11:17:31,599] [INFO] core.processador_base: 🔄 Iniciando processamento de PDFs da pasta de entrada...
+[2025-07-10 11:17:31,599] [WARNING] core.processador_base: ⚠️ Nenhum PDF foi processado na pasta de entrada.
+[2025-07-10 11:17:31,599] [INFO] core.db_helpers: Carregando fornecedores da base de dados...
+[2025-07-10 11:17:31,650] [INFO] core.db_helpers: 236 fornecedores carregados da base de dados.
+[2025-07-10 11:17:31,675] [INFO] core.db_helpers: 7 processos carregados da base de dados.
+[2025-07-10 11:17:31,677] [INFO] core.db_helpers: Carregando clientes da base de dados...
+[2025-07-10 11:17:31,690] [INFO] core.db_helpers: 242 clientes carregados da base de dados.
+[2025-07-10 11:17:31,690] [INFO] Faturas.visualizador_faturas: Iniciando visualizador de faturas com PDFs encontrados: ['F.G.SANTOS F 108 (1)_p1.pdf', 'F.G.SANTOS F 108 (1)_p2.pdf', 'FAC_2025_10-64578 (1)_p1.pdf', 'FAC_2025_10-64806 (1)_p1.pdf', 'FAC_2025_10-64925 (1)_p1.pdf', 'FAC_2025_10-64991 (1)_p1.pdf', 'FAC_2025_10-65098 (1)_p1.pdf', 'FAC_2025_10-65459_p1.pdf', 'FAC_2025_10-65646_p1.pdf', 'FAC_2025_10-65805_p1.pdf', 'FATURA Nº1802_p1.pdf', 'FATURA Nº1862_p1.pdf', 'FATURA Nº1875_p1.pdf', 'FAT_2025_6235 (1)_p1.pdf', 'FAT_2025_6297_p1.pdf', 'FAT_2025_6335_p1.pdf', 'F_2025-07-10_10-55-55_p1.pdf', 'F_2025-07-10_10-55-55_p2.pdf', 'F_2025-07-10_10-55-55_p3.pdf', 'F_2025-07-10_10-55-55_p4.pdf', 'F_2025-07-10_10-55-55_p5.pdf', 'F_2025-07-10_10-55-55_p6.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf', 'NCC_2025_10-6886 (1)_p1.pdf', 'NC_2025_598_p1.pdf']
+[2025-07-10 11:17:31,704] [DEBUG] core.gui_utils: Janela centralizada com sucesso.
+[2025-07-10 11:17:31,879] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 11:17:31,879] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\F.G.SANTOS F 108 (1)_p1.pdf
+[2025-07-10 11:17:31,884] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\F.G.SANTOS F 108 (1)_p1.pdf
+[2025-07-10 11:17:31,884] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\F.G.SANTOS F 108 (1)_p1.pdf
+[2025-07-10 11:17:31,884] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\F.G.SANTOS F 108 (1)_p1.pdf
+[2025-07-10 11:17:33,328] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 11:17:33,331] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 11:17:33,331] [INFO] core.processador_base: 🟢 Visualizador iniciado com sucesso.
+[2025-07-10 11:17:37,669] [DEBUG] core.gui_utils: Combobox atualizado com 13 valores para filtro: 'jo'
+[2025-07-10 11:17:37,739] [DEBUG] core.gui_utils: Combobox atualizado com 9 valores para filtro: 'jos'
+[2025-07-10 11:17:37,779] [DEBUG] core.gui_utils: Combobox atualizado com 9 valores para filtro: 'jos'
+[2025-07-10 11:17:38,009] [DEBUG] core.gui_utils: Combobox atualizado com 5 valores para filtro: 'jose'
+[2025-07-10 11:17:38,119] [DEBUG] core.gui_utils: Combobox atualizado com 5 valores para filtro: 'jose '
+[2025-07-10 11:17:38,359] [DEBUG] core.gui_utils: Combobox atualizado com 1 valores para filtro: 'jose da'
+[2025-07-10 11:17:38,429] [DEBUG] core.gui_utils: Combobox atualizado com 1 valores para filtro: 'jose da'
+[2025-07-10 11:17:40,079] [DEBUG] core.gui_utils: Combobox atualizado com 7 valores para filtro: ''
+[2025-07-10 11:17:44,719] [DEBUG] core.gui_utils: Combobox atualizado com 6 valores para filtro: '1'
+[2025-07-10 11:17:44,829] [DEBUG] core.gui_utils: Combobox atualizado com 6 valores para filtro: '1.'
+[2025-07-10 11:17:45,069] [DEBUG] core.gui_utils: Combobox atualizado com 6 valores para filtro: '1.2'
+[2025-07-10 11:17:45,249] [DEBUG] core.gui_utils: Combobox atualizado com 6 valores para filtro: '1.2.'
+[2025-07-10 11:17:45,609] [DEBUG] core.gui_utils: Combobox atualizado com 2 valores para filtro: '1.2.3'
+[2025-07-10 11:17:45,819] [DEBUG] core.gui_utils: Combobox atualizado com 2 valores para filtro: '1.2.3.'
+[2025-07-10 11:17:45,949] [DEBUG] core.gui_utils: Combobox atualizado com 2 valores para filtro: '1.2.3.1'
+[2025-07-10 11:17:48,929] [DEBUG] core.gui_utils: Combobox atualizado com 2 valores para filtro: '1.2.3.1'
+[2025-07-10 11:17:49,139] [DEBUG] core.gui_utils: Combobox atualizado com 2 valores para filtro: '1.2.3.1'
+[2025-07-10 11:18:14,959] [DEBUG] core.gui_utils: Combobox atualizado com 0 valores para filtro: '505507188 - jose da rocha & filhos lda'
+[2025-07-10 11:18:15,139] [DEBUG] core.gui_utils: Combobox atualizado com 0 valores para filtro: '1.2.3.176.1.2 - donzília da conceição sousa da silva'
+[2025-07-10 11:18:16,609] [DEBUG] Faturas.visualizador_faturas: Valores convertidos: Base=1473.0, IVA=0.0, Total=1473.0
+[2025-07-10 11:18:16,609] [DEBUG] Faturas.visualizador_faturas: Data formatada: 2025-06-26
+[2025-07-10 11:18:16,609] [INFO] Faturas.visualizador_faturas: Salvando fatura: 505507188 - JOSE DA ROCHA & FILHOS LDA, Tipo: FT, Número: FAC A25/108, Ano: 2025, Data: 2025-06-26, Base: 1473.0, IVA: 0.0, Total: 1473.0, Processo: 1.2.3.176.1.2
+[2025-07-10 11:18:16,609] [INFO] core.file_utils: Mover PDF: d:\document_manager\Faturas\separados\F.G.SANTOS F 108 (1)_p1.pdf para 505507188 - JOSE DA ROCHA & FILHOS LDA/2025
+[2025-07-10 11:18:16,609] [INFO] core.file_utils: PDF movido para: d:\document_manager\Faturas\arquivados\2025\505507188 - JOSE DA ROCHA & FILHOS LDA\F.G.SANTOS F 108 (1)_p1.pdf
+[2025-07-10 11:18:16,619] [INFO] core.file_utils: Renomeando PDF: d:\document_manager\Faturas\arquivados\2025\505507188 - JOSE DA ROCHA & FILHOS LDA\F.G.SANTOS F 108 (1)_p1.pdf para FAC A25/108 - 2025
+[2025-07-10 11:18:16,622] [INFO] core.file_utils: PDF renomeado para: d:\document_manager\Faturas\arquivados\2025\505507188 - JOSE DA ROCHA & FILHOS LDA\FAC_A25108.pdf
+[2025-07-10 11:18:16,625] [INFO] core.db_helpers: Gravando fatura na base de dados...
+[2025-07-10 11:18:16,652] [INFO] core.db_helpers: ✅ Fatura gravada com sucesso.
+[2025-07-10 11:18:16,745] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': Fatura gravada e movida com sucesso.
+[2025-07-10 11:18:19,568] [INFO] Faturas.visualizador_faturas: Fatura gravada e movida com sucesso.
+[2025-07-10 11:18:19,674] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 11:18:19,674] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\F.G.SANTOS F 108 (1)_p2.pdf
+[2025-07-10 11:18:19,679] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\F.G.SANTOS F 108 (1)_p2.pdf
+[2025-07-10 11:18:19,679] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\F.G.SANTOS F 108 (1)_p2.pdf
+[2025-07-10 11:18:19,685] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\F.G.SANTOS F 108 (1)_p2.pdf
+[2025-07-10 11:18:21,039] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:505507188*B:505051265*C:PT*D:FT*E:N*F:20250626*G:FAC A25/108*H:JJG7Y52W-108*I1:PT*I2:1473.00*N:0.00*O:1473.00*Q:WctC*R:2648
+[2025-07-10 11:18:21,039] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '505507188', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250626', 'numero_doc': 'FAC A25/108', 'hash': 'JJG7Y52W-108', 'pais_adquirente': 'PT', 'I2': '1473.00', 'total_iva': '0.00', 'total_doc': '1473.00', 'chave_seguranca': 'WctC', 'regime_iva': '2648'}
+[2025-07-10 11:18:21,043] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250626
+[2025-07-10 11:18:21,043] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250626
+[2025-07-10 11:18:21,043] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250626
+[2025-07-10 11:18:21,043] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-06-26 usando formato '%Y%m%d'
+[2025-07-10 11:18:31,289] [INFO] Faturas.visualizador_faturas: Eliminando PDF: F.G.SANTOS F 108 (1)_p2.pdf
+[2025-07-10 11:18:31,289] [INFO] Faturas.visualizador_faturas: PDF F.G.SANTOS F 108 (1)_p2.pdf eliminado com sucesso.
+[2025-07-10 11:18:31,359] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': PDF 'F.G.SANTOS F 108 (1)_p2.pdf' eliminado com sucesso.
+[2025-07-10 11:18:32,949] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 11:18:32,949] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\FAC_2025_10-64578 (1)_p1.pdf
+[2025-07-10 11:18:32,954] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\FAC_2025_10-64578 (1)_p1.pdf
+[2025-07-10 11:18:32,954] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\FAC_2025_10-64578 (1)_p1.pdf
+[2025-07-10 11:18:32,954] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\FAC_2025_10-64578 (1)_p1.pdf
+[2025-07-10 11:18:33,701] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:506650715*B:505051265*C:PT*D:FT*E:N*F:20250625*G:FAC 10/64578*H:JFN9BCWX-64578*I1:PT*I7:98.44*I8:22.64*N:22.64*O:121.08*Q:jcpC*R:2649
+[2025-07-10 11:18:33,701] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '506650715', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250625', 'numero_doc': 'FAC 10/64578', 'hash': 'JFN9BCWX-64578', 'pais_adquirente': 'PT', 'valor_tributavel': '98.44', 'valor_iva': '22.64', 'total_iva': '22.64', 'total_doc': '121.08', 'chave_seguranca': 'jcpC', 'regime_iva': '2649'}
+[2025-07-10 11:18:33,711] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250625
+[2025-07-10 11:18:33,711] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250625
+[2025-07-10 11:18:33,711] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250625
+[2025-07-10 11:18:33,711] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-06-25 usando formato '%Y%m%d'
+[2025-07-10 11:18:33,711] [INFO] core.gui_utils: Item 'F.G.SANTOS F 108 (1)_p2.pdf' eliminado com sucesso.
+[2025-07-10 11:18:33,784] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': 'F.G.SANTOS F 108 (1)_p2.pdf' eliminado com sucesso.
+[2025-07-10 11:18:49,209] [DEBUG] core.gui_utils: Combobox atualizado com 6 valores para filtro: '1'
+[2025-07-10 11:18:49,339] [DEBUG] core.gui_utils: Combobox atualizado com 6 valores para filtro: '1.'
+[2025-07-10 11:18:49,529] [DEBUG] core.gui_utils: Combobox atualizado com 6 valores para filtro: '1.2'
+[2025-07-10 11:18:49,689] [DEBUG] core.gui_utils: Combobox atualizado com 6 valores para filtro: '1.2.'
+[2025-07-10 11:18:50,269] [DEBUG] core.gui_utils: Combobox atualizado com 6 valores para filtro: '1.2'
+[2025-07-10 11:18:50,429] [DEBUG] core.gui_utils: Combobox atualizado com 6 valores para filtro: '1.'
+[2025-07-10 11:18:50,579] [DEBUG] core.gui_utils: Combobox atualizado com 6 valores para filtro: '1'
+[2025-07-10 11:18:50,739] [DEBUG] core.gui_utils: Combobox atualizado com 7 valores para filtro: ''
+[2025-07-10 11:18:50,889] [DEBUG] core.gui_utils: Combobox atualizado com 7 valores para filtro: ''
+[2025-07-10 11:18:51,069] [DEBUG] core.gui_utils: Combobox atualizado com 5 valores para filtro: 'r'
+[2025-07-10 11:18:51,249] [DEBUG] core.gui_utils: Combobox atualizado com 5 valores para filtro: 'r'
+[2025-07-10 11:18:51,869] [DEBUG] core.gui_utils: Combobox atualizado com 7 valores para filtro: ''
+[2025-07-10 11:18:52,040] [DEBUG] core.gui_utils: Combobox atualizado com 5 valores para filtro: 'r'
+[2025-07-10 11:18:52,209] [DEBUG] core.gui_utils: Combobox atualizado com 5 valores para filtro: 'r'
+[2025-07-10 11:18:52,329] [DEBUG] core.gui_utils: Combobox atualizado com 2 valores para filtro: 'ro'
+[2025-07-10 11:18:52,479] [DEBUG] core.gui_utils: Combobox atualizado com 2 valores para filtro: 'roc'
+[2025-07-10 11:18:52,609] [DEBUG] core.gui_utils: Combobox atualizado com 1 valores para filtro: 'roch'
+[2025-07-10 11:18:52,729] [DEBUG] core.gui_utils: Combobox atualizado com 1 valores para filtro: 'rocha'
+[2025-07-10 11:25:27,409] [DEBUG] core.gui_utils: Combobox atualizado com 7 valores para filtro: ''
+[2025-07-10 11:51:17,319] [DEBUG] Faturas.visualizador_faturas: Valores convertidos: Base=98.44, IVA=22.64, Total=121.08
+[2025-07-10 11:51:17,319] [DEBUG] Faturas.visualizador_faturas: Data formatada: 2025-06-25
+[2025-07-10 11:51:17,319] [INFO] Faturas.visualizador_faturas: Salvando fatura: TEB - Materiais de Construção, Lda, Tipo: FT, Número: FAC 10/64578, Ano: 2025, Data: 2025-06-25, Base: 98.44, IVA: 22.64, Total: 121.08, Processo: 1.2.4.481
+[2025-07-10 11:51:17,329] [INFO] core.file_utils: Mover PDF: d:\document_manager\Faturas\separados\FAC_2025_10-64578 (1)_p1.pdf para TEB - Materiais de Construção, Lda/2025
+[2025-07-10 11:51:17,329] [INFO] core.file_utils: PDF movido para: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_2025_10-64578 (1)_p1.pdf
+[2025-07-10 11:51:17,329] [INFO] core.file_utils: Renomeando PDF: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_2025_10-64578 (1)_p1.pdf para FAC 10/64578 - 2025
+[2025-07-10 11:51:17,329] [INFO] core.file_utils: PDF renomeado para: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_1064578.pdf
+[2025-07-10 11:51:17,329] [INFO] core.db_helpers: Gravando fatura na base de dados...
+[2025-07-10 11:51:17,347] [INFO] core.db_helpers: ✅ Fatura gravada com sucesso.
+[2025-07-10 11:51:17,414] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': Fatura gravada e movida com sucesso.
+[2025-07-10 11:51:19,279] [INFO] Faturas.visualizador_faturas: Fatura gravada e movida com sucesso.
+[2025-07-10 11:51:19,389] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 11:51:19,389] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\FAC_2025_10-64806 (1)_p1.pdf
+[2025-07-10 11:51:19,393] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\FAC_2025_10-64806 (1)_p1.pdf
+[2025-07-10 11:51:19,393] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\FAC_2025_10-64806 (1)_p1.pdf
+[2025-07-10 11:51:19,393] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\FAC_2025_10-64806 (1)_p1.pdf
+[2025-07-10 11:51:20,206] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:506650715*B:505051265*C:PT*D:FT*E:N*F:20250627*G:FAC 10/64806*H:JFN9BCWX-64806*I1:PT*I7:78.69*I8:18.10*N:18.10*O:96.79*Q:qqKY*R:2649
+[2025-07-10 11:51:20,206] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '506650715', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250627', 'numero_doc': 'FAC 10/64806', 'hash': 'JFN9BCWX-64806', 'pais_adquirente': 'PT', 'valor_tributavel': '78.69', 'valor_iva': '18.10', 'total_iva': '18.10', 'total_doc': '96.79', 'chave_seguranca': 'qqKY', 'regime_iva': '2649'}
+[2025-07-10 11:51:20,209] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250627
+[2025-07-10 11:51:20,209] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250627
+[2025-07-10 11:51:20,209] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250627
+[2025-07-10 11:51:20,209] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-06-27 usando formato '%Y%m%d'
+[2025-07-10 11:52:31,601] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 11:52:31,601] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\FAC_2025_10-64806 (1)_p1.pdf
+[2025-07-10 11:52:31,601] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\FAC_2025_10-64806 (1)_p1.pdf
+[2025-07-10 11:52:31,609] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\FAC_2025_10-64806 (1)_p1.pdf
+[2025-07-10 11:52:31,609] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\FAC_2025_10-64806 (1)_p1.pdf
+[2025-07-10 11:52:32,309] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:506650715*B:505051265*C:PT*D:FT*E:N*F:20250627*G:FAC 10/64806*H:JFN9BCWX-64806*I1:PT*I7:78.69*I8:18.10*N:18.10*O:96.79*Q:qqKY*R:2649
+[2025-07-10 11:52:32,309] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '506650715', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250627', 'numero_doc': 'FAC 10/64806', 'hash': 'JFN9BCWX-64806', 'pais_adquirente': 'PT', 'valor_tributavel': '78.69', 'valor_iva': '18.10', 'total_iva': '18.10', 'total_doc': '96.79', 'chave_seguranca': 'qqKY', 'regime_iva': '2649'}
+[2025-07-10 11:52:32,309] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250627
+[2025-07-10 11:52:32,309] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250627
+[2025-07-10 11:52:32,309] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250627
+[2025-07-10 11:52:32,309] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-06-27 usando formato '%Y%m%d'
+[2025-07-10 11:52:42,639] [DEBUG] Faturas.visualizador_faturas: Valores convertidos: Base=78.69, IVA=18.1, Total=96.79
+[2025-07-10 11:52:42,639] [DEBUG] Faturas.visualizador_faturas: Data formatada: 2025-06-27
+[2025-07-10 11:52:42,649] [INFO] Faturas.visualizador_faturas: Salvando fatura: TEB - Materiais de Construção, Lda, Tipo: FT, Número: FAC 10/64806, Ano: 2025, Data: 2025-06-27, Base: 78.69, IVA: 18.1, Total: 96.79, Processo: 
+[2025-07-10 11:52:42,649] [INFO] core.file_utils: Mover PDF: d:\document_manager\Faturas\separados\FAC_2025_10-64925 (1)_p1.pdf para TEB - Materiais de Construção, Lda/2025
+[2025-07-10 11:52:42,649] [INFO] core.file_utils: PDF movido para: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_2025_10-64925 (1)_p1.pdf
+[2025-07-10 11:52:42,649] [INFO] core.file_utils: Renomeando PDF: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_2025_10-64925 (1)_p1.pdf para FAC 10/64806 - 2025
+[2025-07-10 11:52:42,649] [INFO] core.file_utils: PDF renomeado para: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_1064806.pdf
+[2025-07-10 11:52:42,649] [INFO] core.db_helpers: Gravando fatura na base de dados...
+[2025-07-10 11:52:42,674] [INFO] core.db_helpers: ✅ Fatura gravada com sucesso.
+[2025-07-10 11:52:42,737] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': Fatura gravada e movida com sucesso.
+[2025-07-10 11:52:48,329] [INFO] Faturas.visualizador_faturas: Fatura gravada e movida com sucesso.
+[2025-07-10 11:52:48,429] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 11:52:48,429] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\FAC_2025_10-64991 (1)_p1.pdf
+[2025-07-10 11:52:48,429] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\FAC_2025_10-64991 (1)_p1.pdf
+[2025-07-10 11:52:48,434] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\FAC_2025_10-64991 (1)_p1.pdf
+[2025-07-10 11:52:48,434] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\FAC_2025_10-64991 (1)_p1.pdf
+[2025-07-10 11:52:49,174] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:506650715*B:505051265*C:PT*D:FT*E:N*F:20250630*G:FAC 10/64991*H:JFN9BCWX-64991*I1:PT*I7:461.22*I8:106.08*N:106.08*O:567.30*Q:JSA3*R:2649
+[2025-07-10 11:52:49,175] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '506650715', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250630', 'numero_doc': 'FAC 10/64991', 'hash': 'JFN9BCWX-64991', 'pais_adquirente': 'PT', 'valor_tributavel': '461.22', 'valor_iva': '106.08', 'total_iva': '106.08', 'total_doc': '567.30', 'chave_seguranca': 'JSA3', 'regime_iva': '2649'}
+[2025-07-10 11:52:49,175] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250630
+[2025-07-10 11:52:49,175] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250630
+[2025-07-10 11:52:49,175] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250630
+[2025-07-10 11:52:49,175] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-06-30 usando formato '%Y%m%d'
+[2025-07-10 12:04:39,030] [DEBUG] Faturas.visualizador_faturas: Valores convertidos: Base=461.22, IVA=106.08, Total=567.3
+[2025-07-10 12:04:39,030] [DEBUG] Faturas.visualizador_faturas: Data formatada: 2025-06-30
+[2025-07-10 12:04:39,030] [INFO] Faturas.visualizador_faturas: Salvando fatura: TEB - Materiais de Construção, Lda, Tipo: FT, Número: FAC 10/64991, Ano: 2025, Data: 2025-06-30, Base: 461.22, IVA: 106.08, Total: 567.3, Processo: 1.2.3.176.1.2
+[2025-07-10 12:04:39,030] [INFO] core.file_utils: Mover PDF: d:\document_manager\Faturas\separados\FAC_2025_10-64991 (1)_p1.pdf para TEB - Materiais de Construção, Lda/2025
+[2025-07-10 12:04:39,030] [INFO] core.file_utils: PDF movido para: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_2025_10-64991 (1)_p1.pdf
+[2025-07-10 12:04:39,030] [INFO] core.file_utils: Renomeando PDF: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_2025_10-64991 (1)_p1.pdf para FAC 10/64991 - 2025
+[2025-07-10 12:04:39,030] [INFO] core.file_utils: PDF renomeado para: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_1064991.pdf
+[2025-07-10 12:04:39,030] [INFO] core.db_helpers: Gravando fatura na base de dados...
+[2025-07-10 12:04:39,054] [INFO] core.db_helpers: ✅ Fatura gravada com sucesso.
+[2025-07-10 12:04:39,128] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': Fatura gravada e movida com sucesso.
+[2025-07-10 12:04:40,664] [INFO] Faturas.visualizador_faturas: Fatura gravada e movida com sucesso.
+[2025-07-10 12:04:40,759] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 12:04:40,764] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\FAC_2025_10-65098 (1)_p1.pdf
+[2025-07-10 12:04:40,764] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\FAC_2025_10-65098 (1)_p1.pdf
+[2025-07-10 12:04:40,772] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\FAC_2025_10-65098 (1)_p1.pdf
+[2025-07-10 12:04:40,773] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\FAC_2025_10-65098 (1)_p1.pdf
+[2025-07-10 12:04:41,509] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:506650715*B:505051265*C:PT*D:FT*E:N*F:20250701*G:FAC 10/65098*H:JFN9BCWX-65098*I1:PT*I7:19.40*I8:4.46*N:4.46*O:23.86*Q:k2h3*R:2649
+[2025-07-10 12:04:41,509] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '506650715', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250701', 'numero_doc': 'FAC 10/65098', 'hash': 'JFN9BCWX-65098', 'pais_adquirente': 'PT', 'valor_tributavel': '19.40', 'valor_iva': '4.46', 'total_iva': '4.46', 'total_doc': '23.86', 'chave_seguranca': 'k2h3', 'regime_iva': '2649'}
+[2025-07-10 12:04:41,514] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250701
+[2025-07-10 12:04:41,514] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250701
+[2025-07-10 12:04:41,514] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250701
+[2025-07-10 12:04:41,514] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-01 usando formato '%Y%m%d'
+[2025-07-10 12:06:25,344] [DEBUG] Faturas.visualizador_faturas: Valores convertidos: Base=19.4, IVA=4.46, Total=23.86
+[2025-07-10 12:06:25,344] [DEBUG] Faturas.visualizador_faturas: Data formatada: 2025-07-01
+[2025-07-10 12:06:25,345] [INFO] Faturas.visualizador_faturas: Salvando fatura: TEB - Materiais de Construção, Lda, Tipo: FT, Número: FAC 10/65098, Ano: 2025, Data: 2025-07-01, Base: 19.4, IVA: 4.46, Total: 23.86, Processo: 
+[2025-07-10 12:06:25,345] [INFO] core.file_utils: Mover PDF: d:\document_manager\Faturas\separados\FAC_2025_10-65098 (1)_p1.pdf para TEB - Materiais de Construção, Lda/2025
+[2025-07-10 12:06:25,346] [INFO] core.file_utils: PDF movido para: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_2025_10-65098 (1)_p1.pdf
+[2025-07-10 12:06:25,347] [INFO] core.file_utils: Renomeando PDF: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_2025_10-65098 (1)_p1.pdf para FAC 10/65098 - 2025
+[2025-07-10 12:06:25,348] [INFO] core.file_utils: PDF renomeado para: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_1065098.pdf
+[2025-07-10 12:06:25,348] [INFO] core.db_helpers: Gravando fatura na base de dados...
+[2025-07-10 12:06:25,361] [INFO] core.db_helpers: ✅ Fatura gravada com sucesso.
+[2025-07-10 12:06:25,428] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': Fatura gravada e movida com sucesso.
+[2025-07-10 12:06:29,859] [INFO] Faturas.visualizador_faturas: Fatura gravada e movida com sucesso.
+[2025-07-10 12:06:29,960] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 12:06:29,961] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\FAC_2025_10-65459_p1.pdf
+[2025-07-10 12:06:29,965] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\FAC_2025_10-65459_p1.pdf
+[2025-07-10 12:06:29,966] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\FAC_2025_10-65459_p1.pdf
+[2025-07-10 12:06:29,969] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\FAC_2025_10-65459_p1.pdf
+[2025-07-10 12:06:30,687] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:506650715*B:505051265*C:PT*D:FT*E:N*F:20250704*G:FAC 10/65459*H:JFN9BCWX-65459*I1:PT*I7:68.33*I8:15.72*N:15.72*O:84.05*Q:v4FP*R:2649
+[2025-07-10 12:06:30,687] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '506650715', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250704', 'numero_doc': 'FAC 10/65459', 'hash': 'JFN9BCWX-65459', 'pais_adquirente': 'PT', 'valor_tributavel': '68.33', 'valor_iva': '15.72', 'total_iva': '15.72', 'total_doc': '84.05', 'chave_seguranca': 'v4FP', 'regime_iva': '2649'}
+[2025-07-10 12:06:30,691] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250704
+[2025-07-10 12:06:30,691] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250704
+[2025-07-10 12:06:30,691] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250704
+[2025-07-10 12:06:30,691] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-04 usando formato '%Y%m%d'
+[2025-07-10 14:59:03,419] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 14:59:03,420] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\FAC_2025_10-65459_p1.pdf
+[2025-07-10 14:59:03,420] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\FAC_2025_10-65459_p1.pdf
+[2025-07-10 14:59:03,425] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\FAC_2025_10-65459_p1.pdf
+[2025-07-10 14:59:03,425] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\FAC_2025_10-65459_p1.pdf
+[2025-07-10 14:59:04,187] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:506650715*B:505051265*C:PT*D:FT*E:N*F:20250704*G:FAC 10/65459*H:JFN9BCWX-65459*I1:PT*I7:68.33*I8:15.72*N:15.72*O:84.05*Q:v4FP*R:2649
+[2025-07-10 14:59:04,187] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '506650715', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250704', 'numero_doc': 'FAC 10/65459', 'hash': 'JFN9BCWX-65459', 'pais_adquirente': 'PT', 'valor_tributavel': '68.33', 'valor_iva': '15.72', 'total_iva': '15.72', 'total_doc': '84.05', 'chave_seguranca': 'v4FP', 'regime_iva': '2649'}
+[2025-07-10 14:59:04,190] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250704
+[2025-07-10 14:59:04,190] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250704
+[2025-07-10 14:59:04,190] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250704
+[2025-07-10 14:59:04,190] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-04 usando formato '%Y%m%d'
+[2025-07-10 14:59:06,070] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'aviso': Já está no primeiro fatura.
+[2025-07-10 14:59:07,580] [INFO] core.visualizador_utils: Já está no primeiro fatura.
+[2025-07-10 14:59:08,370] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 14:59:08,370] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\FAC_2025_10-64806 (1)_p1.pdf
+[2025-07-10 14:59:08,370] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\FAC_2025_10-64806 (1)_p1.pdf
+[2025-07-10 14:59:08,370] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\FAC_2025_10-64806 (1)_p1.pdf
+[2025-07-10 14:59:08,370] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\FAC_2025_10-64806 (1)_p1.pdf
+[2025-07-10 14:59:09,060] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:506650715*B:505051265*C:PT*D:FT*E:N*F:20250627*G:FAC 10/64806*H:JFN9BCWX-64806*I1:PT*I7:78.69*I8:18.10*N:18.10*O:96.79*Q:qqKY*R:2649
+[2025-07-10 14:59:09,060] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '506650715', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250627', 'numero_doc': 'FAC 10/64806', 'hash': 'JFN9BCWX-64806', 'pais_adquirente': 'PT', 'valor_tributavel': '78.69', 'valor_iva': '18.10', 'total_iva': '18.10', 'total_doc': '96.79', 'chave_seguranca': 'qqKY', 'regime_iva': '2649'}
+[2025-07-10 14:59:09,066] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250627
+[2025-07-10 14:59:09,068] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250627
+[2025-07-10 14:59:09,068] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250627
+[2025-07-10 14:59:09,068] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-06-27 usando formato '%Y%m%d'
+[2025-07-10 14:59:11,370] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 14:59:11,370] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\FAC_2025_10-65459_p1.pdf
+[2025-07-10 14:59:11,380] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\FAC_2025_10-65459_p1.pdf
+[2025-07-10 14:59:11,380] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\FAC_2025_10-65459_p1.pdf
+[2025-07-10 14:59:11,380] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\FAC_2025_10-65459_p1.pdf
+[2025-07-10 14:59:12,040] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:506650715*B:505051265*C:PT*D:FT*E:N*F:20250704*G:FAC 10/65459*H:JFN9BCWX-65459*I1:PT*I7:68.33*I8:15.72*N:15.72*O:84.05*Q:v4FP*R:2649
+[2025-07-10 14:59:12,040] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '506650715', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250704', 'numero_doc': 'FAC 10/65459', 'hash': 'JFN9BCWX-65459', 'pais_adquirente': 'PT', 'valor_tributavel': '68.33', 'valor_iva': '15.72', 'total_iva': '15.72', 'total_doc': '84.05', 'chave_seguranca': 'v4FP', 'regime_iva': '2649'}
+[2025-07-10 14:59:12,047] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250704
+[2025-07-10 14:59:12,047] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250704
+[2025-07-10 14:59:12,047] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250704
+[2025-07-10 14:59:12,047] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-04 usando formato '%Y%m%d'
+[2025-07-10 15:00:29,680] [DEBUG] Faturas.visualizador_faturas: Valores convertidos: Base=68.33, IVA=15.72, Total=84.05
+[2025-07-10 15:00:29,680] [DEBUG] Faturas.visualizador_faturas: Data formatada: 2025-07-04
+[2025-07-10 15:00:29,680] [INFO] Faturas.visualizador_faturas: Salvando fatura: TEB - Materiais de Construção, Lda, Tipo: FT, Número: FAC 10/65459, Ano: 2025, Data: 2025-07-04, Base: 68.33, IVA: 15.72, Total: 84.05, Processo: 
+[2025-07-10 15:00:29,680] [INFO] core.file_utils: Mover PDF: d:\document_manager\Faturas\separados\FAC_2025_10-64806 (1)_p1.pdf para TEB - Materiais de Construção, Lda/2025
+[2025-07-10 15:00:29,680] [INFO] core.file_utils: PDF movido para: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_2025_10-64806 (1)_p1.pdf
+[2025-07-10 15:00:29,680] [INFO] core.file_utils: Renomeando PDF: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_2025_10-64806 (1)_p1.pdf para FAC 10/65459 - 2025
+[2025-07-10 15:00:29,680] [INFO] core.file_utils: PDF renomeado para: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_1065459.pdf
+[2025-07-10 15:00:29,680] [INFO] core.db_helpers: Gravando fatura na base de dados...
+[2025-07-10 15:00:29,704] [INFO] core.db_helpers: ✅ Fatura gravada com sucesso.
+[2025-07-10 15:00:29,774] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': Fatura gravada e movida com sucesso.
+[2025-07-10 15:00:31,220] [INFO] Faturas.visualizador_faturas: Fatura gravada e movida com sucesso.
+[2025-07-10 15:00:31,320] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 15:00:31,330] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\FAC_2025_10-65459_p1.pdf
+[2025-07-10 15:00:31,330] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\FAC_2025_10-65459_p1.pdf
+[2025-07-10 15:00:31,330] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\FAC_2025_10-65459_p1.pdf
+[2025-07-10 15:00:31,335] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\FAC_2025_10-65459_p1.pdf
+[2025-07-10 15:00:32,030] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:506650715*B:505051265*C:PT*D:FT*E:N*F:20250704*G:FAC 10/65459*H:JFN9BCWX-65459*I1:PT*I7:68.33*I8:15.72*N:15.72*O:84.05*Q:v4FP*R:2649
+[2025-07-10 15:00:32,030] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '506650715', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250704', 'numero_doc': 'FAC 10/65459', 'hash': 'JFN9BCWX-65459', 'pais_adquirente': 'PT', 'valor_tributavel': '68.33', 'valor_iva': '15.72', 'total_iva': '15.72', 'total_doc': '84.05', 'chave_seguranca': 'v4FP', 'regime_iva': '2649'}
+[2025-07-10 15:00:32,034] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250704
+[2025-07-10 15:00:32,034] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250704
+[2025-07-10 15:00:32,034] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250704
+[2025-07-10 15:00:32,034] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-04 usando formato '%Y%m%d'
+[2025-07-10 15:00:50,080] [DEBUG] Faturas.visualizador_faturas: Valores convertidos: Base=68.33, IVA=15.72, Total=84.05
+[2025-07-10 15:00:50,080] [DEBUG] Faturas.visualizador_faturas: Data formatada: 2025-07-04
+[2025-07-10 15:00:50,080] [INFO] Faturas.visualizador_faturas: Salvando fatura: TEB - Materiais de Construção, Lda, Tipo: FT, Número: FAC 10/65459, Ano: 2025, Data: 2025-07-04, Base: 68.33, IVA: 15.72, Total: 84.05, Processo: 
+[2025-07-10 15:00:50,080] [INFO] core.file_utils: Mover PDF: d:\document_manager\Faturas\separados\FAC_2025_10-65459_p1.pdf para TEB - Materiais de Construção, Lda/2025
+[2025-07-10 15:00:50,080] [INFO] core.file_utils: PDF movido para: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_2025_10-65459_p1.pdf
+[2025-07-10 15:00:50,080] [INFO] core.file_utils: Renomeando PDF: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_2025_10-65459_p1.pdf para FAC 10/65459 - 2025
+[2025-07-10 15:00:50,080] [ERROR] core.file_utils: Já existe um arquivo com o nome: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_1065459.pdf
+[2025-07-10 15:00:50,080] [ERROR] Faturas.visualizador_faturas: Erro ao salvar fatura: Ficheiro duplicado Já existe: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_1065459.pdf
+[2025-07-10 15:00:50,156] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'erro': Ficheiro duplicado: Já existe: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_1065459.pdf
+[2025-07-10 15:01:01,560] [INFO] Faturas.visualizador_faturas: Eliminando PDF: FAC_2025_10-65459_p1.pdf
+[2025-07-10 15:01:01,570] [INFO] Faturas.visualizador_faturas: PDF FAC_2025_10-65459_p1.pdf eliminado com sucesso.
+[2025-07-10 15:01:01,640] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': PDF 'FAC_2025_10-65459_p1.pdf' eliminado com sucesso.
+[2025-07-10 15:01:03,110] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 15:01:03,110] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\FAC_2025_10-65646_p1.pdf
+[2025-07-10 15:01:03,115] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\FAC_2025_10-65646_p1.pdf
+[2025-07-10 15:01:03,115] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\FAC_2025_10-65646_p1.pdf
+[2025-07-10 15:01:03,121] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\FAC_2025_10-65646_p1.pdf
+[2025-07-10 15:01:03,830] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:506650715*B:505051265*C:PT*D:FT*E:N*F:20250708*G:FAC 10/65646*H:JFN9BCWX-65646*I1:PT*I7:192.27*I8:44.22*N:44.22*O:236.49*Q:SlIX*R:2649
+[2025-07-10 15:01:03,830] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '506650715', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250708', 'numero_doc': 'FAC 10/65646', 'hash': 'JFN9BCWX-65646', 'pais_adquirente': 'PT', 'valor_tributavel': '192.27', 'valor_iva': '44.22', 'total_iva': '44.22', 'total_doc': '236.49', 'chave_seguranca': 'SlIX', 'regime_iva': '2649'}
+[2025-07-10 15:01:03,837] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250708
+[2025-07-10 15:01:03,837] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250708
+[2025-07-10 15:01:03,837] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250708
+[2025-07-10 15:01:03,837] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-08 usando formato '%Y%m%d'
+[2025-07-10 15:01:03,837] [INFO] core.gui_utils: Item 'FAC_2025_10-65459_p1.pdf' eliminado com sucesso.
+[2025-07-10 15:01:03,906] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': 'FAC_2025_10-65459_p1.pdf' eliminado com sucesso.
+[2025-07-10 15:01:08,330] [DEBUG] core.gui_utils: Combobox atualizado com 7 valores para filtro: ''
+[2025-07-10 15:01:09,190] [DEBUG] core.gui_utils: Combobox atualizado com 7 valores para filtro: ''
+[2025-07-10 15:03:31,070] [DEBUG] Faturas.visualizador_faturas: Valores convertidos: Base=192.27, IVA=44.22, Total=236.49
+[2025-07-10 15:03:31,070] [DEBUG] Faturas.visualizador_faturas: Data formatada: 2025-07-08
+[2025-07-10 15:03:31,070] [INFO] Faturas.visualizador_faturas: Salvando fatura: TEB - Materiais de Construção, Lda, Tipo: FT, Número: FAC 10/65646, Ano: 2025, Data: 2025-07-08, Base: 192.27, IVA: 44.22, Total: 236.49, Processo: 1.2.4.481
+[2025-07-10 15:03:31,070] [INFO] core.file_utils: Mover PDF: d:\document_manager\Faturas\separados\FAC_2025_10-65646_p1.pdf para TEB - Materiais de Construção, Lda/2025
+[2025-07-10 15:03:31,070] [INFO] core.file_utils: PDF movido para: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_2025_10-65646_p1.pdf
+[2025-07-10 15:03:31,070] [INFO] core.file_utils: Renomeando PDF: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_2025_10-65646_p1.pdf para FAC 10/65646 - 2025
+[2025-07-10 15:03:31,070] [INFO] core.file_utils: PDF renomeado para: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_1065646.pdf
+[2025-07-10 15:03:31,070] [INFO] core.db_helpers: Gravando fatura na base de dados...
+[2025-07-10 15:03:31,092] [INFO] core.db_helpers: ✅ Fatura gravada com sucesso.
+[2025-07-10 15:03:31,160] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': Fatura gravada e movida com sucesso.
+[2025-07-10 15:03:34,120] [INFO] Faturas.visualizador_faturas: Fatura gravada e movida com sucesso.
+[2025-07-10 15:03:34,225] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 15:03:34,225] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\FAC_2025_10-65805_p1.pdf
+[2025-07-10 15:03:34,230] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\FAC_2025_10-65805_p1.pdf
+[2025-07-10 15:03:34,230] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\FAC_2025_10-65805_p1.pdf
+[2025-07-10 15:03:34,230] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\FAC_2025_10-65805_p1.pdf
+[2025-07-10 15:03:34,942] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:506650715*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FAC 10/65805*H:JFN9BCWX-65805*I1:PT*I7:270.18*I8:62.14*N:62.14*O:332.32*Q:zPlE*R:2649
+[2025-07-10 15:03:34,942] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '506650715', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FAC 10/65805', 'hash': 'JFN9BCWX-65805', 'pais_adquirente': 'PT', 'valor_tributavel': '270.18', 'valor_iva': '62.14', 'total_iva': '62.14', 'total_doc': '332.32', 'chave_seguranca': 'zPlE', 'regime_iva': '2649'}
+[2025-07-10 15:03:34,942] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250709
+[2025-07-10 15:03:34,942] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250709
+[2025-07-10 15:03:34,942] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250709
+[2025-07-10 15:03:34,942] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-09 usando formato '%Y%m%d'
+[2025-07-10 15:04:47,390] [INFO] core.db_helpers: Carregando clientes da base de dados...
+[2025-07-10 15:04:48,040] [INFO] core.db_helpers: 242 clientes carregados da base de dados.
+[2025-07-10 15:04:48,055] [INFO] core.db_helpers: 7 processos carregados da base de dados.
+[2025-07-10 15:04:48,055] [INFO] core.db_helpers: Carregando clientes da base de dados...
+[2025-07-10 15:04:48,060] [INFO] core.db_helpers: 242 clientes carregados da base de dados.
+[2025-07-10 15:04:48,063] [DEBUG] core.gui_utils: Listbox filtrado com termo ''. 7 itens exibidos.
+[2025-07-10 15:05:06,460] [DEBUG] core.gui_utils: Combobox atualizado com 238 valores para filtro: 'a'
+[2025-07-10 15:05:07,970] [DEBUG] core.gui_utils: Combobox atualizado com 57 valores para filtro: 'al'
+[2025-07-10 15:05:08,441] [DEBUG] core.gui_utils: Combobox atualizado com 0 valores para filtro: 'alf'
+[2025-07-10 15:05:10,890] [DEBUG] core.gui_utils: Combobox atualizado com 57 valores para filtro: 'al'
+[2025-07-10 15:05:11,170] [DEBUG] core.gui_utils: Combobox atualizado com 4 valores para filtro: 'ali'
+[2025-07-10 15:05:11,380] [DEBUG] core.gui_utils: Combobox atualizado com 2 valores para filtro: 'alic'
+[2025-07-10 15:05:11,600] [DEBUG] core.gui_utils: Combobox atualizado com 2 valores para filtro: 'alice'
+[2025-07-10 15:05:22,210] [INFO] core.db_helpers: 8 processos carregados da base de dados.
+[2025-07-10 15:05:22,210] [INFO] core.db_helpers: Carregando clientes da base de dados...
+[2025-07-10 15:05:22,230] [INFO] core.db_helpers: 242 clientes carregados da base de dados.
+[2025-07-10 15:05:22,230] [DEBUG] core.gui_utils: Listbox filtrado com termo ''. 8 itens exibidos.
+[2025-07-10 15:05:23,884] [INFO] processos: Processo '1.2.4.416.2' salvo com sucesso.
+[2025-07-10 15:05:26,985] [INFO] core.db_helpers: 8 processos carregados da base de dados.
+[2025-07-10 15:05:26,985] [INFO] core.db_helpers: Carregando clientes da base de dados...
+[2025-07-10 15:05:26,985] [INFO] core.db_helpers: 242 clientes carregados da base de dados.
+[2025-07-10 15:05:33,305] [DEBUG] Faturas.visualizador_faturas: Valores convertidos: Base=270.18, IVA=62.14, Total=332.32
+[2025-07-10 15:05:33,305] [DEBUG] Faturas.visualizador_faturas: Data formatada: 2025-07-09
+[2025-07-10 15:05:33,305] [INFO] Faturas.visualizador_faturas: Salvando fatura: TEB - Materiais de Construção, Lda, Tipo: FT, Número: FAC 10/65805, Ano: 2025, Data: 2025-07-09, Base: 270.18, IVA: 62.14, Total: 332.32, Processo: 1.2.4.416.2
+[2025-07-10 15:05:33,305] [INFO] core.file_utils: Mover PDF: d:\document_manager\Faturas\separados\FAC_2025_10-65805_p1.pdf para TEB - Materiais de Construção, Lda/2025
+[2025-07-10 15:05:33,305] [INFO] core.file_utils: PDF movido para: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_2025_10-65805_p1.pdf
+[2025-07-10 15:05:33,305] [INFO] core.file_utils: Renomeando PDF: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_2025_10-65805_p1.pdf para FAC 10/65805 - 2025
+[2025-07-10 15:05:33,305] [INFO] core.file_utils: PDF renomeado para: d:\document_manager\Faturas\arquivados\2025\TEB - Materiais de Construção, Lda\FAC_1065805.pdf
+[2025-07-10 15:05:33,305] [INFO] core.db_helpers: Gravando fatura na base de dados...
+[2025-07-10 15:05:33,310] [INFO] core.db_helpers: ✅ Fatura gravada com sucesso.
+[2025-07-10 15:05:33,381] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': Fatura gravada e movida com sucesso.
+[2025-07-10 15:05:34,860] [INFO] Faturas.visualizador_faturas: Fatura gravada e movida com sucesso.
+[2025-07-10 15:05:34,960] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 15:05:34,960] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\FATURA Nº1802_p1.pdf
+[2025-07-10 15:05:34,970] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\FATURA Nº1802_p1.pdf
+[2025-07-10 15:05:34,975] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\FATURA Nº1802_p1.pdf
+[2025-07-10 15:05:34,980] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\FATURA Nº1802_p1.pdf
+[2025-07-10 15:05:35,835] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:509956610*B:505051265*C:PT*D:FT*E:N*F:20250702*G:FAC A25/1802*H:JJ4TF3RW-1802*I1:PT*I7:50.08*I8:11.52*N:11.52*O:61.60*Q:nERk*R:2648
+[2025-07-10 15:05:35,835] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '509956610', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250702', 'numero_doc': 'FAC A25/1802', 'hash': 'JJ4TF3RW-1802', 'pais_adquirente': 'PT', 'valor_tributavel': '50.08', 'valor_iva': '11.52', 'total_iva': '11.52', 'total_doc': '61.60', 'chave_seguranca': 'nERk', 'regime_iva': '2648'}
+[2025-07-10 15:05:35,840] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250702
+[2025-07-10 15:05:35,840] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250702
+[2025-07-10 15:05:35,840] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250702
+[2025-07-10 15:05:35,840] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-02 usando formato '%Y%m%d'
+[2025-07-10 15:07:39,600] [DEBUG] Faturas.visualizador_faturas: Valores convertidos: Base=50.08, IVA=11.52, Total=61.6
+[2025-07-10 15:07:39,600] [DEBUG] Faturas.visualizador_faturas: Data formatada: 2025-07-02
+[2025-07-10 15:07:39,600] [INFO] Faturas.visualizador_faturas: Salvando fatura: PICHELTUBO LDA, Tipo: FT, Número: FAC A25/1802, Ano: 2025, Data: 2025-07-02, Base: 50.08, IVA: 11.52, Total: 61.6, Processo: 
+[2025-07-10 15:07:39,600] [INFO] core.file_utils: Mover PDF: d:\document_manager\Faturas\separados\FATURA Nº1802_p1.pdf para PICHELTUBO LDA/2025
+[2025-07-10 15:07:39,600] [INFO] core.file_utils: PDF movido para: d:\document_manager\Faturas\arquivados\2025\PICHELTUBO LDA\FATURA Nº1802_p1.pdf
+[2025-07-10 15:07:39,600] [INFO] core.file_utils: Renomeando PDF: d:\document_manager\Faturas\arquivados\2025\PICHELTUBO LDA\FATURA Nº1802_p1.pdf para FAC A25/1802 - 2025
+[2025-07-10 15:07:39,600] [INFO] core.file_utils: PDF renomeado para: d:\document_manager\Faturas\arquivados\2025\PICHELTUBO LDA\FAC_A251802.pdf
+[2025-07-10 15:07:39,600] [INFO] core.db_helpers: Gravando fatura na base de dados...
+[2025-07-10 15:07:39,610] [INFO] core.db_helpers: ✅ Fatura gravada com sucesso.
+[2025-07-10 15:07:39,687] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': Fatura gravada e movida com sucesso.
+[2025-07-10 15:07:41,132] [INFO] Faturas.visualizador_faturas: Fatura gravada e movida com sucesso.
+[2025-07-10 15:07:41,232] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 15:07:41,232] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\FATURA Nº1862_p1.pdf
+[2025-07-10 15:07:41,240] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\FATURA Nº1862_p1.pdf
+[2025-07-10 15:07:41,240] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\FATURA Nº1862_p1.pdf
+[2025-07-10 15:07:41,240] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\FATURA Nº1862_p1.pdf
+[2025-07-10 15:07:41,975] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:509956610*B:505051265*C:PT*D:FT*E:N*F:20250707*G:FAC A25/1862*H:JJ4TF3RW-1862*I1:PT*I7:51.48*I8:11.84*N:11.84*O:63.32*Q:B/Xo*R:2648
+[2025-07-10 15:07:41,975] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '509956610', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250707', 'numero_doc': 'FAC A25/1862', 'hash': 'JJ4TF3RW-1862', 'pais_adquirente': 'PT', 'valor_tributavel': '51.48', 'valor_iva': '11.84', 'total_iva': '11.84', 'total_doc': '63.32', 'chave_seguranca': 'B/Xo', 'regime_iva': '2648'}
+[2025-07-10 15:07:41,980] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250707
+[2025-07-10 15:07:41,980] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250707
+[2025-07-10 15:07:41,980] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250707
+[2025-07-10 15:07:41,980] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-07 usando formato '%Y%m%d'
+[2025-07-10 15:12:52,034] [DEBUG] Faturas.visualizador_faturas: Valores convertidos: Base=51.48, IVA=11.84, Total=63.32
+[2025-07-10 15:12:52,034] [DEBUG] Faturas.visualizador_faturas: Data formatada: 2025-07-07
+[2025-07-10 15:12:52,034] [INFO] Faturas.visualizador_faturas: Salvando fatura: PICHELTUBO LDA, Tipo: FT, Número: FAC A25/1862, Ano: 2025, Data: 2025-07-07, Base: 51.48, IVA: 11.84, Total: 63.32, Processo: 
+[2025-07-10 15:12:52,034] [INFO] core.file_utils: Mover PDF: d:\document_manager\Faturas\separados\FATURA Nº1862_p1.pdf para PICHELTUBO LDA/2025
+[2025-07-10 15:12:52,036] [INFO] core.file_utils: PDF movido para: d:\document_manager\Faturas\arquivados\2025\PICHELTUBO LDA\FATURA Nº1862_p1.pdf
+[2025-07-10 15:12:52,036] [INFO] core.file_utils: Renomeando PDF: d:\document_manager\Faturas\arquivados\2025\PICHELTUBO LDA\FATURA Nº1862_p1.pdf para FAC A25/1862 - 2025
+[2025-07-10 15:12:52,037] [INFO] core.file_utils: PDF renomeado para: d:\document_manager\Faturas\arquivados\2025\PICHELTUBO LDA\FAC_A251862.pdf
+[2025-07-10 15:12:52,037] [INFO] core.db_helpers: Gravando fatura na base de dados...
+[2025-07-10 15:12:52,051] [INFO] core.db_helpers: ✅ Fatura gravada com sucesso.
+[2025-07-10 15:12:52,118] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': Fatura gravada e movida com sucesso.
+[2025-07-10 15:12:53,675] [INFO] Faturas.visualizador_faturas: Fatura gravada e movida com sucesso.
+[2025-07-10 15:12:53,776] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 15:12:53,777] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\FATURA Nº1875_p1.pdf
+[2025-07-10 15:12:53,781] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\FATURA Nº1875_p1.pdf
+[2025-07-10 15:12:53,782] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\FATURA Nº1875_p1.pdf
+[2025-07-10 15:12:53,782] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\FATURA Nº1875_p1.pdf
+[2025-07-10 15:12:54,548] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:509956610*B:505051265*C:PT*D:FT*E:N*F:20250708*G:FAC A25/1875*H:JJ4TF3RW-1875*I1:PT*I7:17.22*I8:3.96*N:3.96*O:21.18*Q:x6cz*R:2648
+[2025-07-10 15:12:54,548] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '509956610', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250708', 'numero_doc': 'FAC A25/1875', 'hash': 'JJ4TF3RW-1875', 'pais_adquirente': 'PT', 'valor_tributavel': '17.22', 'valor_iva': '3.96', 'total_iva': '3.96', 'total_doc': '21.18', 'chave_seguranca': 'x6cz', 'regime_iva': '2648'}
+[2025-07-10 15:12:54,551] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250708
+[2025-07-10 15:12:54,552] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250708
+[2025-07-10 15:12:54,552] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250708
+[2025-07-10 15:12:54,552] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-08 usando formato '%Y%m%d'
+[2025-07-10 15:14:32,409] [DEBUG] Faturas.visualizador_faturas: Valores convertidos: Base=17.22, IVA=3.96, Total=21.18
+[2025-07-10 15:14:32,409] [DEBUG] Faturas.visualizador_faturas: Data formatada: 2025-07-08
+[2025-07-10 15:14:32,409] [INFO] Faturas.visualizador_faturas: Salvando fatura: PICHELTUBO LDA, Tipo: FT, Número: FAC A25/1875, Ano: 2025, Data: 2025-07-08, Base: 17.22, IVA: 3.96, Total: 21.18, Processo: 
+[2025-07-10 15:14:32,410] [INFO] core.file_utils: Mover PDF: d:\document_manager\Faturas\separados\FATURA Nº1875_p1.pdf para PICHELTUBO LDA/2025
+[2025-07-10 15:14:32,411] [INFO] core.file_utils: PDF movido para: d:\document_manager\Faturas\arquivados\2025\PICHELTUBO LDA\FATURA Nº1875_p1.pdf
+[2025-07-10 15:14:32,411] [INFO] core.file_utils: Renomeando PDF: d:\document_manager\Faturas\arquivados\2025\PICHELTUBO LDA\FATURA Nº1875_p1.pdf para FAC A25/1875 - 2025
+[2025-07-10 15:14:32,412] [INFO] core.file_utils: PDF renomeado para: d:\document_manager\Faturas\arquivados\2025\PICHELTUBO LDA\FAC_A251875.pdf
+[2025-07-10 15:14:32,412] [INFO] core.db_helpers: Gravando fatura na base de dados...
+[2025-07-10 15:14:32,427] [INFO] core.db_helpers: ✅ Fatura gravada com sucesso.
+[2025-07-10 15:14:32,499] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': Fatura gravada e movida com sucesso.
+[2025-07-10 15:14:33,766] [INFO] Faturas.visualizador_faturas: Fatura gravada e movida com sucesso.
+[2025-07-10 15:14:33,868] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 15:14:33,869] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\FAT_2025_6235 (1)_p1.pdf
+[2025-07-10 15:14:33,872] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\FAT_2025_6235 (1)_p1.pdf
+[2025-07-10 15:14:33,873] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\FAT_2025_6235 (1)_p1.pdf
+[2025-07-10 15:14:33,873] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\FAT_2025_6235 (1)_p1.pdf
+[2025-07-10 15:14:34,622] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:503853780*B:505051265*C:PT*D:FT*E:N*F:20250701*G:FT FAT.2025/6235*H:JJWZ8G22-6235*I1:PT*I7:551.69*I8:126.89*N:126.89*O:678.58*Q:M+B2*R:0030
+[2025-07-10 15:14:34,623] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '503853780', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250701', 'numero_doc': 'FT FAT.2025/6235', 'hash': 'JJWZ8G22-6235', 'pais_adquirente': 'PT', 'valor_tributavel': '551.69', 'valor_iva': '126.89', 'total_iva': '126.89', 'total_doc': '678.58', 'chave_seguranca': 'M+B2', 'regime_iva': '0030'}
+[2025-07-10 15:14:34,626] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250701
+[2025-07-10 15:14:34,626] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250701
+[2025-07-10 15:14:34,626] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250701
+[2025-07-10 15:14:34,626] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-01 usando formato '%Y%m%d'
+[2025-07-10 15:38:13,904] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'aviso': Já está no primeiro fatura.
+[2025-07-10 15:38:15,171] [INFO] core.visualizador_utils: Já está no primeiro fatura.
+[2025-07-10 15:38:16,405] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 15:38:16,405] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\FAT_2025_6235 (1)_p1.pdf
+[2025-07-10 15:38:16,408] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\FAT_2025_6235 (1)_p1.pdf
+[2025-07-10 15:38:16,409] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\FAT_2025_6235 (1)_p1.pdf
+[2025-07-10 15:38:16,409] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\FAT_2025_6235 (1)_p1.pdf
+[2025-07-10 15:38:17,157] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:503853780*B:505051265*C:PT*D:FT*E:N*F:20250701*G:FT FAT.2025/6235*H:JJWZ8G22-6235*I1:PT*I7:551.69*I8:126.89*N:126.89*O:678.58*Q:M+B2*R:0030
+[2025-07-10 15:38:17,157] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '503853780', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250701', 'numero_doc': 'FT FAT.2025/6235', 'hash': 'JJWZ8G22-6235', 'pais_adquirente': 'PT', 'valor_tributavel': '551.69', 'valor_iva': '126.89', 'total_iva': '126.89', 'total_doc': '678.58', 'chave_seguranca': 'M+B2', 'regime_iva': '0030'}
+[2025-07-10 15:38:17,161] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250701
+[2025-07-10 15:38:17,161] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250701
+[2025-07-10 15:38:17,161] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250701
+[2025-07-10 15:38:17,161] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-01 usando formato '%Y%m%d'
+[2025-07-10 15:38:17,985] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 15:38:17,986] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\FAT_2025_6297_p1.pdf
+[2025-07-10 15:38:17,990] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\FAT_2025_6297_p1.pdf
+[2025-07-10 15:38:17,995] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\FAT_2025_6297_p1.pdf
+[2025-07-10 15:38:17,997] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\FAT_2025_6297_p1.pdf
+[2025-07-10 15:38:18,773] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:503853780*B:505051265*C:PT*D:FT*E:N*F:20250702*G:FT FAT.2025/6297*H:JJWZ8G22-6297*I1:PT*I7:50.25*I8:11.56*N:11.56*O:61.81*Q:fXPi*R:0030
+[2025-07-10 15:38:18,773] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '503853780', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250702', 'numero_doc': 'FT FAT.2025/6297', 'hash': 'JJWZ8G22-6297', 'pais_adquirente': 'PT', 'valor_tributavel': '50.25', 'valor_iva': '11.56', 'total_iva': '11.56', 'total_doc': '61.81', 'chave_seguranca': 'fXPi', 'regime_iva': '0030'}
+[2025-07-10 15:38:18,776] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250702
+[2025-07-10 15:38:18,777] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250702
+[2025-07-10 15:38:18,777] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250702
+[2025-07-10 15:38:18,777] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-02 usando formato '%Y%m%d'
+[2025-07-10 15:38:21,186] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 15:38:21,187] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\FAT_2025_6235 (1)_p1.pdf
+[2025-07-10 15:38:21,190] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\FAT_2025_6235 (1)_p1.pdf
+[2025-07-10 15:38:21,200] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\FAT_2025_6235 (1)_p1.pdf
+[2025-07-10 15:38:21,204] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\FAT_2025_6235 (1)_p1.pdf
+[2025-07-10 15:38:21,955] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:503853780*B:505051265*C:PT*D:FT*E:N*F:20250701*G:FT FAT.2025/6235*H:JJWZ8G22-6235*I1:PT*I7:551.69*I8:126.89*N:126.89*O:678.58*Q:M+B2*R:0030
+[2025-07-10 15:38:21,955] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '503853780', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250701', 'numero_doc': 'FT FAT.2025/6235', 'hash': 'JJWZ8G22-6235', 'pais_adquirente': 'PT', 'valor_tributavel': '551.69', 'valor_iva': '126.89', 'total_iva': '126.89', 'total_doc': '678.58', 'chave_seguranca': 'M+B2', 'regime_iva': '0030'}
+[2025-07-10 15:38:21,958] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250701
+[2025-07-10 15:38:21,959] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250701
+[2025-07-10 15:38:21,959] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250701
+[2025-07-10 15:38:21,959] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-01 usando formato '%Y%m%d'
+[2025-07-10 15:38:22,851] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 15:38:22,851] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\FAT_2025_6297_p1.pdf
+[2025-07-10 15:38:22,854] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\FAT_2025_6297_p1.pdf
+[2025-07-10 15:38:22,854] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\FAT_2025_6297_p1.pdf
+[2025-07-10 15:38:22,855] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\FAT_2025_6297_p1.pdf
+[2025-07-10 15:38:23,626] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:503853780*B:505051265*C:PT*D:FT*E:N*F:20250702*G:FT FAT.2025/6297*H:JJWZ8G22-6297*I1:PT*I7:50.25*I8:11.56*N:11.56*O:61.81*Q:fXPi*R:0030
+[2025-07-10 15:38:23,627] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '503853780', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250702', 'numero_doc': 'FT FAT.2025/6297', 'hash': 'JJWZ8G22-6297', 'pais_adquirente': 'PT', 'valor_tributavel': '50.25', 'valor_iva': '11.56', 'total_iva': '11.56', 'total_doc': '61.81', 'chave_seguranca': 'fXPi', 'regime_iva': '0030'}
+[2025-07-10 15:38:23,630] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250702
+[2025-07-10 15:38:23,630] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250702
+[2025-07-10 15:38:23,630] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250702
+[2025-07-10 15:38:23,630] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-02 usando formato '%Y%m%d'
+[2025-07-10 15:51:05,415] [DEBUG] Faturas.visualizador_faturas: Valores convertidos: Base=50.25, IVA=11.56, Total=61.81
+[2025-07-10 15:51:05,415] [DEBUG] Faturas.visualizador_faturas: Data formatada: 2025-07-02
+[2025-07-10 15:51:05,415] [INFO] Faturas.visualizador_faturas: Salvando fatura: GRECOGESTE - TRADING DE PRODUTOS E SERVIÇOS, S.A., Tipo: FT, Número: FT FAT.2025/6297, Ano: 2025, Data: 2025-07-02, Base: 50.25, IVA: 11.56, Total: 61.81, Processo: 1.2.3.176.1.2
+[2025-07-10 15:51:05,415] [INFO] core.file_utils: Mover PDF: d:\document_manager\Faturas\separados\FAT_2025_6235 (1)_p1.pdf para GRECOGESTE - TRADING DE PRODUTOS E SERVIÇOS, S.A./2025
+[2025-07-10 15:51:05,420] [INFO] core.file_utils: PDF movido para: d:\document_manager\Faturas\arquivados\2025\GRECOGESTE - TRADING DE PRODUTOS E SERVIÇOS, S.A.\FAT_2025_6235 (1)_p1.pdf
+[2025-07-10 15:51:05,420] [INFO] core.file_utils: Renomeando PDF: d:\document_manager\Faturas\arquivados\2025\GRECOGESTE - TRADING DE PRODUTOS E SERVIÇOS, S.A.\FAT_2025_6235 (1)_p1.pdf para FT FAT.2025/6297 - 2025
+[2025-07-10 15:51:05,420] [INFO] core.file_utils: PDF renomeado para: d:\document_manager\Faturas\arquivados\2025\GRECOGESTE - TRADING DE PRODUTOS E SERVIÇOS, S.A.\FT_FAT.20256297.pdf
+[2025-07-10 15:51:05,420] [INFO] core.db_helpers: Gravando fatura na base de dados...
+[2025-07-10 15:51:05,441] [INFO] core.db_helpers: ✅ Fatura gravada com sucesso.
+[2025-07-10 15:51:05,514] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': Fatura gravada e movida com sucesso.
+[2025-07-10 15:51:06,880] [INFO] Faturas.visualizador_faturas: Fatura gravada e movida com sucesso.
+[2025-07-10 15:51:06,980] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 15:51:06,980] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\FAT_2025_6297_p1.pdf
+[2025-07-10 15:51:06,990] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\FAT_2025_6297_p1.pdf
+[2025-07-10 15:51:06,990] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\FAT_2025_6297_p1.pdf
+[2025-07-10 15:51:06,990] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\FAT_2025_6297_p1.pdf
+[2025-07-10 15:51:07,668] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:503853780*B:505051265*C:PT*D:FT*E:N*F:20250702*G:FT FAT.2025/6297*H:JJWZ8G22-6297*I1:PT*I7:50.25*I8:11.56*N:11.56*O:61.81*Q:fXPi*R:0030
+[2025-07-10 15:51:07,668] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '503853780', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250702', 'numero_doc': 'FT FAT.2025/6297', 'hash': 'JJWZ8G22-6297', 'pais_adquirente': 'PT', 'valor_tributavel': '50.25', 'valor_iva': '11.56', 'total_iva': '11.56', 'total_doc': '61.81', 'chave_seguranca': 'fXPi', 'regime_iva': '0030'}
+[2025-07-10 15:51:07,670] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250702
+[2025-07-10 15:51:07,670] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250702
+[2025-07-10 15:51:07,670] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250702
+[2025-07-10 15:51:07,670] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-02 usando formato '%Y%m%d'
+[2025-07-10 15:51:37,250] [DEBUG] Faturas.visualizador_faturas: Valores convertidos: Base=50.25, IVA=11.56, Total=61.81
+[2025-07-10 15:51:37,250] [DEBUG] Faturas.visualizador_faturas: Data formatada: 2025-07-02
+[2025-07-10 15:51:37,250] [INFO] Faturas.visualizador_faturas: Salvando fatura: GRECOGESTE - TRADING DE PRODUTOS E SERVIÇOS, S.A., Tipo: FT, Número: FT FAT.2025/6297, Ano: 2025, Data: 2025-07-02, Base: 50.25, IVA: 11.56, Total: 61.81, Processo: 1.2.3.176.1.2
+[2025-07-10 15:51:37,250] [INFO] core.file_utils: Mover PDF: d:\document_manager\Faturas\separados\FAT_2025_6297_p1.pdf para GRECOGESTE - TRADING DE PRODUTOS E SERVIÇOS, S.A./2025
+[2025-07-10 15:51:37,250] [INFO] core.file_utils: PDF movido para: d:\document_manager\Faturas\arquivados\2025\GRECOGESTE - TRADING DE PRODUTOS E SERVIÇOS, S.A.\FAT_2025_6297_p1.pdf
+[2025-07-10 15:51:37,260] [INFO] core.file_utils: Renomeando PDF: d:\document_manager\Faturas\arquivados\2025\GRECOGESTE - TRADING DE PRODUTOS E SERVIÇOS, S.A.\FAT_2025_6297_p1.pdf para FT FAT.2025/6297 - 2025
+[2025-07-10 15:51:37,260] [ERROR] core.file_utils: Já existe um arquivo com o nome: d:\document_manager\Faturas\arquivados\2025\GRECOGESTE - TRADING DE PRODUTOS E SERVIÇOS, S.A.\FT_FAT.20256297.pdf
+[2025-07-10 15:51:37,260] [ERROR] Faturas.visualizador_faturas: Erro ao salvar fatura: Ficheiro duplicado Já existe: d:\document_manager\Faturas\arquivados\2025\GRECOGESTE - TRADING DE PRODUTOS E SERVIÇOS, S.A.\FT_FAT.20256297.pdf
+[2025-07-10 15:51:37,333] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'erro': Ficheiro duplicado: Já existe: d:\document_manager\Faturas\arquivados\2025\GRECOGESTE - TRADING DE PRODUTOS E SERVIÇOS, S.A.\FT_FAT.20256297.pdf
+[2025-07-10 15:51:55,220] [INFO] Faturas.visualizador_faturas: Eliminando PDF: FAT_2025_6297_p1.pdf
+[2025-07-10 15:51:55,220] [INFO] Faturas.visualizador_faturas: PDF FAT_2025_6297_p1.pdf eliminado com sucesso.
+[2025-07-10 15:51:55,288] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': PDF 'FAT_2025_6297_p1.pdf' eliminado com sucesso.
+[2025-07-10 15:51:56,485] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 15:51:56,490] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\FAT_2025_6335_p1.pdf
+[2025-07-10 15:51:56,490] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\FAT_2025_6335_p1.pdf
+[2025-07-10 15:51:56,505] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\FAT_2025_6335_p1.pdf
+[2025-07-10 15:51:56,507] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\FAT_2025_6335_p1.pdf
+[2025-07-10 15:51:57,205] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:503853780*B:505051265*C:PT*D:FT*E:N*F:20250703*G:FT FAT.2025/6335*H:JJWZ8G22-6335*I1:PT*I7:49.85*I8:11.47*N:11.47*O:61.32*Q:BjFp*R:0030
+[2025-07-10 15:51:57,205] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '503853780', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250703', 'numero_doc': 'FT FAT.2025/6335', 'hash': 'JJWZ8G22-6335', 'pais_adquirente': 'PT', 'valor_tributavel': '49.85', 'valor_iva': '11.47', 'total_iva': '11.47', 'total_doc': '61.32', 'chave_seguranca': 'BjFp', 'regime_iva': '0030'}
+[2025-07-10 15:51:57,205] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250703
+[2025-07-10 15:51:57,205] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250703
+[2025-07-10 15:51:57,205] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250703
+[2025-07-10 15:51:57,205] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-03 usando formato '%Y%m%d'
+[2025-07-10 15:51:57,210] [INFO] core.gui_utils: Item 'FAT_2025_6297_p1.pdf' eliminado com sucesso.
+[2025-07-10 15:51:57,278] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': 'FAT_2025_6297_p1.pdf' eliminado com sucesso.
+[2025-07-10 15:52:02,271] [DEBUG] core.gui_utils: Combobox atualizado com 8 valores para filtro: ''
+[2025-07-10 15:52:46,580] [DEBUG] Faturas.visualizador_faturas: Valores convertidos: Base=49.85, IVA=11.47, Total=61.32
+[2025-07-10 15:52:46,580] [DEBUG] Faturas.visualizador_faturas: Data formatada: 2025-07-03
+[2025-07-10 15:52:46,580] [INFO] Faturas.visualizador_faturas: Salvando fatura: GRECOGESTE - TRADING DE PRODUTOS E SERVIÇOS, S.A., Tipo: FT, Número: FT FAT.2025/6335, Ano: 2025, Data: 2025-07-03, Base: 49.85, IVA: 11.47, Total: 61.32, Processo: 1.2.3.176.1.2
+[2025-07-10 15:52:46,580] [INFO] core.file_utils: Mover PDF: d:\document_manager\Faturas\separados\FAT_2025_6335_p1.pdf para GRECOGESTE - TRADING DE PRODUTOS E SERVIÇOS, S.A./2025
+[2025-07-10 15:52:46,580] [INFO] core.file_utils: PDF movido para: d:\document_manager\Faturas\arquivados\2025\GRECOGESTE - TRADING DE PRODUTOS E SERVIÇOS, S.A.\FAT_2025_6335_p1.pdf
+[2025-07-10 15:52:46,580] [INFO] core.file_utils: Renomeando PDF: d:\document_manager\Faturas\arquivados\2025\GRECOGESTE - TRADING DE PRODUTOS E SERVIÇOS, S.A.\FAT_2025_6335_p1.pdf para FT FAT.2025/6335 - 2025
+[2025-07-10 15:52:46,580] [INFO] core.file_utils: PDF renomeado para: d:\document_manager\Faturas\arquivados\2025\GRECOGESTE - TRADING DE PRODUTOS E SERVIÇOS, S.A.\FT_FAT.20256335.pdf
+[2025-07-10 15:52:46,580] [INFO] core.db_helpers: Gravando fatura na base de dados...
+[2025-07-10 15:52:46,600] [INFO] core.db_helpers: ✅ Fatura gravada com sucesso.
+[2025-07-10 15:52:46,670] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': Fatura gravada e movida com sucesso.
+[2025-07-10 15:52:47,940] [INFO] Faturas.visualizador_faturas: Fatura gravada e movida com sucesso.
+[2025-07-10 15:52:48,040] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 15:52:48,040] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p1.pdf
+[2025-07-10 15:52:48,045] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p1.pdf
+[2025-07-10 15:52:48,045] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p1.pdf
+[2025-07-10 15:52:48,045] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p1.pdf
+[2025-07-10 15:52:49,095] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:501384766*B:505051265*C:PT*D:FT*E:N*F:20250630*G:FT 2025A1/2247*H:JJ3PBFVF-2247*I1:PT*I7:36.67*I8:8.43*N:8.43*O:45.10*Q:bt4H*R:0006
+[2025-07-10 15:52:49,095] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '501384766', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250630', 'numero_doc': 'FT 2025A1/2247', 'hash': 'JJ3PBFVF-2247', 'pais_adquirente': 'PT', 'valor_tributavel': '36.67', 'valor_iva': '8.43', 'total_iva': '8.43', 'total_doc': '45.10', 'chave_seguranca': 'bt4H', 'regime_iva': '0006'}
+[2025-07-10 15:52:49,100] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250630
+[2025-07-10 15:52:49,100] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250630
+[2025-07-10 15:52:49,100] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250630
+[2025-07-10 15:52:49,100] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-06-30 usando formato '%Y%m%d'
+[2025-07-10 16:09:19,030] [DEBUG] Faturas.visualizador_faturas: Valores convertidos: Base=36.67, IVA=8.43, Total=45.1
+[2025-07-10 16:09:19,030] [DEBUG] Faturas.visualizador_faturas: Data formatada: 2025-06-30
+[2025-07-10 16:09:19,030] [INFO] Faturas.visualizador_faturas: Salvando fatura: GASIDOURO REPRESENTACOES GASES INDUSTRIAIS LDA, Tipo: FT, Número: FT 2025A1/2247, Ano: 2025, Data: 2025-06-30, Base: 36.67, IVA: 8.43, Total: 45.1, Processo: 
+[2025-07-10 16:09:19,030] [INFO] core.file_utils: Mover PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p1.pdf para GASIDOURO REPRESENTACOES GASES INDUSTRIAIS LDA/2025
+[2025-07-10 16:09:19,030] [INFO] core.file_utils: PDF movido para: d:\document_manager\Faturas\arquivados\2025\GASIDOURO REPRESENTACOES GASES INDUSTRIAIS LDA\F_2025-07-10_10-55-55_p1.pdf
+[2025-07-10 16:09:19,037] [INFO] core.file_utils: Renomeando PDF: d:\document_manager\Faturas\arquivados\2025\GASIDOURO REPRESENTACOES GASES INDUSTRIAIS LDA\F_2025-07-10_10-55-55_p1.pdf para FT 2025A1/2247 - 2025
+[2025-07-10 16:09:19,037] [INFO] core.file_utils: PDF renomeado para: d:\document_manager\Faturas\arquivados\2025\GASIDOURO REPRESENTACOES GASES INDUSTRIAIS LDA\FT_2025A12247.pdf
+[2025-07-10 16:09:19,037] [INFO] core.db_helpers: Gravando fatura na base de dados...
+[2025-07-10 16:09:19,050] [INFO] core.db_helpers: ✅ Fatura gravada com sucesso.
+[2025-07-10 16:09:19,131] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': Fatura gravada e movida com sucesso.
+[2025-07-10 16:09:19,910] [INFO] Faturas.visualizador_faturas: Fatura gravada e movida com sucesso.
+[2025-07-10 16:09:20,025] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 16:09:20,025] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p2.pdf
+[2025-07-10 16:09:20,030] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p2.pdf
+[2025-07-10 16:09:20,030] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p2.pdf
+[2025-07-10 16:09:20,039] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p2.pdf
+[2025-07-10 16:09:21,230] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:501335331*B:505051265*C:PT*D:FT*E:N*F:20250630*G:FAC A25/1559*H:JJ3RGKSM-1559*I1:PT*I7:58.86*I8:13.54*N:13.54*O:72.40*Q:jOSK*R:2648
+[2025-07-10 16:09:21,230] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '501335331', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250630', 'numero_doc': 'FAC A25/1559', 'hash': 'JJ3RGKSM-1559', 'pais_adquirente': 'PT', 'valor_tributavel': '58.86', 'valor_iva': '13.54', 'total_iva': '13.54', 'total_doc': '72.40', 'chave_seguranca': 'jOSK', 'regime_iva': '2648'}
+[2025-07-10 16:09:21,230] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250630
+[2025-07-10 16:09:21,240] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250630
+[2025-07-10 16:09:21,240] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250630
+[2025-07-10 16:09:21,240] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-06-30 usando formato '%Y%m%d'
+[2025-07-10 16:29:51,489] [DEBUG] Faturas.visualizador_faturas: Valores convertidos: Base=58.86, IVA=13.54, Total=72.4
+[2025-07-10 16:29:51,490] [DEBUG] Faturas.visualizador_faturas: Data formatada: 2025-06-30
+[2025-07-10 16:29:51,490] [INFO] Faturas.visualizador_faturas: Salvando fatura: BELMIRO RIBEIRO LDA, Tipo: FT, Número: FAC A25/1559, Ano: 2025, Data: 2025-06-30, Base: 58.86, IVA: 13.54, Total: 72.4, Processo: 1.2.4.416.2
+[2025-07-10 16:29:51,490] [INFO] core.file_utils: Mover PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p2.pdf para BELMIRO RIBEIRO LDA/2025
+[2025-07-10 16:29:51,492] [INFO] core.file_utils: PDF movido para: d:\document_manager\Faturas\arquivados\2025\BELMIRO RIBEIRO LDA\F_2025-07-10_10-55-55_p2.pdf
+[2025-07-10 16:29:51,492] [INFO] core.file_utils: Renomeando PDF: d:\document_manager\Faturas\arquivados\2025\BELMIRO RIBEIRO LDA\F_2025-07-10_10-55-55_p2.pdf para FAC A25/1559 - 2025
+[2025-07-10 16:29:51,493] [INFO] core.file_utils: PDF renomeado para: d:\document_manager\Faturas\arquivados\2025\BELMIRO RIBEIRO LDA\FAC_A251559.pdf
+[2025-07-10 16:29:51,494] [INFO] core.db_helpers: Gravando fatura na base de dados...
+[2025-07-10 16:29:51,510] [INFO] core.db_helpers: ✅ Fatura gravada com sucesso.
+[2025-07-10 16:29:51,583] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': Fatura gravada e movida com sucesso.
+[2025-07-10 16:29:52,637] [INFO] Faturas.visualizador_faturas: Fatura gravada e movida com sucesso.
+[2025-07-10 16:29:52,741] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 16:29:52,742] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p3.pdf
+[2025-07-10 16:29:52,746] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p3.pdf
+[2025-07-10 16:29:52,747] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p3.pdf
+[2025-07-10 16:29:52,748] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p3.pdf
+[2025-07-10 16:29:53,729] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 16:29:53,732] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 16:30:05,340] [DEBUG] core.gui_utils: Combobox atualizado com 56 valores para filtro: 'b'
+[2025-07-10 16:30:05,587] [DEBUG] core.gui_utils: Combobox atualizado com 14 valores para filtro: 'br'
+[2025-07-10 16:30:40,729] [DEBUG] core.gui_utils: Combobox atualizado com 0 valores para filtro: '507779606 - britafiel - agregados e ornamentais s a'
+[2025-07-10 16:30:41,145] [DEBUG] core.gui_utils: Combobox atualizado com 8 valores para filtro: ''
+[2025-07-10 16:30:44,707] [DEBUG] core.gui_utils: Combobox atualizado com 8 valores para filtro: ''
+[2025-07-10 16:30:44,922] [DEBUG] core.gui_utils: Combobox atualizado com 8 valores para filtro: ''
+[2025-07-10 16:30:45,219] [DEBUG] core.gui_utils: Combobox atualizado com 8 valores para filtro: ''
+[2025-07-10 16:30:45,426] [DEBUG] core.gui_utils: Combobox atualizado com 8 valores para filtro: ''
+[2025-07-10 16:30:46,155] [DEBUG] core.gui_utils: Combobox atualizado com 8 valores para filtro: ''
+[2025-07-10 16:30:46,762] [DEBUG] core.gui_utils: Combobox atualizado com 8 valores para filtro: ''
+[2025-07-10 16:30:46,963] [DEBUG] core.gui_utils: Combobox atualizado com 8 valores para filtro: ''
+[2025-07-10 16:30:57,264] [INFO] core.db_helpers: Carregando clientes da base de dados...
+[2025-07-10 16:30:57,321] [INFO] core.db_helpers: 242 clientes carregados da base de dados.
+[2025-07-10 16:30:57,328] [INFO] core.db_helpers: 8 processos carregados da base de dados.
+[2025-07-10 16:30:57,330] [INFO] core.db_helpers: Carregando clientes da base de dados...
+[2025-07-10 16:30:57,334] [INFO] core.db_helpers: 242 clientes carregados da base de dados.
+[2025-07-10 16:30:57,340] [DEBUG] core.gui_utils: Listbox filtrado com termo ''. 8 itens exibidos.
+[2025-07-10 16:31:46,437] [DEBUG] core.gui_utils: Combobox atualizado com 238 valores para filtro: 'a'
+[2025-07-10 16:31:46,625] [DEBUG] core.gui_utils: Combobox atualizado com 4 valores para filtro: 'az'
+[2025-07-10 16:31:46,850] [DEBUG] core.gui_utils: Combobox atualizado com 1 valores para filtro: 'azu'
+[2025-07-10 16:31:47,052] [DEBUG] core.gui_utils: Combobox atualizado com 1 valores para filtro: 'azul'
+[2025-07-10 16:32:01,109] [INFO] core.db_helpers: 9 processos carregados da base de dados.
+[2025-07-10 16:32:01,110] [INFO] core.db_helpers: Carregando clientes da base de dados...
+[2025-07-10 16:32:01,125] [INFO] core.db_helpers: 242 clientes carregados da base de dados.
+[2025-07-10 16:32:01,127] [DEBUG] core.gui_utils: Listbox filtrado com termo ''. 9 itens exibidos.
+[2025-07-10 16:32:02,065] [INFO] processos: Processo '1.2.3.179' salvo com sucesso.
+[2025-07-10 16:32:02,651] [INFO] core.db_helpers: 9 processos carregados da base de dados.
+[2025-07-10 16:32:02,652] [INFO] core.db_helpers: Carregando clientes da base de dados...
+[2025-07-10 16:32:02,657] [INFO] core.db_helpers: 242 clientes carregados da base de dados.
+[2025-07-10 16:32:04,097] [DEBUG] core.gui_utils: Combobox atualizado com 2 valores para filtro: 'ca'
+[2025-07-10 16:32:04,217] [DEBUG] core.gui_utils: Combobox atualizado com 1 valores para filtro: 'cas'
+[2025-07-10 16:32:04,281] [DEBUG] core.gui_utils: Combobox atualizado com 1 valores para filtro: 'cas'
+[2025-07-10 16:32:52,529] [DEBUG] Faturas.visualizador_faturas: Valores convertidos: Base=137.94, IVA=31.73, Total=169.67
+[2025-07-10 16:32:52,530] [ERROR] Faturas.visualizador_faturas: Formato de data inválido: 2025. Deve ser YYYY-MM-DD.
+[2025-07-10 16:32:52,600] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'erro': Formato de data inválido. Use YYYY-MM-DD.
+[2025-07-10 16:33:05,130] [DEBUG] Faturas.visualizador_faturas: Valores convertidos: Base=137.94, IVA=31.73, Total=169.67
+[2025-07-10 16:33:05,130] [DEBUG] Faturas.visualizador_faturas: Data formatada: 2025-06-18
+[2025-07-10 16:33:05,130] [INFO] Faturas.visualizador_faturas: Salvando fatura: 507779606 - BRITAFIEL - AGREGADOS E ORNAMENTAIS S A, Tipo: FT, Número: FT25/01218, Ano: 2025, Data: 2025-06-18, Base: 137.94, IVA: 31.73, Total: 169.67, Processo: 1.2.3.179
+[2025-07-10 16:33:05,130] [INFO] core.file_utils: Mover PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p3.pdf para 507779606 - BRITAFIEL - AGREGADOS E ORNAMENTAIS S A/2025
+[2025-07-10 16:33:05,132] [INFO] core.file_utils: PDF movido para: d:\document_manager\Faturas\arquivados\2025\507779606 - BRITAFIEL - AGREGADOS E ORNAMENTAIS S A\F_2025-07-10_10-55-55_p3.pdf
+[2025-07-10 16:33:05,132] [INFO] core.file_utils: Renomeando PDF: d:\document_manager\Faturas\arquivados\2025\507779606 - BRITAFIEL - AGREGADOS E ORNAMENTAIS S A\F_2025-07-10_10-55-55_p3.pdf para FT25/01218 - 2025
+[2025-07-10 16:33:05,133] [INFO] core.file_utils: PDF renomeado para: d:\document_manager\Faturas\arquivados\2025\507779606 - BRITAFIEL - AGREGADOS E ORNAMENTAIS S A\FT2501218.pdf
+[2025-07-10 16:33:05,134] [INFO] core.db_helpers: Gravando fatura na base de dados...
+[2025-07-10 16:33:05,137] [INFO] core.db_helpers: ✅ Fatura gravada com sucesso.
+[2025-07-10 16:33:05,209] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': Fatura gravada e movida com sucesso.
+[2025-07-10 16:33:06,662] [INFO] Faturas.visualizador_faturas: Fatura gravada e movida com sucesso.
+[2025-07-10 16:33:06,762] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 16:33:06,762] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p4.pdf
+[2025-07-10 16:33:06,767] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p4.pdf
+[2025-07-10 16:33:06,769] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p4.pdf
+[2025-07-10 16:33:06,777] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p4.pdf
+[2025-07-10 16:33:07,842] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:501335331*B:505051265*C:PT*D:FT*E:N*F:20250627*G:FAC A25/1552*H:JJ3RGKSM-1552*I1:PT*I7:122.93*I8:28.27*N:28.27*O:151.20*Q:rP/j*R:2648
+[2025-07-10 16:33:07,843] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '501335331', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250627', 'numero_doc': 'FAC A25/1552', 'hash': 'JJ3RGKSM-1552', 'pais_adquirente': 'PT', 'valor_tributavel': '122.93', 'valor_iva': '28.27', 'total_iva': '28.27', 'total_doc': '151.20', 'chave_seguranca': 'rP/j', 'regime_iva': '2648'}
+[2025-07-10 16:33:07,846] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250627
+[2025-07-10 16:33:07,846] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250627
+[2025-07-10 16:33:07,846] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250627
+[2025-07-10 16:33:07,846] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-06-27 usando formato '%Y%m%d'
+[2025-07-10 16:33:54,003] [DEBUG] core.gui_utils: Combobox atualizado com 8 valores para filtro: 'a'
+[2025-07-10 16:33:54,434] [DEBUG] core.gui_utils: Combobox atualizado com 2 valores para filtro: 'al'
+[2025-07-10 16:33:57,073] [DEBUG] Faturas.visualizador_faturas: Valores convertidos: Base=122.93, IVA=28.27, Total=151.2
+[2025-07-10 16:33:57,073] [DEBUG] Faturas.visualizador_faturas: Data formatada: 2025-06-27
+[2025-07-10 16:33:57,073] [INFO] Faturas.visualizador_faturas: Salvando fatura: BELMIRO RIBEIRO LDA, Tipo: FT, Número: FAC A25/1552, Ano: 2025, Data: 2025-06-27, Base: 122.93, IVA: 28.27, Total: 151.2, Processo: 1.2.4.416.2
+[2025-07-10 16:33:57,074] [INFO] core.file_utils: Mover PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p4.pdf para BELMIRO RIBEIRO LDA/2025
+[2025-07-10 16:33:57,075] [INFO] core.file_utils: PDF movido para: d:\document_manager\Faturas\arquivados\2025\BELMIRO RIBEIRO LDA\F_2025-07-10_10-55-55_p4.pdf
+[2025-07-10 16:33:57,076] [INFO] core.file_utils: Renomeando PDF: d:\document_manager\Faturas\arquivados\2025\BELMIRO RIBEIRO LDA\F_2025-07-10_10-55-55_p4.pdf para FAC A25/1552 - 2025
+[2025-07-10 16:33:57,077] [INFO] core.file_utils: PDF renomeado para: d:\document_manager\Faturas\arquivados\2025\BELMIRO RIBEIRO LDA\FAC_A251552.pdf
+[2025-07-10 16:33:57,077] [INFO] core.db_helpers: Gravando fatura na base de dados...
+[2025-07-10 16:33:57,080] [INFO] core.db_helpers: ✅ Fatura gravada com sucesso.
+[2025-07-10 16:33:57,152] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': Fatura gravada e movida com sucesso.
+[2025-07-10 16:33:58,524] [INFO] Faturas.visualizador_faturas: Fatura gravada e movida com sucesso.
+[2025-07-10 16:33:58,626] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 16:33:58,627] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p5.pdf
+[2025-07-10 16:33:58,630] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p5.pdf
+[2025-07-10 16:33:58,633] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p5.pdf
+[2025-07-10 16:33:58,635] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p5.pdf
+[2025-07-10 16:33:59,756] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:505209381*B:505051265*C:PT*D:FT*E:N*F:20250702*G:FT PM01FT1/00096965*H:JFN54ZC5*I1:PT*I7:20.24*I8:4.66*N:4.66*O:24.90*Q:AwJT*R:2554
+[2025-07-10 16:33:59,756] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '505209381', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250702', 'numero_doc': 'FT PM01FT1/00096965', 'hash': 'JFN54ZC5', 'pais_adquirente': 'PT', 'valor_tributavel': '20.24', 'valor_iva': '4.66', 'total_iva': '4.66', 'total_doc': '24.90', 'chave_seguranca': 'AwJT', 'regime_iva': '2554'}
+[2025-07-10 16:33:59,759] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250702
+[2025-07-10 16:33:59,759] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250702
+[2025-07-10 16:33:59,759] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250702
+[2025-07-10 16:33:59,759] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-02 usando formato '%Y%m%d'
+[2025-07-10 16:35:54,720] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 16:35:54,720] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p5.pdf
+[2025-07-10 16:35:54,723] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p5.pdf
+[2025-07-10 16:35:54,724] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p5.pdf
+[2025-07-10 16:35:54,727] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p5.pdf
+[2025-07-10 16:35:55,795] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:505209381*B:505051265*C:PT*D:FT*E:N*F:20250702*G:FT PM01FT1/00096965*H:JFN54ZC5*I1:PT*I7:20.24*I8:4.66*N:4.66*O:24.90*Q:AwJT*R:2554
+[2025-07-10 16:35:55,795] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '505209381', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250702', 'numero_doc': 'FT PM01FT1/00096965', 'hash': 'JFN54ZC5', 'pais_adquirente': 'PT', 'valor_tributavel': '20.24', 'valor_iva': '4.66', 'total_iva': '4.66', 'total_doc': '24.90', 'chave_seguranca': 'AwJT', 'regime_iva': '2554'}
+[2025-07-10 16:35:55,798] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250702
+[2025-07-10 16:35:55,798] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250702
+[2025-07-10 16:35:55,798] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250702
+[2025-07-10 16:35:55,798] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-02 usando formato '%Y%m%d'
+[2025-07-10 16:35:55,899] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 16:35:55,899] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p6.pdf
+[2025-07-10 16:35:55,903] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p6.pdf
+[2025-07-10 16:35:55,903] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p6.pdf
+[2025-07-10 16:35:55,904] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p6.pdf
+[2025-07-10 16:35:57,059] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 16:35:57,062] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 16:35:57,610] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'aviso': Já está no primeiro fatura.
+[2025-07-10 16:35:58,965] [INFO] core.visualizador_utils: Já está no primeiro fatura.
+[2025-07-10 16:36:01,980] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 16:36:01,981] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p5.pdf
+[2025-07-10 16:36:01,984] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p5.pdf
+[2025-07-10 16:36:01,984] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p5.pdf
+[2025-07-10 16:36:01,984] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p5.pdf
+[2025-07-10 16:36:03,000] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:505209381*B:505051265*C:PT*D:FT*E:N*F:20250702*G:FT PM01FT1/00096965*H:JFN54ZC5*I1:PT*I7:20.24*I8:4.66*N:4.66*O:24.90*Q:AwJT*R:2554
+[2025-07-10 16:36:03,000] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '505209381', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250702', 'numero_doc': 'FT PM01FT1/00096965', 'hash': 'JFN54ZC5', 'pais_adquirente': 'PT', 'valor_tributavel': '20.24', 'valor_iva': '4.66', 'total_iva': '4.66', 'total_doc': '24.90', 'chave_seguranca': 'AwJT', 'regime_iva': '2554'}
+[2025-07-10 16:36:03,004] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d/%m/%Y' não corresponde: 20250702
+[2025-07-10 16:36:03,004] [DEBUG] Faturas.visualizador_faturas: Formato de data '%Y-%m-%d' não corresponde: 20250702
+[2025-07-10 16:36:03,004] [DEBUG] Faturas.visualizador_faturas: Formato de data '%d-%m-%Y' não corresponde: 20250702
+[2025-07-10 16:36:03,004] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-02 usando formato '%Y%m%d'
+[2025-07-10 16:36:09,204] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 16:36:09,206] [INFO] core.visualizador_utils: Fechando visualizador e encerrando SumatraPDF.
+[2025-07-10 16:36:40,889] [INFO] Faturas.faturas: Iniciando processamento de faturas em: d:\document_manager\Faturas
+[2025-07-10 16:36:40,890] [INFO] core.processador_base: 🔄 Iniciando processamento de PDFs da pasta de entrada...
+[2025-07-10 16:36:40,891] [WARNING] core.processador_base: ⚠️ Nenhum PDF foi processado na pasta de entrada.
+[2025-07-10 16:36:40,891] [INFO] core.db_helpers: Carregando fornecedores da base de dados...
+[2025-07-10 16:36:41,008] [INFO] core.db_helpers: 237 fornecedores carregados da base de dados.
+[2025-07-10 16:36:41,031] [INFO] core.db_helpers: 9 processos carregados da base de dados.
+[2025-07-10 16:36:41,032] [INFO] core.db_helpers: Carregando clientes da base de dados...
+[2025-07-10 16:36:41,042] [INFO] core.db_helpers: 242 clientes carregados da base de dados.
+[2025-07-10 16:36:41,043] [INFO] Faturas.visualizador_faturas: Iniciando visualizador de faturas com PDFs encontrados: ['F_2025-07-10_10-55-55_p5.pdf', 'F_2025-07-10_10-55-55_p6.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf', 'NCC_2025_10-6886 (1)_p1.pdf', 'NC_2025_598_p1.pdf']
+[2025-07-10 16:36:41,054] [DEBUG] core.gui_utils: Janela centralizada com sucesso.
+[2025-07-10 16:36:41,224] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 16:36:41,224] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p5.pdf
+[2025-07-10 16:36:41,228] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p5.pdf
+[2025-07-10 16:36:41,228] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p5.pdf
+[2025-07-10 16:36:41,229] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p5.pdf
+[2025-07-10 16:36:42,328] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:505209381*B:505051265*C:PT*D:FT*E:N*F:20250702*G:FT PM01FT1/00096965*H:JFN54ZC5*I1:PT*I7:20.24*I8:4.66*N:4.66*O:24.90*Q:AwJT*R:2554
+[2025-07-10 16:36:42,328] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '505209381', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250702', 'numero_doc': 'FT PM01FT1/00096965', 'hash': 'JFN54ZC5', 'pais_adquirente': 'PT', 'valor_tributavel': '20.24', 'valor_iva': '4.66', 'total_iva': '4.66', 'total_doc': '24.90', 'chave_seguranca': 'AwJT', 'regime_iva': '2554'}
+[2025-07-10 16:36:42,332] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-02 usando formato '%Y%m%d'
+[2025-07-10 16:36:42,332] [INFO] core.processador_base: 🟢 Visualizador iniciado com sucesso.
+[2025-07-10 16:38:11,930] [DEBUG] Faturas.visualizador_faturas: Valores convertidos: Base=20.24, IVA=4.66, Total=24.9
+[2025-07-10 16:38:11,930] [DEBUG] Faturas.visualizador_faturas: Data formatada: 2025-07-02
+[2025-07-10 16:38:11,930] [INFO] Faturas.visualizador_faturas: Salvando fatura: STATION PENAFIEL CENTRO DE MANUTENÇÃO DE VEICULOS LDA, Tipo: FT, Número: FT PM01FT1/00096965, Ano: 2025, Data: 2025-07-02, Base: 20.24, IVA: 4.66, Total: 24.9, Processo: 
+[2025-07-10 16:38:11,931] [INFO] core.file_utils: Mover PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p5.pdf para STATION PENAFIEL CENTRO DE MANUTENÇÃO DE VEICULOS LDA/2025
+[2025-07-10 16:38:11,932] [INFO] core.file_utils: PDF movido para: d:\document_manager\Faturas\arquivados\2025\STATION PENAFIEL CENTRO DE MANUTENÇÃO DE VEICULOS LDA\F_2025-07-10_10-55-55_p5.pdf
+[2025-07-10 16:38:11,932] [INFO] core.file_utils: Renomeando PDF: d:\document_manager\Faturas\arquivados\2025\STATION PENAFIEL CENTRO DE MANUTENÇÃO DE VEICULOS LDA\F_2025-07-10_10-55-55_p5.pdf para FT PM01FT1/00096965 - 2025
+[2025-07-10 16:38:11,933] [INFO] core.file_utils: PDF renomeado para: d:\document_manager\Faturas\arquivados\2025\STATION PENAFIEL CENTRO DE MANUTENÇÃO DE VEICULOS LDA\FT_PM01FT100096965.pdf
+[2025-07-10 16:38:11,934] [INFO] core.db_helpers: Gravando fatura na base de dados...
+[2025-07-10 16:38:11,948] [INFO] core.db_helpers: ✅ Fatura gravada com sucesso.
+[2025-07-10 16:38:12,034] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': Fatura gravada e movida com sucesso.
+[2025-07-10 16:38:12,980] [INFO] Faturas.visualizador_faturas: Fatura gravada e movida com sucesso.
+[2025-07-10 16:38:13,082] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 16:38:13,083] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p6.pdf
+[2025-07-10 16:38:13,087] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p6.pdf
+[2025-07-10 16:38:13,087] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p6.pdf
+[2025-07-10 16:38:13,088] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p6.pdf
+[2025-07-10 16:38:14,392] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 16:38:14,395] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 16:38:36,795] [DEBUG] core.gui_utils: Combobox atualizado com 25 valores para filtro: 'ga'
+[2025-07-10 16:38:36,890] [DEBUG] core.gui_utils: Combobox atualizado com 25 valores para filtro: 'ga'
+[2025-07-10 16:38:37,075] [DEBUG] core.gui_utils: Combobox atualizado com 3 valores para filtro: 'gas'
+[2025-07-10 16:39:10,017] [DEBUG] core.gui_utils: Combobox atualizado com 0 valores para filtro: '501384766 - gasidouro representacoes gases industriais lda'
+[2025-07-10 16:39:50,169] [DEBUG] Faturas.visualizador_faturas: Valores convertidos: Base=1.96, IVA=0.45, Total=2.41
+[2025-07-10 16:39:50,169] [DEBUG] Faturas.visualizador_faturas: Data formatada: 2025-07-03
+[2025-07-10 16:39:50,169] [INFO] Faturas.visualizador_faturas: Salvando fatura: 501384766 - GASIDOURO REPRESENTACOES GASES INDUSTRIAIS LDA, Tipo: FT, Número: 2025A1/2357, Ano: 2025, Data: 2025-07-03, Base: 1.96, IVA: 0.45, Total: 2.41, Processo: 
+[2025-07-10 16:39:50,170] [INFO] core.file_utils: Mover PDF: d:\document_manager\Faturas\separados\F_2025-07-10_10-55-55_p6.pdf para 501384766 - GASIDOURO REPRESENTACOES GASES INDUSTRIAIS LDA/2025
+[2025-07-10 16:39:50,171] [INFO] core.file_utils: PDF movido para: d:\document_manager\Faturas\arquivados\2025\501384766 - GASIDOURO REPRESENTACOES GASES INDUSTRIAIS LDA\F_2025-07-10_10-55-55_p6.pdf
+[2025-07-10 16:39:50,172] [INFO] core.file_utils: Renomeando PDF: d:\document_manager\Faturas\arquivados\2025\501384766 - GASIDOURO REPRESENTACOES GASES INDUSTRIAIS LDA\F_2025-07-10_10-55-55_p6.pdf para 2025A1/2357 - 2025
+[2025-07-10 16:39:50,173] [INFO] core.file_utils: PDF renomeado para: d:\document_manager\Faturas\arquivados\2025\501384766 - GASIDOURO REPRESENTACOES GASES INDUSTRIAIS LDA\2025A12357.pdf
+[2025-07-10 16:39:50,173] [INFO] core.db_helpers: Gravando fatura na base de dados...
+[2025-07-10 16:39:50,187] [INFO] core.db_helpers: ✅ Fatura gravada com sucesso.
+[2025-07-10 16:39:50,254] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': Fatura gravada e movida com sucesso.
+[2025-07-10 16:39:51,454] [INFO] Faturas.visualizador_faturas: Fatura gravada e movida com sucesso.
+[2025-07-10 16:39:51,557] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 16:39:51,558] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 16:39:51,562] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 16:39:51,563] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 16:39:51,565] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 16:39:52,663] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 16:39:52,663] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 16:39:52,667] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-09 usando formato '%Y%m%d'
+[2025-07-10 16:40:24,653] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 16:40:24,653] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 16:40:24,656] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 16:40:24,656] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 16:40:24,657] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 16:40:25,670] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 16:40:25,670] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 16:40:25,674] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-09 usando formato '%Y%m%d'
+[2025-07-10 16:40:27,815] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 16:40:27,816] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf
+[2025-07-10 16:40:27,819] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf
+[2025-07-10 16:40:27,820] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf
+[2025-07-10 16:40:27,821] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf
+[2025-07-10 16:40:28,802] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 16:40:28,805] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 16:40:30,150] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 16:40:30,151] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 16:40:30,154] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 16:40:30,155] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 16:40:30,156] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 16:40:31,211] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 16:40:31,211] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 16:40:31,217] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-09 usando formato '%Y%m%d'
+[2025-07-10 16:40:31,356] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 16:40:31,357] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf
+[2025-07-10 16:40:31,360] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf
+[2025-07-10 16:40:31,364] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf
+[2025-07-10 16:40:31,365] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf
+[2025-07-10 16:40:32,266] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 16:40:32,269] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 16:40:32,352] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'aviso': Já está no primeiro fatura.
+[2025-07-10 16:40:33,756] [INFO] core.visualizador_utils: Já está no primeiro fatura.
+[2025-07-10 16:40:36,664] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 16:40:36,664] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 16:40:36,666] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 16:40:36,667] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 16:40:36,668] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 16:40:37,718] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 16:40:37,719] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 16:40:37,722] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-09 usando formato '%Y%m%d'
+[2025-07-10 16:40:38,706] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 16:40:38,710] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf
+[2025-07-10 16:40:38,713] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf
+[2025-07-10 16:40:38,717] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf
+[2025-07-10 16:40:38,718] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf
+[2025-07-10 16:40:39,667] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 16:40:39,671] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 16:40:41,149] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 16:40:41,150] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 16:40:41,153] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 16:40:41,154] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 16:40:41,154] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 16:40:42,115] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 16:40:42,118] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 16:40:44,119] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 16:40:44,119] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf
+[2025-07-10 16:40:44,123] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf
+[2025-07-10 16:40:44,129] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf
+[2025-07-10 16:40:44,131] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf
+[2025-07-10 16:40:44,906] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 16:40:44,909] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 16:40:46,476] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 16:40:46,477] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\NCC_2025_10-6886 (1)_p1.pdf
+[2025-07-10 16:40:46,482] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\NCC_2025_10-6886 (1)_p1.pdf
+[2025-07-10 16:40:46,482] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\NCC_2025_10-6886 (1)_p1.pdf
+[2025-07-10 16:40:46,483] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\NCC_2025_10-6886 (1)_p1.pdf
+[2025-07-10 16:40:47,178] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:506650715*B:505051265*C:PT*D:NC*E:N*F:20250603*G:NCC 10/6886*H:JFN33B85-6886*I1:PT*I7:252.00*I8:57.96*N:57.96*O:309.96*Q:e7tW*R:2649
+[2025-07-10 16:40:47,179] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '506650715', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'NC', 'tem_iva': 'N', 'data_doc': '20250603', 'numero_doc': 'NCC 10/6886', 'hash': 'JFN33B85-6886', 'pais_adquirente': 'PT', 'valor_tributavel': '252.00', 'valor_iva': '57.96', 'total_iva': '57.96', 'total_doc': '309.96', 'chave_seguranca': 'e7tW', 'regime_iva': '2649'}
+[2025-07-10 16:40:47,182] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-06-03 usando formato '%Y%m%d'
+[2025-07-10 16:40:47,848] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 16:40:47,848] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\NC_2025_598_p1.pdf
+[2025-07-10 16:40:47,852] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\NC_2025_598_p1.pdf
+[2025-07-10 16:40:47,853] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\NC_2025_598_p1.pdf
+[2025-07-10 16:40:47,854] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\NC_2025_598_p1.pdf
+[2025-07-10 16:40:48,574] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:503853780*B:505051265*C:PT*D:NC*E:N*F:20250707*G:NC NC.2025/598*H:JJW28GVG-598*I1:PT*I7:16.88*I8:3.88*N:3.88*O:20.76*Q:SjV5*R:0030
+[2025-07-10 16:40:48,574] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '503853780', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'NC', 'tem_iva': 'N', 'data_doc': '20250707', 'numero_doc': 'NC NC.2025/598', 'hash': 'JJW28GVG-598', 'pais_adquirente': 'PT', 'valor_tributavel': '16.88', 'valor_iva': '3.88', 'total_iva': '3.88', 'total_doc': '20.76', 'chave_seguranca': 'SjV5', 'regime_iva': '0030'}
+[2025-07-10 16:40:48,577] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-07-07 usando formato '%Y%m%d'
+[2025-07-10 16:40:48,872] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 16:40:48,872] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\NCC_2025_10-6886 (1)_p1.pdf
+[2025-07-10 16:40:48,875] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\NCC_2025_10-6886 (1)_p1.pdf
+[2025-07-10 16:40:48,875] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\NCC_2025_10-6886 (1)_p1.pdf
+[2025-07-10 16:40:48,876] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\NCC_2025_10-6886 (1)_p1.pdf
+[2025-07-10 16:40:49,539] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:506650715*B:505051265*C:PT*D:NC*E:N*F:20250603*G:NCC 10/6886*H:JFN33B85-6886*I1:PT*I7:252.00*I8:57.96*N:57.96*O:309.96*Q:e7tW*R:2649
+[2025-07-10 16:40:49,539] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '506650715', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'NC', 'tem_iva': 'N', 'data_doc': '20250603', 'numero_doc': 'NCC 10/6886', 'hash': 'JFN33B85-6886', 'pais_adquirente': 'PT', 'valor_tributavel': '252.00', 'valor_iva': '57.96', 'total_iva': '57.96', 'total_doc': '309.96', 'chave_seguranca': 'e7tW', 'regime_iva': '2649'}
+[2025-07-10 16:40:49,542] [DEBUG] Faturas.visualizador_faturas: Data formatada com sucesso: 2025-06-03 usando formato '%Y%m%d'
+[2025-07-10 16:40:50,237] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 16:40:50,237] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf
+[2025-07-10 16:40:50,240] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf
+[2025-07-10 16:40:50,240] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf
+[2025-07-10 16:40:50,241] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf
+[2025-07-10 16:40:51,033] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 16:40:51,036] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 16:40:51,366] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 16:40:51,366] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 16:40:51,368] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 16:40:51,369] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 16:40:51,369] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 16:40:52,305] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 16:40:52,309] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 16:40:52,418] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 16:40:52,419] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf
+[2025-07-10 16:40:52,422] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf
+[2025-07-10 16:40:52,422] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf
+[2025-07-10 16:40:52,423] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf
+[2025-07-10 16:40:53,291] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 16:40:53,294] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.

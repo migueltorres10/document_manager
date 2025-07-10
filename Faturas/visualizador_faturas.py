@@ -12,8 +12,6 @@ from core.gui_utils import (
 )
 from core.pdf_utils import (
     listar_pdfs,
-    abrir_pdf_externo,
-    fechar_sumatra
 )
 from core.db_helpers import (
     obter_fornecedores,
@@ -210,12 +208,15 @@ class VisualizadorFaturas:
             mostrar_mensagem("erro", "Base, IVA e Total devem ser números válidos.")
             return
 
-        if not all([fornecedor_nome, tipodoc, ano, numero, data, base, iva, total]):
+        if not all([fornecedor_nome, tipodoc, ano, numero, data, total]):
             logger.warning("Campos obrigatórios não preenchidos.")
             mostrar_mensagem("aviso", "Preencha todos os campos obrigatórios.")
             return
 
-        fornecedor_nif = next((nif for nif, nome in self.fornecedores.items() if nome == fornecedor_nome), None)
+        if " - " in fornecedor_nome:
+            fornecedor_nif = fornecedor_nome.split(" - ")[0]
+        else:
+            fornecedor_nif = next((nif for nif, nome in self.fornecedores.items() if nome == fornecedor_nome), None)
         if not fornecedor_nif:
             logger.error(f"Fornecedor '{fornecedor_nome}' não encontrado na base de dados.")
             mostrar_mensagem("erro", "Fornecedor não encontrado na base de dados.")
@@ -290,7 +291,6 @@ class VisualizadorFaturas:
 
             del self.pdfs[self.index_atual]
             logger.info(f"PDF {nome_pdf} eliminado com sucesso.")
-            mostrar_mensagem("info", f"PDF '{nome_pdf}' eliminado com sucesso.")
             if self.pdfs:
                 if self.index_atual >= len(self.pdfs):
                     self.index_atual = len(self.pdfs) - 1
@@ -329,7 +329,7 @@ class VisualizadorFaturas:
         data_qr = dados_qr.get("data_doc", "").strip()
 
         data_formatada = None
-        for formato in ("%d/%m/%Y", "%Y-%m-%d", "%d-%m-%Y", "%Y%m%d"):
+        for formato in ("%Y%m%d","%d/%m/%Y", "%Y-%m-%d", "%d-%m-%Y"):
             try:
                 data_formatada = datetime.datetime.strptime(data_qr, formato).date()
                 logger.debug(f"Data formatada com sucesso: {data_formatada} usando formato '{formato}'")
