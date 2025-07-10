@@ -1,7 +1,9 @@
 import os
 import tkinter as tk
 from tkinter import ttk
+from tkinter import filedialog, simpledialog
 import datetime
+import fitz
 from core.logger import configurar_logger
 logger = configurar_logger(__name__)
 from core.gui_utils import (
@@ -12,6 +14,7 @@ from core.gui_utils import (
 )
 from core.pdf_utils import (
     listar_pdfs,
+    juntar_pdfs_em_posicao
 )
 from core.db_helpers import (
     obter_fornecedores,
@@ -109,11 +112,12 @@ class VisualizadorFaturas:
     def _criar_navegacao(self):
         """
         Cria os botões de navegação para percorrer as faturas.
-        Adiciona botões para abrir o PDF atual, navegar para a fatura anterior e próxima,
+        Adiciona botões para abrir o PDF atual, juntar a outro PDF, navegar para a fatura anterior e próxima,
         e abrir o gestor de processos.
         """
         frame = tk.Frame(self.root)
         frame.pack(pady=10)
+        tk.Button(frame, text="➕ Juntar a outro PDF", width=25, command=self.juntar_pdf).pack(pady=3)
         tk.Button(frame, text="◀ Anterior", width=12, command=self.mostrar_anterior).pack(side="left", padx=5)
         tk.Button(frame, text="Próximo ▶", width=12, command=self.mostrar_proximo).pack(side="left", padx=5)
         tk.Button(self.root, text="📎 Gerir Processos", command=self.abrir_gestor_processos).pack(pady=5)
@@ -163,10 +167,20 @@ class VisualizadorFaturas:
         abrir_pdf_atual(self.pdfs, self.index_atual, self.pasta_pdf, self.preencher_dados_qr)
 
     def mostrar_anterior(self):
-        self.index_atual = mostrar_anterior(self.pdfs, self.index_atual, self.abrir_pdf_atual, doc_nome="fatura")
+        self.index_atual = mostrar_anterior(
+            len(self.pdfs),
+            self.index_atual,
+            doc_nome="fatura"
+        )
+        self.abrir_pdf_atual()
 
     def mostrar_proximo(self):
-        self.index_atual = mostrar_proximo(self.pdfs, self.index_atual, self.abrir_pdf_atual, doc_nome="fatura")
+        self.index_atual = mostrar_proximo(
+            len(self.pdfs),
+            self.index_atual,
+            doc_nome="fatura"
+        )
+        self.abrir_pdf_atual()
 
     def terminar(self):
         terminar(self.root)        
@@ -253,6 +267,7 @@ class VisualizadorFaturas:
                 processo=processo,
                 caminho_pdf=final
             )
+            logger.info(f"NIF: {fornecedor_nif}, numero: {numero} e total: {total}")
 
             mostrar_mensagem("info", "Fatura gravada e movida com sucesso.")
             logger.info("Fatura gravada e movida com sucesso.")
@@ -340,3 +355,49 @@ class VisualizadorFaturas:
         self.entry_base.insert(0, dados_qr.get("valor_tributavel", ""))
         self.entry_iva.insert(0, dados_qr.get("total_iva", ""))
         self.entry_total.insert(0, dados_qr.get("total_doc", ""))
+
+    def juntar_pdf(self):
+        if not self.pdfs:
+            mostrar_mensagem("aviso", "Nenhum PDF disponível para juntar.")
+            return
+
+        atual = os.path.join(self.pasta_pdf, self.pdfs[self.index_atual])
+
+        destino = filedialog.askopenfilename(
+            title="Selecionar PDF já arquivado",
+            filetypes=[("Ficheiros PDF", "*.pdf")]
+        )
+        if not destino:
+            return
+
+        try:
+            total_paginas = len(fitz.open(destino))
+            pagina_escolhida = simpledialog.askinteger(
+                "Escolher Página",
+                f"O PDF de destino tem {total_paginas} páginas.\n\n"
+                "Em que página queres inserir o novo PDF?\n(0 = início, vazio = fim)",
+                minvalue=0,
+                maxvalue=total_paginas
+            )
+
+            # Se o utilizador deixar em branco, assume fim
+            pagina_escolhida = pagina_escolhida if pagina_escolhida is not None else -1
+
+            caminho_final = juntar_pdfs_em_posicao(
+                pdf_base=destino,
+                pdf_a_adicionar=atual,
+                pagina_destino=pagina_escolhida
+            )
+
+            mostrar_mensagem("info", f"PDFs unidos com sucesso:\n{caminho_final}")
+            logger.info(f"PDF '{atual}' inserido em '{destino}' na página {pagina_escolhida}")
+
+            del self.pdfs[self.index_atual]
+            if self.pdfs:
+                self.abrir_pdf_atual()
+            else:
+                self.root.destroy()
+
+        except Exception as e:
+            logger.exception("Erro ao juntar PDFs")
+            mostrar_mensagem("erro", f"Erro ao juntar PDFs:\n{e}")

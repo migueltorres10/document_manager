@@ -10,70 +10,68 @@ logger = configurar_logger(__name__)
 def abrir_pdf_atual(pdfs, index_atual, pasta_pdf, preencher_callback):
     """
     Abre o PDF atual na lista de PDFs.
-    Args:
-        pdfs (list): Lista de nomes de arquivos PDF.
-        index_atual (int): Índice do PDF atual na lista.
-        pasta_pdf (str): Caminho da pasta onde os PDFs estão localizados.
-        preencher_callback (function): Função a ser chamada após abrir o PDF.
-    Returns:
-        None
     """
     if not pdfs:
+        logger.warning("Lista de PDFs vazia — nada para abrir.")
         return
+
+    if not (0 <= index_atual < len(pdfs)):
+        logger.error(f"Índice fora do intervalo: {index_atual} (máximo: {len(pdfs) - 1})")
+        return
+
     fechar_sumatra()
     caminho_pdf = os.path.join(pasta_pdf, pdfs[index_atual])
-    logger.info(f"Abrindo PDF: {caminho_pdf}")
-    abrir_pdf_externo(caminho_pdf)
-    preencher_callback(caminho_pdf)
+    logger.info(f"Abrindo PDF no índice {index_atual}: {caminho_pdf}")
+
+    try:
+        abrir_pdf_externo(caminho_pdf)
+        preencher_callback(caminho_pdf)
+    except Exception as e:
+        logger.exception(f"Erro ao abrir e preencher PDF '{caminho_pdf}': {e}")
+
 
 def abrir_pdf_atual_com_rotacao(pdfs, index, pasta_pdf, preencher_callback):
     if not pdfs:
+        logger.warning("Lista de PDFs vazia — nada para abrir com rotação.")
         return
+
+    if not (0 <= index < len(pdfs)):
+        logger.error(f"Índice fora do intervalo: {index} (máximo: {len(pdfs) - 1})")
+        return
+
     fechar_sumatra()
     caminho_pdf = os.path.join(pasta_pdf, pdfs[index])
+    logger.info(f"Abrindo PDF com rotação no índice {index}: {caminho_pdf}")
+
     try:
         rodar_pdf_90graus(caminho_pdf)
+        abrir_pdf_externo(caminho_pdf)
+        preencher_callback(caminho_pdf)
     except Exception as e:
+        logger.exception(f"Erro ao rodar e abrir PDF '{caminho_pdf}': {e}")
         mostrar_mensagem("erro", f"Erro ao rodar PDF: {e}")
-        return
-    abrir_pdf_externo(caminho_pdf)
-    preencher_callback(caminho_pdf)
 
 
-def mostrar_anterior(pdfs, index_atual, callback, doc_nome="documento"):
+def mostrar_anterior(lista_len, index_atual, doc_nome="documento"):
     """
-    Mostra o PDF anterior na lista de PDFs.
-    Args:
-        pdfs (list): Lista de nomes de arquivos PDF.
-        index_atual (int): Índice do PDF atual na lista.
-        callback (function): Função a ser chamada após mudar o índice.
-        doc_nome (str): Nome do documento para mensagens.
-    Returns:
-        int: Novo índice atual após a mudança.
+    Retorna o índice anterior se possível, senão mantém e mostra aviso.
     """
     if index_atual > 0:
         index_atual -= 1
-        callback()
+        logger.info(f"← Navegar para o anterior ({doc_nome}): {index_atual}")
     else:
         mostrar_mensagem("aviso", f"Já está no primeiro {doc_nome}.")
         logger.info(f"Já está no primeiro {doc_nome}.")
     return index_atual
 
 
-def mostrar_proximo(pdfs, index_atual, callback, doc_nome="documento"):
+def mostrar_proximo(lista_len, index_atual, doc_nome="documento"):
     """
-    Mostra o próximo PDF na lista de PDFs.
-    Args:
-        pdfs (list): Lista de nomes de arquivos PDF.
-        index_atual (int): Índice do PDF atual na lista.
-        callback (function): Função a ser chamada após mudar o índice.
-        doc_nome (str): Nome do documento para mensagens.
-    Returns:
-        int: Novo índice atual após a mudança.
+    Retorna o índice seguinte se possível, senão mantém e mostra aviso.
     """
-    if index_atual < len(pdfs) - 1:
+    if index_atual < lista_len - 1:
         index_atual += 1
-        callback()
+        logger.info(f"→ Navegar para o próximo ({doc_nome}): {index_atual}")
     else:
         mostrar_mensagem("aviso", f"Já está no último {doc_nome}.")
         logger.info(f"Já está no último {doc_nome}.")

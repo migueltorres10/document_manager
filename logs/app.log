@@ -879,3 +879,734 @@
 [2025-07-10 16:40:52,423] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf
 [2025-07-10 16:40:53,291] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
 [2025-07-10 16:40:53,294] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 17:01:42,450] [INFO] Faturas.faturas: Iniciando processamento de faturas em: d:\document_manager\Faturas
+[2025-07-10 17:01:42,450] [INFO] core.processador_base: 🔄 Iniciando processamento de PDFs da pasta de entrada...
+[2025-07-10 17:01:42,452] [WARNING] core.processador_base: ⚠️ Nenhum PDF foi processado na pasta de entrada.
+[2025-07-10 17:01:42,452] [INFO] core.db_helpers: Carregando fornecedores da base de dados...
+[2025-07-10 17:01:42,506] [INFO] core.db_helpers: 237 fornecedores carregados da base de dados.
+[2025-07-10 17:01:42,528] [INFO] core.db_helpers: 9 processos carregados da base de dados.
+[2025-07-10 17:01:42,529] [INFO] core.db_helpers: Carregando clientes da base de dados...
+[2025-07-10 17:01:42,539] [INFO] core.db_helpers: 242 clientes carregados da base de dados.
+[2025-07-10 17:01:42,540] [INFO] Faturas.visualizador_faturas: Iniciando visualizador de faturas com PDFs encontrados: ['inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf', 'NCC_2025_10-6886 (1)_p1.pdf', 'NC_2025_598_p1.pdf']
+[2025-07-10 17:01:42,554] [DEBUG] core.gui_utils: Janela centralizada com sucesso.
+[2025-07-10 17:01:42,564] [ERROR] core.processador_base: ❌ Erro ao iniciar o visualizador: cannot access local variable 'frame' where it is not associated with a value
+Traceback (most recent call last):
+  File "d:\document_manager\core\processador_base.py", line 42, in processar_documentos
+    nome_visualizador_cls(pasta_pdf=pasta_separados, base_dir=base_dir)
+  File "d:\document_manager\Faturas\visualizador_faturas.py", line 66, in __init__
+    self._inicializar_interface()
+  File "d:\document_manager\Faturas\visualizador_faturas.py", line 93, in _inicializar_interface
+    self._criar_navegacao()
+  File "d:\document_manager\Faturas\visualizador_faturas.py", line 117, in _criar_navegacao
+    tk.Button(frame, text="➕ Juntar a outro PDF", width=25, command=self.juntar_pdf).pack(pady=3)
+              ^^^^^
+UnboundLocalError: cannot access local variable 'frame' where it is not associated with a value
+[2025-07-10 17:03:39,042] [INFO] Faturas.faturas: Iniciando processamento de faturas em: d:\document_manager\Faturas
+[2025-07-10 17:03:39,043] [INFO] core.processador_base: 🔄 Iniciando processamento de PDFs da pasta de entrada...
+[2025-07-10 17:03:39,044] [WARNING] core.processador_base: ⚠️ Nenhum PDF foi processado na pasta de entrada.
+[2025-07-10 17:03:39,044] [INFO] core.db_helpers: Carregando fornecedores da base de dados...
+[2025-07-10 17:03:39,099] [INFO] core.db_helpers: 237 fornecedores carregados da base de dados.
+[2025-07-10 17:03:39,119] [INFO] core.db_helpers: 9 processos carregados da base de dados.
+[2025-07-10 17:03:39,120] [INFO] core.db_helpers: Carregando clientes da base de dados...
+[2025-07-10 17:03:39,131] [INFO] core.db_helpers: 242 clientes carregados da base de dados.
+[2025-07-10 17:03:39,132] [INFO] Faturas.visualizador_faturas: Iniciando visualizador de faturas com PDFs encontrados: ['inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf', 'NCC_2025_10-6886 (1)_p1.pdf', 'NC_2025_598_p1.pdf']
+[2025-07-10 17:03:39,146] [DEBUG] core.gui_utils: Janela centralizada com sucesso.
+[2025-07-10 17:03:39,334] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 17:03:39,334] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:03:39,337] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:03:39,339] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:03:39,341] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:03:40,464] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 17:03:40,464] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 17:03:40,469] [INFO] core.processador_base: 🟢 Visualizador iniciado com sucesso.
+[2025-07-10 17:08:29,423] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'aviso': Já está no primeiro fatura.
+[2025-07-10 17:08:30,415] [INFO] core.visualizador_utils: Já está no primeiro fatura.
+[2025-07-10 17:08:31,522] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 17:08:31,523] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:08:31,525] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:08:31,528] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:08:31,530] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:08:32,617] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 17:08:32,617] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 17:08:32,726] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 17:08:32,726] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf
+[2025-07-10 17:08:32,730] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf
+[2025-07-10 17:08:32,731] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf
+[2025-07-10 17:08:32,734] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf
+[2025-07-10 17:08:33,704] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 17:08:33,708] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 17:08:34,973] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'aviso': Já está no primeiro fatura.
+[2025-07-10 17:08:36,140] [INFO] core.visualizador_utils: Já está no primeiro fatura.
+[2025-07-10 17:08:37,203] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 17:08:37,204] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:08:37,207] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:08:37,208] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:08:37,212] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:08:38,268] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 17:08:38,268] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 17:11:40,649] [DEBUG] Faturas.visualizador_faturas: Valores convertidos: Base=52.16, IVA=5.47, Total=57.63
+[2025-07-10 17:11:40,650] [DEBUG] Faturas.visualizador_faturas: Data formatada: 2025-07-09
+[2025-07-10 17:11:40,650] [INFO] Faturas.visualizador_faturas: Salvando fatura: AUDAX RENOVABLES S A - SUCURSAL EM PORTUGAL, Tipo: FT, Número: FL FL25/2500081984, Ano: 2025, Data: 2025-07-09, Base: 52.16, IVA: 5.47, Total: 57.63, Processo: 
+[2025-07-10 17:11:40,651] [INFO] core.file_utils: Mover PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf para AUDAX RENOVABLES S A - SUCURSAL EM PORTUGAL/2025
+[2025-07-10 17:11:40,652] [INFO] core.file_utils: PDF movido para: d:\document_manager\Faturas\arquivados\2025\AUDAX RENOVABLES S A - SUCURSAL EM PORTUGAL\inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf
+[2025-07-10 17:11:40,653] [INFO] core.file_utils: Renomeando PDF: d:\document_manager\Faturas\arquivados\2025\AUDAX RENOVABLES S A - SUCURSAL EM PORTUGAL\inv0003385800_ADX_ECOFACTURA_NXO_p2.pdf para FL FL25/2500081984 - 2025
+[2025-07-10 17:11:40,654] [INFO] core.file_utils: PDF renomeado para: d:\document_manager\Faturas\arquivados\2025\AUDAX RENOVABLES S A - SUCURSAL EM PORTUGAL\FL_FL252500081984.pdf
+[2025-07-10 17:11:40,654] [INFO] core.db_helpers: Gravando fatura na base de dados...
+[2025-07-10 17:11:40,681] [ERROR] core.db_helpers: ❌ Erro ao gravar fatura: ('22001', '[22001] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]String or binary data would be truncated. (8152) (SQLExecDirectW); [22001] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement has been terminated. (3621)')
+Traceback (most recent call last):
+  File "d:\document_manager\core\db_helpers.py", line 152, in gravar_fatura_bd
+    cursor.execute("""
+pyodbc.DataError: ('22001', '[22001] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]String or binary data would be truncated. (8152) (SQLExecDirectW); [22001] [Microsoft][ODBC Driver 17 for SQL Server][SQL Server]The statement has been terminated. (3621)')
+[2025-07-10 17:11:40,751] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'info': Fatura gravada e movida com sucesso.
+[2025-07-10 17:11:43,013] [INFO] Faturas.visualizador_faturas: Fatura gravada e movida com sucesso.
+[2025-07-10 17:11:43,119] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 17:11:43,120] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:11:43,124] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:11:43,124] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:11:43,130] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:11:44,128] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 17:11:44,132] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 17:13:05,270] [ERROR] Faturas.visualizador_faturas: Erro ao juntar PDFs
+Traceback (most recent call last):
+  File "d:\document_manager\core\pdf_utils.py", line 134, in juntar_pdfs_em_posicao
+    doc_base.save(destino)
+  File "C:\Python312\Lib\site-packages\pymupdf\__init__.py", line 5409, in save
+    raise ValueError("save to original must be incremental")
+ValueError: save to original must be incremental
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\document_manager\Faturas\visualizador_faturas.py", line 371, in juntar_pdf
+    caminho_final = juntar_pdfs_em_posicao(
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\document_manager\core\pdf_utils.py", line 147, in juntar_pdfs_em_posicao
+    raise RuntimeError(f"Erro ao juntar PDFs: {e}")
+RuntimeError: Erro ao juntar PDFs: save to original must be incremental
+[2025-07-10 17:13:05,350] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'erro': Erro ao juntar PDFs:
+Erro ao juntar PDFs: save to original must be incremental
+[2025-07-10 17:13:45,332] [ERROR] Faturas.visualizador_faturas: Erro ao juntar PDFs
+Traceback (most recent call last):
+  File "d:\document_manager\core\pdf_utils.py", line 134, in juntar_pdfs_em_posicao
+    doc_base.save(destino)
+  File "C:\Python312\Lib\site-packages\pymupdf\__init__.py", line 5409, in save
+    raise ValueError("save to original must be incremental")
+ValueError: save to original must be incremental
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "d:\document_manager\Faturas\visualizador_faturas.py", line 371, in juntar_pdf
+    caminho_final = juntar_pdfs_em_posicao(
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\document_manager\core\pdf_utils.py", line 147, in juntar_pdfs_em_posicao
+    raise RuntimeError(f"Erro ao juntar PDFs: {e}")
+RuntimeError: Erro ao juntar PDFs: save to original must be incremental
+[2025-07-10 17:13:45,405] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'erro': Erro ao juntar PDFs:
+Erro ao juntar PDFs: save to original must be incremental
+[2025-07-10 17:41:04,874] [INFO] Faturas.faturas: Iniciando processamento de faturas em: d:\document_manager\Faturas
+[2025-07-10 17:41:04,875] [INFO] core.processador_base: 🔄 Iniciando processamento de PDFs da pasta de entrada...
+[2025-07-10 17:41:04,876] [WARNING] core.processador_base: ⚠️ Nenhum PDF foi processado na pasta de entrada.
+[2025-07-10 17:41:04,877] [INFO] core.db_helpers: Carregando fornecedores da base de dados...
+[2025-07-10 17:41:04,932] [INFO] core.db_helpers: 237 fornecedores carregados da base de dados.
+[2025-07-10 17:41:04,954] [INFO] core.db_helpers: 9 processos carregados da base de dados.
+[2025-07-10 17:41:04,955] [INFO] core.db_helpers: Carregando clientes da base de dados...
+[2025-07-10 17:41:04,968] [INFO] core.db_helpers: 242 clientes carregados da base de dados.
+[2025-07-10 17:41:04,969] [INFO] Faturas.visualizador_faturas: Iniciando visualizador de faturas com PDFs encontrados: ['inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf', 'NCC_2025_10-6886 (1)_p1.pdf', 'NC_2025_598_p1.pdf']
+[2025-07-10 17:41:04,981] [DEBUG] core.gui_utils: Janela centralizada com sucesso.
+[2025-07-10 17:41:05,171] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 17:41:05,172] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:41:05,175] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:41:05,176] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:41:05,176] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:41:06,267] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 17:41:06,268] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 17:41:06,271] [INFO] core.processador_base: 🟢 Visualizador iniciado com sucesso.
+[2025-07-10 17:44:00,938] [INFO] Faturas.faturas: Iniciando processamento de faturas em: d:\document_manager\Faturas
+[2025-07-10 17:44:00,939] [INFO] core.processador_base: 🔄 Iniciando processamento de PDFs da pasta de entrada...
+[2025-07-10 17:44:00,940] [WARNING] core.processador_base: ⚠️ Nenhum PDF foi processado na pasta de entrada.
+[2025-07-10 17:44:00,941] [INFO] core.db_helpers: Carregando fornecedores da base de dados...
+[2025-07-10 17:44:00,994] [INFO] core.db_helpers: 237 fornecedores carregados da base de dados.
+[2025-07-10 17:44:01,014] [INFO] core.db_helpers: 9 processos carregados da base de dados.
+[2025-07-10 17:44:01,015] [INFO] core.db_helpers: Carregando clientes da base de dados...
+[2025-07-10 17:44:01,026] [INFO] core.db_helpers: 242 clientes carregados da base de dados.
+[2025-07-10 17:44:01,028] [INFO] Faturas.visualizador_faturas: Iniciando visualizador de faturas com PDFs encontrados: ['inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf', 'NCC_2025_10-6886 (1)_p1.pdf', 'NC_2025_598_p1.pdf']
+[2025-07-10 17:44:01,042] [DEBUG] core.gui_utils: Janela centralizada com sucesso.
+[2025-07-10 17:44:01,234] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 17:44:01,235] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:44:01,238] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:44:01,239] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:44:01,239] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:44:02,332] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 17:44:02,332] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 17:44:02,336] [INFO] core.processador_base: 🟢 Visualizador iniciado com sucesso.
+[2025-07-10 17:44:12,197] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 17:44:12,197] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:44:12,200] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:44:12,201] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:44:12,202] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:44:13,235] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 17:44:13,235] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 17:44:14,411] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 17:44:14,412] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:44:14,416] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:44:14,417] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:44:14,417] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:44:15,371] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 17:44:15,375] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 17:44:16,716] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 17:44:16,717] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:44:16,720] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:44:16,720] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:44:16,721] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:44:17,748] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 17:44:17,749] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 17:44:29,651] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 17:44:29,652] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:44:29,655] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:44:29,657] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:44:29,665] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:44:30,629] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 17:44:30,633] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 17:44:30,738] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'aviso': Já está no primeiro fatura.
+[2025-07-10 17:44:32,151] [INFO] core.visualizador_utils: Já está no primeiro fatura.
+[2025-07-10 17:44:34,740] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 17:44:34,742] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:44:34,745] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:44:34,746] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:44:34,747] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:44:35,789] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 17:44:35,790] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 17:44:43,314] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 17:44:43,315] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:44:43,318] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:44:43,320] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:44:43,333] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:44:44,313] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 17:44:44,316] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 17:44:44,426] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 17:44:44,426] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf
+[2025-07-10 17:44:44,430] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf
+[2025-07-10 17:44:44,431] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf
+[2025-07-10 17:44:44,431] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf
+[2025-07-10 17:44:45,214] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 17:44:45,217] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 17:44:45,337] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 17:44:45,338] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:44:45,340] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:44:45,341] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:44:45,341] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:44:46,274] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 17:44:46,278] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 17:44:46,368] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'aviso': Já está no primeiro fatura.
+[2025-07-10 17:44:47,510] [INFO] core.visualizador_utils: Já está no primeiro fatura.
+[2025-07-10 17:44:48,379] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 17:44:48,380] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:44:48,382] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:44:48,383] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:44:48,384] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:44:49,412] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 17:44:49,412] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 17:44:54,539] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 17:44:54,540] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:44:54,543] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:44:54,544] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:44:54,545] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:44:55,478] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 17:44:55,481] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 17:45:01,853] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 17:45:01,854] [INFO] core.visualizador_utils: Fechando visualizador e encerrando SumatraPDF.
+[2025-07-10 17:46:07,002] [INFO] Faturas.faturas: Iniciando processamento de faturas em: d:\document_manager\Faturas
+[2025-07-10 17:46:07,003] [INFO] core.processador_base: 🔄 Iniciando processamento de PDFs da pasta de entrada...
+[2025-07-10 17:46:07,004] [WARNING] core.processador_base: ⚠️ Nenhum PDF foi processado na pasta de entrada.
+[2025-07-10 17:46:07,004] [INFO] core.db_helpers: Carregando fornecedores da base de dados...
+[2025-07-10 17:46:07,057] [INFO] core.db_helpers: 237 fornecedores carregados da base de dados.
+[2025-07-10 17:46:07,076] [INFO] core.db_helpers: 9 processos carregados da base de dados.
+[2025-07-10 17:46:07,077] [INFO] core.db_helpers: Carregando clientes da base de dados...
+[2025-07-10 17:46:07,089] [INFO] core.db_helpers: 242 clientes carregados da base de dados.
+[2025-07-10 17:46:07,089] [INFO] Faturas.visualizador_faturas: Iniciando visualizador de faturas com PDFs encontrados: ['inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf', 'NCC_2025_10-6886 (1)_p1.pdf', 'NC_2025_598_p1.pdf']
+[2025-07-10 17:46:07,100] [DEBUG] core.gui_utils: Janela centralizada com sucesso.
+[2025-07-10 17:46:07,283] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 17:46:07,283] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:46:07,287] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:46:07,287] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:46:07,288] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:46:08,352] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 17:46:08,352] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 17:46:08,356] [INFO] core.processador_base: 🟢 Visualizador iniciado com sucesso.
+[2025-07-10 17:46:12,511] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'aviso': Já está no primeiro fatura.
+[2025-07-10 17:46:13,638] [INFO] core.visualizador_utils: Já está no primeiro fatura.
+[2025-07-10 17:46:14,799] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'aviso': Já está no primeiro fatura.
+[2025-07-10 17:46:15,573] [INFO] core.visualizador_utils: Já está no primeiro fatura.
+[2025-07-10 17:46:16,368] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 17:46:16,368] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:46:16,371] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:46:16,372] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:46:16,374] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 17:46:17,420] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 17:46:17,420] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 17:46:20,383] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 17:46:20,384] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:46:20,387] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:46:20,388] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:46:20,392] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 17:46:21,329] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 17:46:21,332] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 17:46:21,829] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'aviso': Já está no primeiro fatura.
+[2025-07-10 17:46:23,046] [INFO] core.visualizador_utils: Já está no primeiro fatura.
+[2025-07-10 18:12:28,146] [INFO] Faturas.faturas: Iniciando processamento de faturas em: d:\document_manager\Faturas
+[2025-07-10 18:12:28,146] [INFO] core.processador_base: 🔄 Iniciando processamento de PDFs da pasta de entrada...
+[2025-07-10 18:12:28,147] [WARNING] core.processador_base: ⚠️ Nenhum PDF foi processado na pasta de entrada.
+[2025-07-10 18:12:28,148] [INFO] core.db_helpers: Carregando fornecedores da base de dados...
+[2025-07-10 18:12:28,207] [INFO] core.db_helpers: 237 fornecedores carregados da base de dados.
+[2025-07-10 18:12:28,230] [INFO] core.db_helpers: 9 processos carregados da base de dados.
+[2025-07-10 18:12:28,231] [INFO] core.db_helpers: Carregando clientes da base de dados...
+[2025-07-10 18:12:28,240] [INFO] core.db_helpers: 242 clientes carregados da base de dados.
+[2025-07-10 18:12:28,240] [INFO] Faturas.visualizador_faturas: Iniciando visualizador de faturas com PDFs encontrados: ['inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf', 'NCC_2025_10-6886 (1)_p1.pdf', 'NC_2025_598_p1.pdf']
+[2025-07-10 18:12:28,249] [DEBUG] core.gui_utils: Janela centralizada com sucesso.
+[2025-07-10 18:12:28,431] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:12:28,431] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:12:28,435] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:12:28,435] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:12:28,436] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:12:29,488] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 18:12:29,488] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 18:12:29,492] [INFO] core.processador_base: 🟢 Visualizador iniciado com sucesso.
+[2025-07-10 18:12:33,778] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:12:33,778] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:12:33,781] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:12:33,782] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:12:33,783] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:12:34,884] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 18:12:34,884] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 18:12:34,888] [INFO] Faturas.visualizador_faturas: Mostrando fatura seguinte: índice 2 de 5
+[2025-07-10 18:12:40,718] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:12:40,718] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:12:40,722] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:12:40,723] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:12:40,724] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:12:41,644] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 18:12:41,647] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 18:12:41,647] [INFO] Faturas.visualizador_faturas: Mostrando fatura anterior: índice 1 de 5
+[2025-07-10 18:12:47,648] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'aviso': Já está no primeiro fatura.
+[2025-07-10 18:12:48,678] [INFO] core.visualizador_utils: Já está no primeiro fatura.
+[2025-07-10 18:12:48,680] [INFO] Faturas.visualizador_faturas: Mostrando fatura anterior: índice 1 de 5
+[2025-07-10 18:12:52,807] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:12:52,808] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:12:52,811] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:12:52,813] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:12:52,813] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:12:53,830] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 18:12:53,830] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 18:12:53,834] [INFO] Faturas.visualizador_faturas: Mostrando fatura seguinte: índice 2 de 5
+[2025-07-10 18:13:00,209] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:13:00,210] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:13:00,213] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:13:00,213] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:13:00,214] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:13:01,134] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 18:13:01,137] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 18:13:01,137] [INFO] Faturas.visualizador_faturas: Mostrando fatura anterior: índice 1 de 5
+[2025-07-10 18:13:05,561] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'aviso': Já está no primeiro fatura.
+[2025-07-10 18:13:06,983] [INFO] core.visualizador_utils: Já está no primeiro fatura.
+[2025-07-10 18:13:06,984] [INFO] Faturas.visualizador_faturas: Mostrando fatura anterior: índice 1 de 5
+[2025-07-10 18:13:08,337] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:13:08,337] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:13:08,340] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:13:08,341] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:13:08,345] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:13:09,358] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 18:13:09,358] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 18:13:09,362] [INFO] Faturas.visualizador_faturas: Mostrando fatura seguinte: índice 2 de 5
+[2025-07-10 18:13:09,622] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:13:09,623] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:13:09,625] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:13:09,627] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:13:09,628] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:13:10,567] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 18:13:10,571] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 18:13:10,571] [INFO] Faturas.visualizador_faturas: Mostrando fatura seguinte: índice 3 de 5
+[2025-07-10 18:13:42,267] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:13:42,267] [INFO] core.visualizador_utils: Fechando visualizador e encerrando SumatraPDF.
+[2025-07-10 18:13:55,154] [INFO] Faturas.faturas: Iniciando processamento de faturas em: d:\document_manager\Faturas
+[2025-07-10 18:13:55,154] [INFO] core.processador_base: 🔄 Iniciando processamento de PDFs da pasta de entrada...
+[2025-07-10 18:13:55,155] [WARNING] core.processador_base: ⚠️ Nenhum PDF foi processado na pasta de entrada.
+[2025-07-10 18:13:55,156] [INFO] core.db_helpers: Carregando fornecedores da base de dados...
+[2025-07-10 18:13:55,208] [INFO] core.db_helpers: 237 fornecedores carregados da base de dados.
+[2025-07-10 18:13:55,227] [INFO] core.db_helpers: 9 processos carregados da base de dados.
+[2025-07-10 18:13:55,228] [INFO] core.db_helpers: Carregando clientes da base de dados...
+[2025-07-10 18:13:55,238] [INFO] core.db_helpers: 242 clientes carregados da base de dados.
+[2025-07-10 18:13:55,239] [INFO] Faturas.visualizador_faturas: Iniciando visualizador de faturas com PDFs encontrados: ['inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf', 'NCC_2025_10-6886 (1)_p1.pdf', 'NC_2025_598_p1.pdf']
+[2025-07-10 18:13:55,249] [DEBUG] core.gui_utils: Janela centralizada com sucesso.
+[2025-07-10 18:13:55,430] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:13:55,430] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:13:55,434] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:13:55,434] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:13:55,434] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:13:56,495] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 18:13:56,495] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 18:13:56,499] [INFO] core.processador_base: 🟢 Visualizador iniciado com sucesso.
+[2025-07-10 18:14:01,705] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:14:01,707] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:14:01,710] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:14:01,714] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:14:01,724] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:14:02,789] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 18:14:02,789] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 18:14:02,794] [INFO] Faturas.visualizador_faturas: Mostrando fatura seguinte: índice 2 de 5
+[2025-07-10 18:14:19,950] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:14:19,951] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:14:19,955] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:14:19,957] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:14:19,958] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:14:20,906] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 18:14:20,910] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 18:14:20,910] [INFO] Faturas.visualizador_faturas: Mostrando fatura anterior: índice 1 de 5
+[2025-07-10 18:14:30,863] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:14:30,863] [INFO] core.visualizador_utils: Fechando visualizador e encerrando SumatraPDF.
+[2025-07-10 18:16:17,570] [INFO] Faturas.faturas: Iniciando processamento de faturas em: d:\document_manager\Faturas
+[2025-07-10 18:16:17,570] [INFO] core.processador_base: 🔄 Iniciando processamento de PDFs da pasta de entrada...
+[2025-07-10 18:16:17,571] [WARNING] core.processador_base: ⚠️ Nenhum PDF foi processado na pasta de entrada.
+[2025-07-10 18:16:17,572] [INFO] core.db_helpers: Carregando fornecedores da base de dados...
+[2025-07-10 18:16:17,628] [INFO] core.db_helpers: 237 fornecedores carregados da base de dados.
+[2025-07-10 18:16:17,647] [INFO] core.db_helpers: 9 processos carregados da base de dados.
+[2025-07-10 18:16:17,647] [INFO] core.db_helpers: Carregando clientes da base de dados...
+[2025-07-10 18:16:17,657] [INFO] core.db_helpers: 242 clientes carregados da base de dados.
+[2025-07-10 18:16:17,657] [INFO] Faturas.visualizador_faturas: Iniciando visualizador de faturas com PDFs encontrados: ['inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf', 'NCC_2025_10-6886 (1)_p1.pdf', 'NC_2025_598_p1.pdf']
+[2025-07-10 18:16:17,668] [DEBUG] core.gui_utils: Janela centralizada com sucesso.
+[2025-07-10 18:16:17,846] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:16:17,846] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:16:17,850] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:16:17,850] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:16:17,850] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:16:18,872] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 18:16:18,872] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 18:16:18,876] [INFO] Faturas.visualizador_faturas: Mostrando fatura atual: índice 1 de 5
+[2025-07-10 18:16:18,877] [INFO] core.processador_base: 🟢 Visualizador iniciado com sucesso.
+[2025-07-10 18:16:28,837] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:16:28,837] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:16:28,840] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:16:28,840] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:16:28,841] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:16:29,895] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 18:16:29,896] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 18:16:29,899] [INFO] Faturas.visualizador_faturas: Mostrando fatura atual: índice 1 de 5
+[2025-07-10 18:16:29,900] [INFO] Faturas.visualizador_faturas: Mostrando fatura seguinte: índice 2 de 5
+[2025-07-10 18:16:47,782] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:16:47,783] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:16:47,786] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:16:47,787] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:16:47,791] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:16:48,756] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 18:16:48,760] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 18:16:48,762] [INFO] Faturas.visualizador_faturas: Mostrando fatura atual: índice 2 de 5
+[2025-07-10 18:16:48,763] [INFO] Faturas.visualizador_faturas: Mostrando fatura anterior: índice 1 de 5
+[2025-07-10 18:16:53,393] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'aviso': Já está no primeiro fatura.
+[2025-07-10 18:16:54,942] [INFO] core.visualizador_utils: Já está no primeiro fatura.
+[2025-07-10 18:16:54,944] [INFO] Faturas.visualizador_faturas: Mostrando fatura anterior: índice 1 de 5
+[2025-07-10 18:18:23,354] [INFO] Faturas.faturas: Iniciando processamento de faturas em: d:\document_manager\Faturas
+[2025-07-10 18:18:23,355] [INFO] core.processador_base: 🔄 Iniciando processamento de PDFs da pasta de entrada...
+[2025-07-10 18:18:23,356] [WARNING] core.processador_base: ⚠️ Nenhum PDF foi processado na pasta de entrada.
+[2025-07-10 18:18:23,356] [INFO] core.db_helpers: Carregando fornecedores da base de dados...
+[2025-07-10 18:18:23,407] [INFO] core.db_helpers: 237 fornecedores carregados da base de dados.
+[2025-07-10 18:18:23,426] [INFO] core.db_helpers: 9 processos carregados da base de dados.
+[2025-07-10 18:18:23,427] [INFO] core.db_helpers: Carregando clientes da base de dados...
+[2025-07-10 18:18:23,438] [INFO] core.db_helpers: 242 clientes carregados da base de dados.
+[2025-07-10 18:18:23,439] [INFO] Faturas.visualizador_faturas: Iniciando visualizador de faturas com PDFs encontrados: ['inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf', 'NCC_2025_10-6886 (1)_p1.pdf', 'NC_2025_598_p1.pdf']
+[2025-07-10 18:18:23,450] [DEBUG] core.gui_utils: Janela centralizada com sucesso.
+[2025-07-10 18:18:23,637] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:18:23,637] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:18:23,641] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:18:23,642] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:18:23,642] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:18:24,686] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 18:18:24,686] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 18:18:24,690] [INFO] Faturas.visualizador_faturas: Mostrando fatura atual: índice 1 de 5, documento: inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:18:24,691] [INFO] core.processador_base: 🟢 Visualizador iniciado com sucesso.
+[2025-07-10 18:18:30,939] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'aviso': Já está no primeiro fatura.
+[2025-07-10 18:18:32,077] [INFO] core.visualizador_utils: Já está no primeiro fatura.
+[2025-07-10 18:18:33,067] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:18:33,067] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:18:33,070] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:18:33,070] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:18:33,072] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:18:34,104] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 18:18:34,104] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 18:18:34,108] [INFO] Faturas.visualizador_faturas: Mostrando fatura atual: índice 1 de 5, documento: inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:18:43,358] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:18:43,359] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:18:43,363] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:18:43,364] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:18:43,372] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:18:44,302] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 18:18:44,305] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 18:18:44,305] [INFO] Faturas.visualizador_faturas: Mostrando fatura atual: índice 2 de 5, documento: inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:18:47,843] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'aviso': Já está no primeiro fatura.
+[2025-07-10 18:18:48,870] [INFO] core.visualizador_utils: Já está no primeiro fatura.
+[2025-07-10 18:18:49,755] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:18:49,756] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:18:49,758] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:18:49,759] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:18:49,764] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:18:50,775] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 18:18:50,775] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 18:18:50,778] [INFO] Faturas.visualizador_faturas: Mostrando fatura atual: índice 1 de 5, documento: inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:18:55,066] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:18:55,067] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:18:55,069] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:18:55,070] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:18:55,070] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:18:56,000] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 18:18:56,003] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 18:18:56,004] [INFO] Faturas.visualizador_faturas: Mostrando fatura atual: índice 2 de 5, documento: inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:19:10,756] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:19:10,756] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf
+[2025-07-10 18:19:10,760] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf
+[2025-07-10 18:19:10,761] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf
+[2025-07-10 18:19:10,761] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf
+[2025-07-10 18:19:11,613] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 18:19:11,616] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 18:19:11,616] [INFO] Faturas.visualizador_faturas: Mostrando fatura atual: índice 3 de 5, documento: inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf
+[2025-07-10 18:19:11,728] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:19:11,730] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:19:11,733] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:19:11,734] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:19:11,734] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:19:12,662] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 18:19:12,665] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 18:19:12,666] [INFO] Faturas.visualizador_faturas: Mostrando fatura atual: índice 2 de 5, documento: inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:19:13,338] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'aviso': Já está no primeiro fatura.
+[2025-07-10 18:19:14,487] [INFO] core.visualizador_utils: Já está no primeiro fatura.
+[2025-07-10 18:19:15,393] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:19:15,394] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:19:15,396] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:19:15,398] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:19:15,404] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:19:16,450] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 18:19:16,450] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 18:19:16,454] [INFO] Faturas.visualizador_faturas: Mostrando fatura atual: índice 1 de 5, documento: inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:19:16,630] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:19:16,632] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:19:16,634] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:19:16,635] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:19:16,638] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:19:17,574] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 18:19:17,578] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 18:19:17,579] [INFO] Faturas.visualizador_faturas: Mostrando fatura atual: índice 2 de 5, documento: inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:19:18,510] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:19:18,510] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf
+[2025-07-10 18:19:18,513] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf
+[2025-07-10 18:19:18,515] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf
+[2025-07-10 18:19:18,516] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf
+[2025-07-10 18:19:19,307] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 18:19:19,311] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 18:19:19,311] [INFO] Faturas.visualizador_faturas: Mostrando fatura atual: índice 3 de 5, documento: inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf
+[2025-07-10 18:19:21,569] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:19:21,570] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:19:21,574] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:19:21,575] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:19:21,576] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:19:22,674] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 18:19:22,677] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 18:19:22,678] [INFO] Faturas.visualizador_faturas: Mostrando fatura atual: índice 2 de 5, documento: inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:19:22,753] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'aviso': Já está no primeiro fatura.
+[2025-07-10 18:19:24,510] [INFO] core.visualizador_utils: Já está no primeiro fatura.
+[2025-07-10 18:26:14,323] [INFO] Faturas.faturas: Iniciando processamento de faturas em: d:\document_manager\Faturas
+[2025-07-10 18:26:14,323] [INFO] core.processador_base: 🔄 Iniciando processamento de PDFs da pasta de entrada...
+[2025-07-10 18:26:14,324] [WARNING] core.processador_base: ⚠️ Nenhum PDF foi processado na pasta de entrada.
+[2025-07-10 18:26:14,325] [INFO] core.db_helpers: Carregando fornecedores da base de dados...
+[2025-07-10 18:26:14,377] [INFO] core.db_helpers: 237 fornecedores carregados da base de dados.
+[2025-07-10 18:26:14,398] [INFO] core.db_helpers: 9 processos carregados da base de dados.
+[2025-07-10 18:26:14,399] [INFO] core.db_helpers: Carregando clientes da base de dados...
+[2025-07-10 18:26:14,410] [INFO] core.db_helpers: 242 clientes carregados da base de dados.
+[2025-07-10 18:26:14,411] [INFO] Faturas.visualizador_faturas: Iniciando visualizador de faturas com PDFs encontrados: ['inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf', 'NCC_2025_10-6886 (1)_p1.pdf', 'NC_2025_598_p1.pdf']
+[2025-07-10 18:26:14,423] [DEBUG] core.gui_utils: Janela centralizada com sucesso.
+[2025-07-10 18:26:14,617] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:26:14,618] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:26:14,622] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:26:14,622] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:26:14,623] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:26:15,631] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 18:26:15,631] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 18:26:15,635] [INFO] Faturas.visualizador_faturas: Mostrando fatura atual: índice 1 de 5, documento: inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:26:15,636] [INFO] core.processador_base: 🟢 Visualizador iniciado com sucesso.
+[2025-07-10 18:26:19,524] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'aviso': Já está no primeiro fatura.
+[2025-07-10 18:26:20,690] [INFO] core.visualizador_utils: Já está no primeiro fatura.
+[2025-07-10 18:26:23,777] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:26:23,778] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:26:23,780] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:26:23,781] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:26:23,782] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:26:24,770] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 18:26:24,770] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 18:26:24,774] [INFO] Faturas.visualizador_faturas: Mostrando fatura atual: índice 1 de 5, documento: inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:28:47,914] [INFO] Faturas.faturas: Iniciando processamento de faturas em: d:\document_manager\Faturas
+[2025-07-10 18:28:47,915] [INFO] core.processador_base: 🔄 Iniciando processamento de PDFs da pasta de entrada...
+[2025-07-10 18:28:47,916] [WARNING] core.processador_base: ⚠️ Nenhum PDF foi processado na pasta de entrada.
+[2025-07-10 18:28:47,916] [INFO] core.db_helpers: Carregando fornecedores da base de dados...
+[2025-07-10 18:28:47,971] [INFO] core.db_helpers: 237 fornecedores carregados da base de dados.
+[2025-07-10 18:28:47,992] [INFO] core.db_helpers: 9 processos carregados da base de dados.
+[2025-07-10 18:28:47,993] [INFO] core.db_helpers: Carregando clientes da base de dados...
+[2025-07-10 18:28:48,007] [INFO] core.db_helpers: 242 clientes carregados da base de dados.
+[2025-07-10 18:28:48,008] [INFO] Faturas.visualizador_faturas: Iniciando visualizador de faturas com PDFs encontrados: ['inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf', 'NCC_2025_10-6886 (1)_p1.pdf', 'NC_2025_598_p1.pdf']
+[2025-07-10 18:28:48,022] [DEBUG] core.gui_utils: Janela centralizada com sucesso.
+[2025-07-10 18:28:48,212] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:28:48,212] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:28:48,215] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:28:48,217] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:28:48,218] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:28:49,255] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 18:28:49,255] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 18:28:49,259] [DEBUG] Faturas.visualizador_faturas: Mostrando fatura atual: índice 1 de 5, documento: inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:28:49,259] [INFO] core.processador_base: 🟢 Visualizador iniciado com sucesso.
+[2025-07-10 18:28:53,912] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:28:53,913] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:28:53,917] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:28:53,920] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:28:53,921] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:28:54,930] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 18:28:54,930] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 18:28:54,933] [DEBUG] Faturas.visualizador_faturas: Mostrando fatura atual: índice 1 de 5, documento: inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:28:54,933] [DEBUG] Faturas.visualizador_faturas: Abrindo fatura seguinte, documento: %s
+[2025-07-10 18:29:21,360] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:29:21,361] [INFO] core.visualizador_utils: Abrindo PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:29:21,364] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:29:21,365] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:29:21,373] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:29:22,300] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 18:29:22,302] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 18:29:22,303] [DEBUG] Faturas.visualizador_faturas: Mostrando fatura atual: índice 2 de 5, documento: inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:29:22,303] [DEBUG] Faturas.visualizador_faturas: Abrindo fatura anterior, documento: %s
+[2025-07-10 18:34:44,170] [INFO] Faturas.faturas: Iniciando processamento de faturas em: d:\document_manager\Faturas
+[2025-07-10 18:34:44,170] [INFO] core.processador_base: 🔄 Iniciando processamento de PDFs da pasta de entrada...
+[2025-07-10 18:34:44,171] [WARNING] core.processador_base: ⚠️ Nenhum PDF foi processado na pasta de entrada.
+[2025-07-10 18:34:44,172] [INFO] core.db_helpers: Carregando fornecedores da base de dados...
+[2025-07-10 18:34:44,224] [INFO] core.db_helpers: 237 fornecedores carregados da base de dados.
+[2025-07-10 18:34:44,242] [INFO] core.db_helpers: 9 processos carregados da base de dados.
+[2025-07-10 18:34:44,243] [INFO] core.db_helpers: Carregando clientes da base de dados...
+[2025-07-10 18:34:44,255] [INFO] core.db_helpers: 242 clientes carregados da base de dados.
+[2025-07-10 18:34:44,256] [INFO] Faturas.visualizador_faturas: Iniciando visualizador de faturas com PDFs encontrados: ['inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf', 'NCC_2025_10-6886 (1)_p1.pdf', 'NC_2025_598_p1.pdf']
+[2025-07-10 18:34:44,267] [DEBUG] core.gui_utils: Janela centralizada com sucesso.
+[2025-07-10 18:34:44,448] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:34:44,448] [INFO] core.visualizador_utils: Abrindo PDF no índice 0: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:34:44,452] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:34:44,452] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:34:44,452] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:34:45,542] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 18:34:45,542] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 18:34:45,546] [INFO] core.processador_base: 🟢 Visualizador iniciado com sucesso.
+[2025-07-10 18:34:56,834] [INFO] core.visualizador_utils: → Navegar para o próximo (fatura): 1
+[2025-07-10 18:34:56,953] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:34:56,956] [INFO] core.visualizador_utils: Abrindo PDF no índice 0: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:34:56,961] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:34:56,962] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:34:56,964] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:34:58,008] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 18:34:58,009] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 18:35:07,266] [INFO] core.visualizador_utils: ← Navegar para o anterior (fatura): 0
+[2025-07-10 18:35:07,362] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:35:07,362] [INFO] core.visualizador_utils: Abrindo PDF no índice 1: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:35:07,366] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:35:07,366] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:35:07,367] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:35:08,356] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 18:35:08,360] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 18:37:38,882] [INFO] Faturas.faturas: Iniciando processamento de faturas em: d:\document_manager\Faturas
+[2025-07-10 18:37:38,882] [INFO] core.processador_base: 🔄 Iniciando processamento de PDFs da pasta de entrada...
+[2025-07-10 18:37:38,884] [WARNING] core.processador_base: ⚠️ Nenhum PDF foi processado na pasta de entrada.
+[2025-07-10 18:37:38,884] [INFO] core.db_helpers: Carregando fornecedores da base de dados...
+[2025-07-10 18:37:38,942] [INFO] core.db_helpers: 237 fornecedores carregados da base de dados.
+[2025-07-10 18:37:38,979] [INFO] core.db_helpers: 9 processos carregados da base de dados.
+[2025-07-10 18:37:38,979] [INFO] core.db_helpers: Carregando clientes da base de dados...
+[2025-07-10 18:37:38,989] [INFO] core.db_helpers: 242 clientes carregados da base de dados.
+[2025-07-10 18:37:38,989] [INFO] Faturas.visualizador_faturas: Iniciando visualizador de faturas com PDFs encontrados: ['inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf', 'NCC_2025_10-6886 (1)_p1.pdf', 'NC_2025_598_p1.pdf']
+[2025-07-10 18:37:38,999] [DEBUG] core.gui_utils: Janela centralizada com sucesso.
+[2025-07-10 18:37:39,179] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:37:39,179] [INFO] core.visualizador_utils: Abrindo PDF no índice 0: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:37:39,183] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:37:39,184] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:37:39,187] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:37:40,268] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 18:37:40,269] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 18:37:40,272] [INFO] core.processador_base: 🟢 Visualizador iniciado com sucesso.
+[2025-07-10 18:37:41,491] [INFO] core.visualizador_utils: Já está no primeiro fatura.
+[2025-07-10 18:37:41,576] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'aviso': Já está no primeiro fatura.
+[2025-07-10 18:37:43,658] [INFO] core.visualizador_utils: → Navegar para o próximo (fatura): 1
+[2025-07-10 18:37:43,758] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:37:43,758] [INFO] core.visualizador_utils: Abrindo PDF no índice 0: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:37:43,761] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:37:43,762] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:37:43,763] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:37:44,778] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 18:37:44,778] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 18:37:44,947] [INFO] core.visualizador_utils: ← Navegar para o anterior (fatura): 0
+[2025-07-10 18:37:45,046] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:37:45,047] [INFO] core.visualizador_utils: Abrindo PDF no índice 1: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:37:45,051] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:37:45,052] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:37:45,053] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:37:46,017] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 18:37:46,020] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 18:37:46,266] [INFO] core.visualizador_utils: Já está no primeiro fatura.
+[2025-07-10 18:37:46,334] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'aviso': Já está no primeiro fatura.
+[2025-07-10 18:41:15,202] [INFO] Faturas.faturas: Iniciando processamento de faturas em: d:\document_manager\Faturas
+[2025-07-10 18:41:15,203] [INFO] core.processador_base: 🔄 Iniciando processamento de PDFs da pasta de entrada...
+[2025-07-10 18:41:15,204] [WARNING] core.processador_base: ⚠️ Nenhum PDF foi processado na pasta de entrada.
+[2025-07-10 18:41:15,204] [INFO] core.db_helpers: Carregando fornecedores da base de dados...
+[2025-07-10 18:41:15,261] [INFO] core.db_helpers: 237 fornecedores carregados da base de dados.
+[2025-07-10 18:41:15,281] [INFO] core.db_helpers: 9 processos carregados da base de dados.
+[2025-07-10 18:41:15,282] [INFO] core.db_helpers: Carregando clientes da base de dados...
+[2025-07-10 18:41:15,293] [INFO] core.db_helpers: 242 clientes carregados da base de dados.
+[2025-07-10 18:41:15,293] [INFO] Faturas.visualizador_faturas: Iniciando visualizador de faturas com PDFs encontrados: ['inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf', 'inv0003385800_ADX_ECOFACTURA_NXO_p4.pdf', 'NCC_2025_10-6886 (1)_p1.pdf', 'NC_2025_598_p1.pdf']
+[2025-07-10 18:41:15,307] [DEBUG] core.gui_utils: Janela centralizada com sucesso.
+[2025-07-10 18:41:15,499] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:41:15,500] [INFO] core.visualizador_utils: Abrindo PDF no índice 0: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:41:15,504] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:41:15,504] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:41:15,505] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:41:16,576] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 18:41:16,576] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 18:41:16,581] [INFO] core.processador_base: 🟢 Visualizador iniciado com sucesso.
+[2025-07-10 18:41:20,651] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'aviso': Já está no primeiro fatura.
+[2025-07-10 18:41:21,893] [INFO] core.visualizador_utils: Já está no primeiro fatura.
+[2025-07-10 18:41:21,994] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:41:22,001] [INFO] core.visualizador_utils: Abrindo PDF no índice 0: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:41:22,001] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:41:22,001] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:41:22,009] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:41:23,006] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 18:41:23,006] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 18:41:28,081] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'aviso': Já está no primeiro fatura.
+[2025-07-10 18:41:29,341] [INFO] core.visualizador_utils: Já está no primeiro fatura.
+[2025-07-10 18:41:29,441] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:41:29,441] [INFO] core.visualizador_utils: Abrindo PDF no índice 0: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:41:29,451] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:41:29,451] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:41:29,451] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:41:30,496] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 18:41:30,496] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 18:41:31,521] [INFO] core.visualizador_utils: → Navegar para o próximo (fatura): 1
+[2025-07-10 18:41:31,621] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:41:31,621] [INFO] core.visualizador_utils: Abrindo PDF no índice 1: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:41:31,631] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:41:31,643] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:41:31,647] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p3.pdf
+[2025-07-10 18:41:32,606] [INFO] core.ocr_utils: Nenhum QR Code encontrado no PDF.
+[2025-07-10 18:41:32,606] [WARNING] Faturas.visualizador_faturas: Nenhum dado QR code encontrado no PDF.
+[2025-07-10 18:41:33,271] [INFO] core.visualizador_utils: ← Navegar para o anterior (fatura): 0
+[2025-07-10 18:41:33,376] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:41:33,376] [INFO] core.visualizador_utils: Abrindo PDF no índice 0: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:41:33,376] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:41:33,386] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:41:33,398] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:41:34,421] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 18:41:34,421] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}
+[2025-07-10 18:41:34,971] [DEBUG] core.gui_utils: Mostrando mensagem do tipo 'aviso': Já está no primeiro fatura.
+[2025-07-10 18:41:36,031] [INFO] core.visualizador_utils: Já está no primeiro fatura.
+[2025-07-10 18:41:36,141] [INFO] core.pdf_utils: SumatraPDF encerrado.
+[2025-07-10 18:41:36,141] [INFO] core.visualizador_utils: Abrindo PDF no índice 0: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:41:36,146] [INFO] core.pdf_utils: PDF aberto com Sumatra: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:41:36,146] [INFO] Faturas.visualizador_faturas: Preenchendo dados do QR code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:41:36,146] [INFO] core.ocr_utils: Tentando extrair QR Code do PDF: d:\document_manager\Faturas\separados\inv0003385800_ADX_ECOFACTURA_NXO_p1.pdf
+[2025-07-10 18:41:37,166] [DEBUG] core.ocr_utils: QR Code lido com conteúdo: A:980642841*B:505051265*C:PT*D:FT*E:N*F:20250709*G:FL FL25/2500081984*H:JJW78DYH-2500081984*I1:PT*I3:38.42*I4:2.31*I7:13.74*I8:3.16*N:5.47*O:57.63*Q:fA6s*R:631
+[2025-07-10 18:41:37,166] [DEBUG] core.ocr_utils: QR Code convertido para dicionário: {'nif_emitente': '980642841', 'nif_adquirente': '505051265', 'pais_emitente': 'PT', 'tipo_doc': 'FT', 'tem_iva': 'N', 'data_doc': '20250709', 'numero_doc': 'FL FL25/2500081984', 'hash': 'JJW78DYH-2500081984', 'pais_adquirente': 'PT', 'I3': '38.42', 'I4': '2.31', 'valor_tributavel': '13.74', 'valor_iva': '3.16', 'total_iva': '5.47', 'total_doc': '57.63', 'chave_seguranca': 'fA6s', 'regime_iva': '631'}

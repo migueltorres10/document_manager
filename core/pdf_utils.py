@@ -100,3 +100,40 @@ def rodar_pdf_90graus(input_path):
     except Exception as e:
         logger.exception(f"Erro ao rodar PDF: {e}")
         raise
+
+def juntar_pdfs_em_posicao(pdf_base, pdf_a_adicionar, destino=None, pagina_destino=-1):
+    """
+    Junta dois arquivos PDF, inserindo todas as páginas de um PDF (`pdf_a_adicionar`) em uma posição específica de outro PDF (`pdf_base`).
+    Arg:
+        pdf_base (str): Caminho para o arquivo PDF base onde as páginas serão inseridas.
+        pdf_a_adicionar (str): Caminho para o arquivo PDF cujas páginas serão adicionadas.
+        destino (str, opcional): Caminho para salvar o PDF resultante. Se não for fornecido, será criado um novo arquivo com sufixo '_merged'.
+        pagina_destino (int, opcional): Índice da página no PDF base onde as páginas do PDF a adicionar serão inseridas. O padrão é -1 (adiciona ao final).
+    Return:
+        str: Caminho do arquivo PDF resultante.
+    """
+    try:
+        doc_base = fitz.open(pdf_base)
+        doc_novo = fitz.open(pdf_a_adicionar)
+
+        doc_base.insert_pdf(doc_novo, start_at=pagina_destino)
+
+        if not destino:
+            # Cria nome com sufixo _merged
+            base_name = os.path.splitext(pdf_base)[0]
+            destino = f"{base_name}_merged.pdf"
+
+        try:
+            doc_base.save(destino, incremental=False)
+        except Exception as e:
+            raise RuntimeError(f"Erro ao juntar PDFs: {e}")
+        finally:
+            doc_base.close()
+            doc_novo.close()
+
+        return destino
+
+    except Exception as e:
+        raise RuntimeError(f"Erro ao juntar PDFs: {e}")
+
+

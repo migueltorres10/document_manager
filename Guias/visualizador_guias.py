@@ -126,10 +126,23 @@ class VisualizadorGuias:
         abrir_pdf_atual(self.pdfs, self.index_atual, self.pasta_pdf, self.preencher_dados_qr)
 
     def mostrar_anterior(self):
-        self.index_atual = mostrar_anterior(self.pdfs, self.index_atual, self.abrir_pdf_atual, doc_nome="guia")
+        def callback(): self.abrir_pdf_atual()
+        self.index_atual = mostrar_anterior(
+            len(self.pdfs),
+            self.index_atual,
+            callback,
+            doc_nome="guia"
+        )
 
     def mostrar_proximo(self):
-        self.index_atual = mostrar_proximo(self.pdfs, self.index_atual, self.abrir_pdf_atual, doc_nome="guia")
+        def callback(): self.abrir_pdf_atual()
+        self.index_atual = mostrar_proximo(
+            len(self.pdfs),
+            self.index_atual,
+            callback,
+            doc_nome="guia"
+        )
+
 
     def terminar(self):
         terminar(self.root)
