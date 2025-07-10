@@ -36,6 +36,8 @@ from core.visualizador_utils import (
     terminar
 )
 
+from core.data_utils import parse_data_flexivel
+
 from processos import GestorProcessos
 
 
@@ -232,13 +234,8 @@ class VisualizadorGuias:
             self.fornecedor_var.set(fornecedor_nome)
 
         data_qr = dados_qr.get("data_doc", "").strip()
-        data_formatada = None
-        for formato in ("%d/%m/%Y", "%Y-%m-%d", "%d-%m-%Y", "%Y%m%d"):
-            try:
-                data_formatada = datetime.datetime.strptime(data_qr, formato).date()
-                break
-            except ValueError:
-                continue
+
+        data_formatada = parse_data_flexivel(data_qr)
 
         if data_formatada:
             self.entry_data.insert(0, data_formatada.isoformat())

@@ -35,6 +35,8 @@ from core.visualizador_utils import (
     terminar
 )
 
+from core.data_utils import parse_data_flexivel
+
 from processos import GestorProcessos
 
 
@@ -328,15 +330,7 @@ class VisualizadorFaturas:
         self.entry_tipo.insert(0, dados_qr.get("tipo_doc", ""))
         data_qr = dados_qr.get("data_doc", "").strip()
 
-        data_formatada = None
-        for formato in ("%Y%m%d","%d/%m/%Y", "%Y-%m-%d", "%d-%m-%Y"):
-            try:
-                data_formatada = datetime.datetime.strptime(data_qr, formato).date()
-                logger.debug(f"Data formatada com sucesso: {data_formatada} usando formato '{formato}'")
-                break
-            except ValueError:
-                logger.debug(f"Formato de data '{formato}' não corresponde: {data_qr}")
-                continue
+        data_formatada = parse_data_flexivel(data_qr)
 
         if data_formatada:
             self.entry_data.insert(0, data_formatada.isoformat())
