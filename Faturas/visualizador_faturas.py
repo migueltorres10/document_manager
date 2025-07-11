@@ -229,10 +229,14 @@ class VisualizadorFaturas:
             mostrar_mensagem("aviso", "Preencha todos os campos obrigatórios.")
             return
 
-        if " - " in fornecedor_nome:
-            fornecedor_nif = fornecedor_nome.split(" - ")[0]
-        else:
-            fornecedor_nif = next((nif for nif, nome in self.fornecedores.items() if nome == fornecedor_nome), None)
+        fornecedor_nif = fornecedor_nome.split(" - ")[0].strip()
+        fornecedor_nome_limpo = self.fornecedores.get(fornecedor_nif)
+
+        if not fornecedor_nome_limpo:
+            logger.error(f"Fornecedor com NIF '{fornecedor_nif}' não encontrado na base de dados.")
+            mostrar_mensagem("erro", "Fornecedor não encontrado na base de dados.")
+            return
+        
         if not fornecedor_nif:
             logger.error(f"Fornecedor '{fornecedor_nome}' não encontrado na base de dados.")
             mostrar_mensagem("erro", "Fornecedor não encontrado na base de dados.")
@@ -252,7 +256,12 @@ class VisualizadorFaturas:
 
         try:
             logger.info(f"Salvando fatura: {fornecedor_nome}, Tipo: {tipodoc}, Número: {numero}, Ano: {ano}, Data: {data_formatada}, Base: {base}, IVA: {iva}, Total: {total}, Processo: {processo}")
-            destino = mover_pdf_para_pasta_destino(caminho_pdf, fornecedor_nome, ano, os.path.join(self.base_dir, "arquivados"))
+            destino = mover_pdf_para_pasta_destino(
+                caminho_pdf, 
+                fornecedor_nome_limpo, 
+                ano, 
+                os.path.join(self.base_dir, "arquivados")
+            )
             final = renomear_pdf(destino, numero, ano)
 
             gravar_fatura_bd(
@@ -337,9 +346,12 @@ class VisualizadorFaturas:
             logger.warning("Nenhum dado QR code encontrado no PDF.")
             return
 
-        fornecedor_nome = self.fornecedores.get(dados_qr.get("nif_emitente"))
-        if fornecedor_nome:
-            self.fornecedor_var.set(fornecedor_nome)
+        nif = dados_qr.get("nif_emitente")
+        nome = self.fornecedores.get(nif)
+        if nome:
+            valor_combo = f"{nif} - {nome}"
+            self.fornecedor_var.set(valor_combo)
+            logger.info(f"Fornecedora preenchida: {valor_combo}")
 
 
         self.entry_tipo.insert(0, dados_qr.get("tipo_doc", ""))
@@ -386,7 +398,8 @@ class VisualizadorFaturas:
             caminho_final = juntar_pdfs_em_posicao(
                 pdf_base=destino,
                 pdf_a_adicionar=atual,
-                pagina_destino=pagina_escolhida
+                pagina_destino=pagina_escolhida,
+                destino=destino  # salvar diretamente no mesmo ficheiro
             )
 
             mostrar_mensagem("info", f"PDFs unidos com sucesso:\n{caminho_final}")

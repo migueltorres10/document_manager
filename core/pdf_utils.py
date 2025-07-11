@@ -103,14 +103,8 @@ def rodar_pdf_90graus(input_path):
 
 def juntar_pdfs_em_posicao(pdf_base, pdf_a_adicionar, destino=None, pagina_destino=-1):
     """
-    Junta dois arquivos PDF, inserindo todas as páginas de um PDF (`pdf_a_adicionar`) em uma posição específica de outro PDF (`pdf_base`).
-    Arg:
-        pdf_base (str): Caminho para o arquivo PDF base onde as páginas serão inseridas.
-        pdf_a_adicionar (str): Caminho para o arquivo PDF cujas páginas serão adicionadas.
-        destino (str, opcional): Caminho para salvar o PDF resultante. Se não for fornecido, será criado um novo arquivo com sufixo '_merged'.
-        pagina_destino (int, opcional): Índice da página no PDF base onde as páginas do PDF a adicionar serão inseridas. O padrão é -1 (adiciona ao final).
-    Return:
-        str: Caminho do arquivo PDF resultante.
+    Junta páginas de um PDF a outro PDF base, na posição desejada.
+    Se não for passado destino, o ficheiro original é substituído com segurança.
     """
     try:
         doc_base = fitz.open(pdf_base)
@@ -118,22 +112,26 @@ def juntar_pdfs_em_posicao(pdf_base, pdf_a_adicionar, destino=None, pagina_desti
 
         doc_base.insert_pdf(doc_novo, start_at=pagina_destino)
 
-        if not destino:
-            # Cria nome com sufixo _merged
-            base_name = os.path.splitext(pdf_base)[0]
-            destino = f"{base_name}_merged.pdf"
-
-        try:
-            doc_base.save(destino, incremental=False)
-        except Exception as e:
-            raise RuntimeError(f"Erro ao juntar PDFs: {e}")
-        finally:
+        if not destino or destino == pdf_base:
+            # Cria ficheiro temporário
+            with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp:
+                temp_path = tmp.name
+            doc_base.save(temp_path)
             doc_base.close()
             doc_novo.close()
-
-        return destino
+            shutil.move(temp_path, pdf_base)
+            return pdf_base
+        else:
+            doc_base.save(destino)
+            return destino
 
     except Exception as e:
         raise RuntimeError(f"Erro ao juntar PDFs: {e}")
+    finally:
+        if not doc_base.is_closed:
+            doc_base.close()
+        if not doc_novo.is_closed:
+            doc_novo.close()
+
 
 
