@@ -126,23 +126,20 @@ class VisualizadorGuias:
         abrir_pdf_atual(self.pdfs, self.index_atual, self.pasta_pdf, self.preencher_dados_qr)
 
     def mostrar_anterior(self):
-        def callback(): self.abrir_pdf_atual()
         self.index_atual = mostrar_anterior(
             len(self.pdfs),
             self.index_atual,
-            callback,
             doc_nome="guia"
         )
+        self.abrir_pdf_atual()
 
     def mostrar_proximo(self):
-        def callback(): self.abrir_pdf_atual()
         self.index_atual = mostrar_proximo(
             len(self.pdfs),
             self.index_atual,
-            callback,
             doc_nome="guia"
         )
-
+        self.abrir_pdf_atual()
 
     def terminar(self):
         terminar(self.root)
@@ -155,6 +152,11 @@ class VisualizadorGuias:
         self.combo_processo["values"] = [f"{p['referencia']} - {p['nome_cliente']}" for p in self.processos]
 
     def salvar_dados(self):
+        """
+        Salva os dados da guia no banco de dados e move o PDF para a pasta de destino.
+        Verifica se todos os campos obrigatórios estão preenchidos.
+        Se houver erros, exibe mensagens apropriadas.
+        """
         fornecedor_nome = self.fornecedor_var.get().strip()
         ano = self.entry_ano.get().strip()
         numero = self.entry_numero.get().strip()
@@ -167,16 +169,25 @@ class VisualizadorGuias:
             mostrar_mensagem("aviso", "Preencha todos os campos obrigatórios.")
             return
 
-        fornecedor_nif = next((nif for nif, nome in self.fornecedores.items() if nome == fornecedor_nome), None)
+        fornecedor_nif = fornecedor_nome.split(" - ")[0].strip()
+        fornecedor_nome_limpo = self.fornecedores.get(fornecedor_nif)
+
+        if not fornecedor_nome_limpo:
+            logger.error(f"Fornecedor com NIF '{fornecedor_nif}' não encontrado na base de dados.")
+            mostrar_mensagem("erro", "Fornecedor não encontrado na base de dados.")
+            return
+        
         if not fornecedor_nif:
-            logger.error("Fornecedor não encontrado na base de dados.")
+            logger.error(f"Fornecedor '{fornecedor_nome}' não encontrado na base de dados.")
             mostrar_mensagem("erro", "Fornecedor não encontrado na base de dados.")
             return
 
         try:
+            # Tenta converter a data para o formato correto
             data_formatada = datetime.datetime.strptime(data, "%Y-%m-%d").date()
+            logger.debug(f"Data formatada: {data_formatada}")
         except ValueError:
-            logger.error("Formato de data inválido.")
+            logger.error(f"Formato de data inválido: {data}. Deve ser YYYY-MM-DD.")
             mostrar_mensagem("erro", "Formato de data inválido. Use YYYY-MM-DD.")
             return
 
@@ -184,10 +195,21 @@ class VisualizadorGuias:
         caminho_pdf = os.path.join(self.pasta_pdf, nome_pdf)
 
         try:
-            destino = mover_pdf_para_pasta_destino(caminho_pdf, fornecedor_nome, ano, os.path.join(self.base_dir, "arquivados"))
+            destino = mover_pdf_para_pasta_destino(
+                caminho_pdf, 
+                fornecedor_nome_limpo, 
+                ano, 
+                os.path.join(self.base_dir, "arquivados")
+            )
             final = renomear_pdf(destino, numero, ano)
 
-            gravar_guia_bd(fornecedor_nif, numero, ano, data_formatada, processo, final)
+            gravar_guia_bd(
+                fornecedor_nif, 
+                numero, 
+                ano, 
+                data_formatada, 
+                processo, 
+                final)
 
             mostrar_mensagem("info", "Guia gravada e movida com sucesso.")
             logger.info(f"Guia '{nome_pdf}' gravada e movida para '{final}'.")
@@ -208,6 +230,11 @@ class VisualizadorGuias:
             mostrar_mensagem("erro", f"Erro ao salvar guia: {e}")
 
     def eliminar_pdf(self):
+        """
+        Elimina o PDF atual da lista e do sistema de arquivos.
+        Se não houver PDFs, exibe uma mensagem de aviso.
+        Se o PDF for eliminado com sucesso, atualiza a lista de PDFs e abre o próximo PDF.
+        """
         if not self.pdfs:
             return
 
@@ -230,6 +257,11 @@ class VisualizadorGuias:
         confirmar_eliminacao(nome_pdf, acao)
 
     def preencher_dados_qr(self, caminho_pdf):
+        """
+        Preenche os campos do formulário com os dados extraídos do QR code no PDF.
+        Args:
+            caminho_pdf (str): Caminho do arquivo PDF a ser processado.
+        """
         logger.info(f"Preenchendo dados do QR Code para o PDF: {caminho_pdf}")
         self.entry_ano.delete(0, tk.END)
         self.entry_data.delete(0, tk.END)
@@ -242,9 +274,12 @@ class VisualizadorGuias:
             logger.warning("Nenhum dado QR Code encontrado no PDF.")
             return
 
-        fornecedor_nome = self.fornecedores.get(dados_qr.get("nif_emitente"))
-        if fornecedor_nome:
-            self.fornecedor_var.set(fornecedor_nome)
+        nif = dados_qr.get("nif_emitente")
+        nome = self.fornecedores.get(nif)
+        if nome:
+            valor_combo = f"{nif} - {nome}"
+            self.fornecedor_var.set(valor_combo)
+            logger.info(f"Fornecedora preenchida: {valor_combo}")
 
         data_qr = dados_qr.get("data_doc", "").strip()
 

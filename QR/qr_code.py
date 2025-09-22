@@ -123,7 +123,7 @@ class GeradorQRCode:
                 combo.bind("<KeyRelease>", self.filtrar_equipas)
                 self.combo_equipa = combo
             elif texto.lower().startswith("tipo"):
-                tipos_validos = ["Folhas_Obra", "Folhas_Faltas", "Folhas_Assiduidade"]
+                tipos_validos = ["Folhas de Obra", "Folhas de Faltas", "Folhas de Assiduidade"]
                 combo["values"] = tipos_validos
                 combo.bind("<<ComboboxSelected>>", lambda e: self._tipo_selecionado(combo.get()))
             combo.pack(pady=5)
@@ -178,7 +178,8 @@ class GeradorQRCode:
             return
 
         # Caminho do template base
-        template_base = os.path.join("templates", f"{TIPOS_DOCUMENTOS[tipo_documento]}_Base.xlsx")
+        sigla = TIPOS_DOCUMENTOS[tipo_documento]["sigla"]
+        template_base = os.path.join("templates", f"{sigla}_Base.xlsx")
         documentos_gerados = []
 
         # Loop pelos meses selecionados
@@ -208,7 +209,8 @@ class GeradorQRCode:
             qr.save(qr_temp_path)
 
             # Pasta e nome final do documento
-            pasta_saida = os.path.join(tipo_documento, "geradas", ano, equipa_nome)
+            pasta_nome = TIPOS_DOCUMENTOS[tipo_documento]["pasta"]
+            pasta_saida = os.path.join(pasta_nome, "geradas", ano, equipa_nome)
             os.makedirs(pasta_saida, exist_ok=True)
             nome_ficheiro = f"{ano}_{nome_mes}_{equipa_nome}.xlsx"
             caminho_final = os.path.join(pasta_saida, nome_ficheiro)

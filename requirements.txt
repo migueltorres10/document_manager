@@ -9,3 +9,4 @@ naps2
 Pillow
 pyzbar
 PyMuPDF
+

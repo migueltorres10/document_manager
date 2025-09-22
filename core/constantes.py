@@ -30,16 +30,17 @@ MESES_MAP = {
 
 # Tipos de documentos e seus códigos
 TIPOS_DOCUMENTOS = {
-    "Guias": "GR",
-    "Faturas": "F",
-    "Recibos": "R",
-    "Folhas de Obra": "FO",
-    "Folhas de Faltas": "FF",
-    "Folhas de Assiduidade": "FA",
-    "Faturas Emitidas": "F-E",
-    "Recibos Emitidos": "R-E",
-    "Guias Emitidas": "GR-E",
+    "Guias": {"sigla": "GR", "pasta": "Guias"},
+    "Faturas": {"sigla": "F", "pasta": "Faturas"},
+    "Recibos": {"sigla": "R", "pasta": "Recibos"},
+    "Folhas de Obra": {"sigla": "FO", "pasta": "Folhas_Obra"},
+    "Folhas de Faltas": {"sigla": "FF", "pasta": "Folhas_Faltas"},
+    "Folhas de Assiduidade": {"sigla": "FA", "pasta": "Folhas_Assiduidade"},
+    "Faturas Emitidas": {"sigla": "F-E", "pasta": "Faturas_Emitidas"},
+    "Recibos Emitidos": {"sigla": "R-E", "pasta": "Recibos_Emitidos"},
+    "Guias Emitidas": {"sigla": "GR-E", "pasta": "Guias_Emitidas"},
 }
+
 
 # Estrutura de diretórios a criar no início
 DOCUMENTOS_COM_PASTAS = {
